@@ -1,0 +1,53 @@
+Web Desa pariwang
+- Profil Desa
+	- nama desa
+	- alamat desa
+	- potensi
+	- jumlah penduduk
+	- contact
+	- longitude
+	- latitude
+	- link video profil desa
+	- status desa
+- Bumdes
+	- nama
+	- direktur
+	- status_sertifikasi
+	- jumlah pegawai
+	- unit usaha
+	- file_sertifikat
+	- phone
+- Kelembagaan
+	- bpd (Badan Permusyawaran desa)
+		- sk_periode
+			- nama
+			- jabatan
+			- keterwakilan dusun
+	- kader karang taruna
+		- nama
+		- jabatan
+	- kpm (Kader Pembangunan Manusia)
+		- nama
+		- jabatan
+	- lpm (Lembaga Ketahanan Masyarakat)
+		- nama
+		- jabatan
+	- pkk (Kader Pkk)
+		- nama
+		- jabatan
+	- posyandu (Kader Posyandu)
+		- nama Posyandu
+			- nama
+			- jabatan
+	
+	- 1 tabel
+		- nama Lembaga
+		- file
+			- member
+				- nama
+				- jabatan
+- Berita
+	- judul
+	- image
+	- body
+	- publish date
