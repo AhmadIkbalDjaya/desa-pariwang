@@ -1,0 +1,9 @@
+.pagination {
+  justify-content: end;
+}
+
+@media (max-width:300px) {
+  .add-button {
+    width: 100%;
+  }
+}
