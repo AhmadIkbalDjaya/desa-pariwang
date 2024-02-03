@@ -1,4 +1,5 @@
 <div>
+  <x-toast />
   {{-- If your happiness depends on money, you will never be happy with yourself. --}}
   <nav
     style="--bs-breadcrumb-divider: url(&#34;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='8' height='8'%3E%3Cpath d='M2.5 0L1 1.5 3.5 4 1 6.5 2.5 8l4-4-4-4z' fill='%236c757d'/%3E%3C/svg%3E&#34;);"
@@ -52,7 +53,7 @@
                     <span class="badge bg-warning text-white"><i class="ti ti-edit"></i></span>
                   </a>
                   <span class="badge bg-danger text-white" style="cursor: pointer" data-bs-toggle="modal"
-                    data-bs-target="#exampleModal">
+                    data-bs-target="#exampleModal" wire:click="setBumdes({{ $bumdes->id }})">
                     <i class="ti ti-trash"></i>
                   </span>
                 </td>
@@ -66,7 +67,8 @@
   </div>
 
   {{-- delete modal --}}
-  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div wire:ignore.self class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+    aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered">
       <div class="modal-content">
         <div class="modal-header">
@@ -74,11 +76,13 @@
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body text-center">
-          <p class="fs-5">Yakin Ingin Menghapus?</p>
+          {{-- <p class="fs-5">Yakin Ingin Menghapus {{ $bumdes_name }}?</p> --}}
+          <p class="fs-5">Yakin Ingin Menghapus {{ $form->name }}?</p>
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
-          <button type="button" class="btn btn-danger">Hapus</button>
+          <button type="button" class="btn btn-danger"
+            wire:click="destroy">Hapus</button>
         </div>
       </div>
     </div>

@@ -28,6 +28,8 @@
   <script src="{{ asset('admin/assets/libs/apexcharts/dist/apexcharts.min.js') }}"></script>
   <script src="{{ asset('admin/assets/libs/simplebar/dist/simplebar.js') }}"></script>
   <script src="{{ asset('admin/assets/js/dashboard.js') }}"></script>
+  <script src="{{ asset('js/modal.js') }}"></script>
+  <script src="{{ asset('js/toast.js') }}"></script>
 </body>
 
 </html>

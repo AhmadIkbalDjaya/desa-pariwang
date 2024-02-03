@@ -2,6 +2,7 @@
 
 namespace App\Livewire\Admin\Bumdes;
 
+use App\Livewire\Forms\Admin\BumdesForm;
 use App\Models\Bumdes;
 use Livewire\Attributes\Layout;
 use Livewire\Component;
@@ -13,6 +14,7 @@ class Index extends Component
     #[Layout('components.layouts.admin')] 
     public $perpage = 10;
     public $search = "";
+    public BumdesForm $form;
     public function render()
     {
         $search = $this->search;
@@ -20,5 +22,16 @@ class Index extends Component
         return view('livewire.admin.bumdes.index', [
             "bumdeses" => $bumdeses,
         ])->title("Badan Usaha Milik Desa");
+    }
+
+    public function setBumdes(Bumdes $bumdes) {
+        $this->form->setBumdes($bumdes);
+    }
+    
+    public function destroy() {
+        $this->form->delete();
+        flash('Bumdes Berhasil Dihapus', 'danger');        
+        $this->dispatch('show-notif');
+        $this->dispatch("close-modal");
     }
 }
