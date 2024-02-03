@@ -15,12 +15,16 @@
       <h5 class="card-title fw-semibold mb-3">Badan Usaha Milik Desa</h5>
       <p class="mb-2">Badan Usaha Milik Desa Pariwang</p>
       <div class="d-flex justify-content-between">
-      {{-- <div class="row"> --}}
+        {{-- <div class="row"> --}}
         <div>
           <input wire:model.live="search" class="form-control" type="text" placeholder="Cari Bumdes"
             aria-label="default input example">
         </div>
-        <button class="btn btn-primary add-button"><i class="ti ti-plus"></i> Bumdes</button>
+        <button class="btn btn-primary add-button">
+          <a href="{{ route('admin.bundes.create') }}" wire:navigate class="text-white">
+            <i class="ti ti-plus"></i> Bumdes
+          </a>
+        </button>
         {{-- <div class="col-md-6 text-end">
         </div> --}}
       </div>
@@ -41,9 +45,16 @@
                 <td style="white-space: nowrap">{{ $bumdes->director }}</td>
                 <td style="white-space: nowrap">{{ $bumdes->unit }}</td>
                 <td style="white-space: nowrap">
-                  <span class="badge bg-info text-white"><i class="ti ti-eye"></i></span>
-                  <span class="badge bg-warning text-white"><i class="ti ti-edit"></i></span>
-                  <span class="badge bg-danger text-white"><i class="ti ti-trash"></i></span>
+                  <a href="{{ route('admin.bumdes.show', ['bumdes' => $bumdes->id]) }}" wire:navigate>
+                    <span class="badge bg-info text-white"><i class="ti ti-eye"></i></span>
+                  </a>
+                  <a href="{{ route('admin.bumdes.edit', ['bumdes' => $bumdes->id]) }}" wire:navigate>
+                    <span class="badge bg-warning text-white"><i class="ti ti-edit"></i></span>
+                  </a>
+                  <span class="badge bg-danger text-white" style="cursor: pointer" data-bs-toggle="modal"
+                    data-bs-target="#exampleModal">
+                    <i class="ti ti-trash"></i>
+                  </span>
                 </td>
               </tr>
             @endforeach
@@ -51,6 +62,25 @@
         </table>
       </div>
       <x-pagination :items="$bumdeses" />
+    </div>
+  </div>
+
+  {{-- delete modal --}}
+  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="exampleModalLabel">Konfirmasi Hapus</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body text-center">
+          <p class="fs-5">Yakin Ingin Menghapus?</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+          <button type="button" class="btn btn-danger">Hapus</button>
+        </div>
+      </div>
     </div>
   </div>
 

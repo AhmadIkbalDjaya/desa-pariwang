@@ -24,6 +24,9 @@ Route::prefix("addes")->group(function () {
     });
     Route::prefix("bumdes")->group(function () {
         Route::get('', \App\Livewire\Admin\Bumdes\Index::class)->name('admin.bumdes.index');
+        Route::get('create', \App\Livewire\Admin\Bumdes\Create::class)->name('admin.bundes.create');
+        Route::get('{bumdes}', \App\Livewire\Admin\Bumdes\Show::class)->name('admin.bumdes.show');
+        Route::get('{bumdes}/edit', \App\Livewire\Admin\Bumdes\Edit::class)->name('admin.bumdes.edit');
     });
     Route::prefix("institution")->group(function () {
         Route::get('', \App\Livewire\Admin\Institution\Index::class)->name('admin.institution.index');
