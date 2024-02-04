@@ -30,6 +30,9 @@ Route::prefix("addes")->group(function () {
     });
     Route::prefix("institution")->group(function () {
         Route::get('', \App\Livewire\Admin\Institution\Index::class)->name('admin.institution.index');
+        Route::get('create', \App\Livewire\Admin\Institution\Create::class)->name('admin.institution.create');
+        Route::get('{institution}', \App\Livewire\Admin\Institution\Show::class)->name('admin.institution.show');
+        Route::get('{institution}/edit', \App\Livewire\Admin\Institution\Edit::class)->name('admin.institution.edit');
     });
     Route::prefix("article")->group(function () {
         Route::get('', \App\Livewire\Admin\Article\Index::class)->name('admin.article.index');

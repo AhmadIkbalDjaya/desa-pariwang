@@ -32,7 +32,6 @@
         <li class="sidebar-item {{ Request::is('addes/bumdes*') ? 'selected' : '' }}">
           <a class="sidebar-link" href="{{ route('admin.bumdes.index') }}" wire:navigate.hover aria-expanded="false">
             <span>
-              {{-- <i class="ti ti-shopping-cart"></i> --}}
               <i class="ti ti-building-store"></i>
             </span>
             <span class="hide-menu">Bumdes</span>
@@ -42,7 +41,6 @@
           <a class="sidebar-link" href="{{ route('admin.institution.index') }}" wire:navigate.hover
             aria-expanded="false">
             <span>
-              {{-- <i class="ti ti-users"></i> --}}
               <i class="ti ti-building-bank"></i>
             </span>
             <span class="hide-menu">Kelembagaan</span>
@@ -60,30 +58,17 @@
           <i class="ti ti-dots nav-small-cap-icon fs-4"></i>
           <span class="hide-menu">Kelembagaan</span>
         </li>
-        <li class="sidebar-item {{ Request::is('') ? 'selected' : '' }}">
-          <a class="sidebar-link" href="./ui-buttons.html" aria-expanded="false">
-            <span>
-              <i class="ti ti-users"></i>
-            </span>
-            <span class="hide-menu">BPD</span>
-          </a>
-        </li>
-        <li class="sidebar-item {{ Request::is('') ? 'selected' : '' }}">
-          <a class="sidebar-link" href="./ui-card.html" aria-expanded="false">
-            <span>
-              <i class="ti ti-cards"></i>
-            </span>
-            <span class="hide-menu">Kader Pembangunan Manusia</span>
-          </a>
-        </li>
-        <li class="sidebar-item {{ Request::is('') ? 'selected' : '' }}">
-          <a class="sidebar-link" href="./ui-card.html" aria-expanded="false">
-            <span>
-              <i class="ti ti-cards"></i>
-            </span>
-            <span class="hide-menu">Posyandu</span>
-          </a>
-        </li>
+        @foreach ($institutions as $institution)
+          <li class="sidebar-item {{ Request::is('') ? 'selected' : '' }}">
+            <a class="sidebar-link" href="{{ route('admin.institution.show', ['institution' => $institution->id]) }}"
+              wire:navigate aria-expanded="false">
+              <span>
+                <i class="ti ti-users"></i>
+              </span>
+              <span class="hide-menu">{{ $institution->abbreviation ?? $institution->name }}</span>
+            </a>
+          </li>
+        @endforeach
       </ul>
       <div class="unlimited-access hide-menu bg-light-primary position-relative mb-7 mt-5 rounded">
         <div class="d-flex">

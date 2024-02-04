@@ -14,7 +14,9 @@ return new class extends Migration
         Schema::create('institutions', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->string('file')->nullable();
+            // $table->string('slug')->unique();
+            $table->string('abbreviation')->nullable();
+            // $table->string('file')->nullable();
             $table->timestamps();
         });
     }

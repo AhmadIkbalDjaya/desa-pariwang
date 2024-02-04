@@ -26,5 +26,6 @@ class DatabaseSeeder extends Seeder
         ]);
         $this->call(VillageStatusSeeder::class);
         Bumdes::factory(30)->create();
+        $this->call(InstitutionSeeder::class);
     }
 }

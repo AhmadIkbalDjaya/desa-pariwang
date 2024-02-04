@@ -23,7 +23,6 @@ class Edit extends Component
     }
 
     public function update() {
-        // dd("ok");
         $this->form->update();
         $this->redirectRoute('admin.bumdes.index', navigate:true);
         flash('Bumdes Berhasil Diedit', 'success');

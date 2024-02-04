@@ -9,7 +9,6 @@ use Livewire\Form;
 
 class BumdesForm extends Form
 {
-    // use WithFileUploads;
     public ?Bumdes $bumdes;
     #[Validate("required|string")]
     public $name;
@@ -26,7 +25,6 @@ class BumdesForm extends Form
     #[Validate("required")]
     public $phone;
     
-
     public function setBumdes(Bumdes $bumdes) {
         $this->bumdes = $bumdes;
         $this->name = $bumdes->name;

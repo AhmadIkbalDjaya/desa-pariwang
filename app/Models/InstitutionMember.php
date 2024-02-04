@@ -9,4 +9,8 @@ class InstitutionMember extends Model
 {
     use HasFactory;
     protected $guarded = ["id"];
+
+    public function institution() {
+        return $this->belongsTo(Institution::class);
+    }
 }
