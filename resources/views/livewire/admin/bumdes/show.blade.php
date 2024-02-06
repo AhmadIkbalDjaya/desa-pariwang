@@ -29,7 +29,6 @@
           </button>
         </div>
       </div>
-      {{-- <p class="mb-2">Detail {{ $bumdes->name }}</p> --}}
     </div>
   </div>
 

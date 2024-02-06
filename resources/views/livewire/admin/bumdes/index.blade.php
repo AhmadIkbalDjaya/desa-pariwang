@@ -16,7 +16,6 @@
       <h5 class="card-title fw-semibold mb-3">Badan Usaha Milik Desa</h5>
       <p class="mb-2">Badan Usaha Milik Desa Pariwang</p>
       <div class="d-flex justify-content-between">
-        {{-- <div class="row"> --}}
         <div>
           <input wire:model.live="search" class="form-control" type="text" placeholder="Cari Bumdes"
             aria-label="default input example">
@@ -26,8 +25,6 @@
             <i class="ti ti-plus"></i> Bumdes
           </a>
         </button>
-        {{-- <div class="col-md-6 text-end">
-        </div> --}}
       </div>
       <div class="table-responsive">
         <table class="table datatable">
@@ -53,7 +50,7 @@
                     <span class="badge bg-warning text-white"><i class="ti ti-edit"></i></span>
                   </a>
                   <span class="badge bg-danger text-white" style="cursor: pointer" data-bs-toggle="modal"
-                    data-bs-target="#exampleModal" wire:click="setBumdes({{ $bumdes->id }})">
+                    data-bs-target="#deleteModal" wire:click="setBumdes({{ $bumdes->id }})">
                     <i class="ti ti-trash"></i>
                   </span>
                 </td>
@@ -67,12 +64,12 @@
   </div>
 
   {{-- delete modal --}}
-  <div wire:ignore.self class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+  <div wire:ignore.self class="modal fade" id="deleteModal" tabindex="-1" aria-labelledby="deleteModalLabel"
     aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered">
       <div class="modal-content">
         <div class="modal-header">
-          <h1 class="modal-title fs-5" id="exampleModalLabel">Konfirmasi Hapus</h1>
+          <h1 class="modal-title fs-5" id="deleteModalLabel">Konfirmasi Hapus</h1>
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body text-center">
@@ -81,8 +78,7 @@
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
-          <button type="button" class="btn btn-danger"
-            wire:click="destroy">Hapus</button>
+          <button type="button" class="btn btn-danger" wire:click="destroy">Hapus</button>
         </div>
       </div>
     </div>

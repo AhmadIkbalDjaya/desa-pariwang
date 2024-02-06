@@ -17,7 +17,7 @@
   <div class="card">
     <div class="card-body">
       <h5 class="card-title fw-semibold mb-3">{{ $institution->name }}
-        {{ $institution->abbreviation ? $institution->abbreviation : '' }}</h5>
+        {{ $institution->abbreviation ? '(' . $institution->abbreviation . ')' : '' }}</h5>
       <div class="d-flex justify-content-between">
         <div>
           <input wire:model.live="search" class="form-control" type="text" placeholder="Cari Anggota"

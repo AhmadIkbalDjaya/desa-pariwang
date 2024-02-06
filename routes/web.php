@@ -36,5 +36,8 @@ Route::prefix("addes")->group(function () {
     });
     Route::prefix("article")->group(function () {
         Route::get('', \App\Livewire\Admin\Article\Index::class)->name('admin.article.index');
+        Route::get('create', \App\Livewire\Admin\Article\Create::class)->name('admin.article.create');
+        Route::get('{article}', \App\Livewire\Admin\Article\Show::class)->name('admin.article.show');
+        Route::get('{article}/edit', \App\Livewire\Admin\Article\Edit::class)->name('admin.article.edit');
     });
 });
