@@ -80,8 +80,9 @@
               <p class="fs-4">Sertifikat</p>
             </div>
             <div class="col-7 col-lg-8">
-              <input wire:model.live='form.certificate_file' class="form-control @error('form.certificate_file') is-invalid @enderror"
-                type="file" placeholder="Default input">
+              <input wire:model.live='form.certificate_file'
+                class="form-control @error('form.certificate_file') is-invalid @enderror" type="file"
+                placeholder="Default input">
               @error('form.certificate_file')
                 <div class="invalid-feedback text-start">{{ $message }}</div>
               @enderror

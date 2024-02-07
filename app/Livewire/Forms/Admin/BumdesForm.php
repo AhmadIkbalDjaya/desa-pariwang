@@ -40,6 +40,8 @@ class BumdesForm extends Form
         $validated = $this->validate();
         if ($this->certificate_file) {
             $validated["certificate_file"] = $this->certificate_file->storePublicly("certificate_file");
+        } else {
+            unset($validated['certificate_file']);
         }
         Bumdes::create($validated);
     }
@@ -58,6 +60,11 @@ class BumdesForm extends Form
     }
 
     public function delete() {
+        if ($this->certificate_file) {
+            if (Storage::exists($this->certificate_file)) {
+                Storage::delete($this->certificate_file);
+            }
+        }
         $this->bumdes->delete();
     }
 }

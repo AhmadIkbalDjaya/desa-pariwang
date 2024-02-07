@@ -29,6 +29,15 @@
             <span class="hide-menu">Profil</span>
           </a>
         </li>
+        <li class="sidebar-item {{ Request::is('addes/village-aparatus*') ? 'selected' : '' }}">
+          <a class="sidebar-link" href="{{ route('admin.village-aparatus.index') }}" wire:navigate.hover
+            aria-expanded="false">
+            <span>
+              <i class="ti ti-users"></i>
+            </span>
+            <span class="hide-menu">Perangkat Desa</span>
+          </a>
+        </li>
         <li class="sidebar-item {{ Request::is('addes/bumdes*') ? 'selected' : '' }}">
           <a class="sidebar-link" href="{{ route('admin.bumdes.index') }}" wire:navigate.hover aria-expanded="false">
             <span>
@@ -54,7 +63,7 @@
             <span class="hide-menu">Berita</span>
           </a>
         </li>
-        <li class="nav-small-cap">
+        {{-- <li class="nav-small-cap">
           <i class="ti ti-dots nav-small-cap-icon fs-4"></i>
           <span class="hide-menu">Kelembagaan</span>
         </li>
@@ -68,7 +77,7 @@
               <span class="hide-menu">{{ $institution->abbreviation ?? $institution->name }}</span>
             </a>
           </li>
-        @endforeach
+        @endforeach --}}
       </ul>
       <div class="unlimited-access hide-menu bg-light-primary position-relative mb-7 mt-5 rounded">
         <div class="d-flex">
