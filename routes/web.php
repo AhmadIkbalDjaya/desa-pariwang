@@ -17,33 +17,40 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::prefix("addes")->group(function () {
-    Route::get('', \App\Livewire\Admin\Index::class)->name('admin.index');
-    Route::prefix("profile")->group(function () {
-        Route::get('', \App\Livewire\Admin\Profile\Index::class)->name('admin.profile.index');
-    });
-    Route::prefix("bumdes")->group(function () {
-        Route::get('', \App\Livewire\Admin\Bumdes\Index::class)->name('admin.bumdes.index');
-        Route::get('create', \App\Livewire\Admin\Bumdes\Create::class)->name('admin.bumdes.create');
-        Route::get('{bumdes}', \App\Livewire\Admin\Bumdes\Show::class)->name('admin.bumdes.show');
-        Route::get('{bumdes}/edit', \App\Livewire\Admin\Bumdes\Edit::class)->name('admin.bumdes.edit');
-    });
-    Route::prefix("institution")->group(function () {
-        Route::get('', \App\Livewire\Admin\Institution\Index::class)->name('admin.institution.index');
-        Route::get('create', \App\Livewire\Admin\Institution\Create::class)->name('admin.institution.create');
-        Route::get('{institution}', \App\Livewire\Admin\Institution\Show::class)->name('admin.institution.show');
-        Route::get('{institution}/edit', \App\Livewire\Admin\Institution\Edit::class)->name('admin.institution.edit');
-    });
-    Route::prefix("article")->group(function () {
-        Route::get('', \App\Livewire\Admin\Article\Index::class)->name('admin.article.index');
-        Route::get('create', \App\Livewire\Admin\Article\Create::class)->name('admin.article.create');
-        Route::get('{article}', \App\Livewire\Admin\Article\Show::class)->name('admin.article.show');
-        Route::get('{article}/edit', \App\Livewire\Admin\Article\Edit::class)->name('admin.article.edit');
-    });
-    Route::prefix("village-aparatus")->group(function () {
-        Route::get('', \App\Livewire\Admin\VillageAparatus\Index::class)->name('admin.village-aparatus.index');
-        Route::get('create', \App\Livewire\Admin\VillageAparatus\Create::class)->name('admin.village-aparatus.create');
-        Route::get('{village_aparatus}', \App\Livewire\Admin\VillageAparatus\Show::class)->name('admin.village-aparatus.show');
-        Route::get('{village_aparatus}/edit', \App\Livewire\Admin\VillageAparatus\Edit::class)->name('admin.village-aparatus.edit');
+Route::middleware(['guest'])->group(function () {
+    Route::get('login', \App\Livewire\Admin\Login::class)->name('login');
+    
+});
+
+Route::middleware(['auth'])->group(function () {
+    Route::prefix("addes")->group(function () {
+        Route::get('', \App\Livewire\Admin\Index::class)->name('admin.index');
+        Route::prefix("profile")->group(function () {
+            Route::get('', \App\Livewire\Admin\Profile\Index::class)->name('admin.profile.index');
+        });
+        Route::prefix("bumdes")->group(function () {
+            Route::get('', \App\Livewire\Admin\Bumdes\Index::class)->name('admin.bumdes.index');
+            Route::get('create', \App\Livewire\Admin\Bumdes\Create::class)->name('admin.bumdes.create');
+            Route::get('{bumdes}', \App\Livewire\Admin\Bumdes\Show::class)->name('admin.bumdes.show');
+            Route::get('{bumdes}/edit', \App\Livewire\Admin\Bumdes\Edit::class)->name('admin.bumdes.edit');
+        });
+        Route::prefix("institution")->group(function () {
+            Route::get('', \App\Livewire\Admin\Institution\Index::class)->name('admin.institution.index');
+            Route::get('create', \App\Livewire\Admin\Institution\Create::class)->name('admin.institution.create');
+            Route::get('{institution}', \App\Livewire\Admin\Institution\Show::class)->name('admin.institution.show');
+            Route::get('{institution}/edit', \App\Livewire\Admin\Institution\Edit::class)->name('admin.institution.edit');
+        });
+        Route::prefix("article")->group(function () {
+            Route::get('', \App\Livewire\Admin\Article\Index::class)->name('admin.article.index');
+            Route::get('create', \App\Livewire\Admin\Article\Create::class)->name('admin.article.create');
+            Route::get('{article}', \App\Livewire\Admin\Article\Show::class)->name('admin.article.show');
+            Route::get('{article}/edit', \App\Livewire\Admin\Article\Edit::class)->name('admin.article.edit');
+        });
+        Route::prefix("village-aparatus")->group(function () {
+            Route::get('', \App\Livewire\Admin\VillageAparatus\Index::class)->name('admin.village-aparatus.index');
+            Route::get('create', \App\Livewire\Admin\VillageAparatus\Create::class)->name('admin.village-aparatus.create');
+            Route::get('{village_aparatus}', \App\Livewire\Admin\VillageAparatus\Show::class)->name('admin.village-aparatus.show');
+            Route::get('{village_aparatus}/edit', \App\Livewire\Admin\VillageAparatus\Edit::class)->name('admin.village-aparatus.edit');
+        });
     });
 });
