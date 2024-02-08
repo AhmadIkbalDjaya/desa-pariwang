@@ -30,5 +30,6 @@ class DatabaseSeeder extends Seeder
         $this->call(InstitutionSeeder::class);
         Article::factory(15)->create();
         $this->call(VillageAparatusSeeder::class);
+        $this->call(ProfileSeeder::class);
     }
 }
