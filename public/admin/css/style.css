@@ -7,3 +7,11 @@
     width: 100%;
   }
 }
+
+.custom-overflow {
+  width: 100%;
+  /* white-space: nowrap; */
+  max-lines: 3;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
