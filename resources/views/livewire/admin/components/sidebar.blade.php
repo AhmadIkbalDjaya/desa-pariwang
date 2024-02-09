@@ -63,21 +63,6 @@
             <span class="hide-menu">Berita</span>
           </a>
         </li>
-        {{-- <li class="nav-small-cap">
-          <i class="ti ti-dots nav-small-cap-icon fs-4"></i>
-          <span class="hide-menu">Kelembagaan</span>
-        </li>
-        @foreach ($institutions as $institution)
-          <li class="sidebar-item {{ Request::is('') ? 'selected' : '' }}">
-            <a class="sidebar-link" href="{{ route('admin.institution.show', ['institution' => $institution->id]) }}"
-              wire:navigate aria-expanded="false">
-              <span>
-                <i class="ti ti-users"></i>
-              </span>
-              <span class="hide-menu">{{ $institution->abbreviation ?? $institution->name }}</span>
-            </a>
-          </li>
-        @endforeach --}}
       </ul>
       <div class="unlimited-access hide-menu bg-light-primary position-relative mb-7 mt-5 rounded">
         <div class="d-flex">
