@@ -63,16 +63,24 @@
             <span class="hide-menu">Berita</span>
           </a>
         </li>
+        <li class="sidebar-item {{ Request::is('addes/complaint*') ? 'selected' : '' }}">
+          <a class="sidebar-link" href="{{ route('admin.complaint.index') }}" wire:navigate.hover aria-expanded="false">
+            <span>
+              <i class="ti ti-news"></i>
+            </span>
+            <span class="hide-menu">Kritik & Masukan</span>
+          </a>
+        </li>
       </ul>
       <div class="unlimited-access hide-menu bg-light-primary position-relative mb-7 mt-5 rounded">
         <div class="d-flex">
           <div class="unlimited-access-title me-3">
-            <h6 class="fw-semibold fs-4 mb-6 text-dark w-85">Upgrade to pro</h6>
-            <a href="https://adminmart.com/product/modernize-bootstrap-5-admin-template/" target="_blank"
-              class="btn btn-primary fs-2 fw-semibold lh-sm">Buy Pro</a>
+            <h6 class="fw-semibold fs-3 mb-6 text-dark w-85">Butuh Bantuan?</h6>
+            <a href="https://www.instagram.com/djaya_ikbal/" target="_blank"
+              class="btn btn-primary fs-2 fw-semibold lh-sm">Hubungi Developer</a>
           </div>
           <div class="unlimited-access-img">
-            <img src="../assets/images/backgrounds/rocket.png" alt="" class="img-fluid">
+            <img src="{{ 'admin/assets/images/backgrounds/rocket.png' }}" alt="" class="img-fluid">
           </div>
         </div>
       </div>

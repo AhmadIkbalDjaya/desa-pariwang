@@ -201,7 +201,9 @@
                   <tbody>
                     @foreach ($institutions as $institution)
                       <tr wire:key="{{ $institution->id }}">
-                        <td class="py-2" style="white-space: nowrap">{{ $institution->name }}</td>
+                        <td class="py-2" style="white-space: nowrap">
+                          {{-- {{ $institution->abbreviation ?? $institution->name }}</td> --}}
+                          {{ $institution->name }}</td>
                         <td class="py-2 text-center" style="white-space: nowrap">{{ $institution->members->count() }}
                         </td>
                         </td>

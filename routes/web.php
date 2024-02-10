@@ -52,5 +52,6 @@ Route::middleware(['auth'])->group(function () {
             Route::get('{village_aparatus}', \App\Livewire\Admin\VillageAparatus\Show::class)->name('admin.village-aparatus.show');
             Route::get('{village_aparatus}/edit', \App\Livewire\Admin\VillageAparatus\Edit::class)->name('admin.village-aparatus.edit');
         });
+        Route::get('complaint', \App\Livewire\Admin\Complaint\Index::class)->name('admin.complaint.index');
     });
 });

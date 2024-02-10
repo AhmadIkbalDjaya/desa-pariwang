@@ -41,7 +41,7 @@ class Show extends Component
 
     public function store() {
         $this->form->store();
-        flash("Anggota Berhasil Ditambahkan");
+        flash("Anggota Berhasil Ditambahkan", "success");
         $this->dispatch("show-notif");
         $this->dispatch("close-modal");
         $this->form->resetInstitutionMember();
@@ -49,7 +49,7 @@ class Show extends Component
 
     public function update() {
         $this->form->update();
-        flash("Anggota Berhasil Diedit");
+        flash("Anggota Berhasil Diedit", "warning");
         $this->dispatch("show-notif");
         $this->dispatch("close-modal");
         $this->form->resetInstitutionMember();
@@ -57,7 +57,7 @@ class Show extends Component
 
     public function destroy() {
         $this->form->delete();
-        flash("Anggota Berhasil Dihapus");
+        flash("Anggota Berhasil Dihapus", "danger");
         $this->dispatch("show-notif");
         $this->dispatch("close-modal");
         $this->form->resetInstitutionMember();
