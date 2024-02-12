@@ -9,6 +9,7 @@
 </head>
 
 <body>
+  <livewire:public.components.navbar />
   {{ $slot }}
 </body>
 
