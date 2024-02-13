@@ -11,4 +11,8 @@ class Navbar extends Component
     {
         return view('livewire.public.components.navbar');
     }
+
+    public function clickOpen() {
+        $this->open = !$this->open;
+    }
 }

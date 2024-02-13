@@ -14,10 +14,13 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', \App\Livewire\Public\Home\Index::class)->name("home");
+Route::get('tentang', \App\Livewire\Public\About\Index::class)->name("about");
+Route::get('bumdes', \App\Livewire\Public\Bumdes\Index::class)->name("bumdes");
+Route::get('kelembagaan', \App\Livewire\Public\Institution\Index::class)->name("institution");
+Route::get('berita-&-kegiatan', \App\Livewire\Public\Article\Index::class)->name("article");
 
 Route::middleware(['guest'])->group(function () {
     Route::get('login', \App\Livewire\Admin\Login::class)->name('login');
-    
 });
 
 Route::middleware(['auth'])->group(function () {
