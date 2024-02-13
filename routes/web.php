@@ -26,6 +26,7 @@ Route::middleware(['auth'])->group(function () {
         Route::prefix("profile")->group(function () {
             Route::get('', \App\Livewire\Admin\Profile\Index::class)->name('admin.profile.index');
         });
+        Route::get('adminProfile/changePass', \App\Livewire\Admin\AdminProfile\ChangePass::class)->name('admin.admin-profile.changePass');
         Route::prefix("bumdes")->group(function () {
             Route::get('', \App\Livewire\Admin\Bumdes\Index::class)->name('admin.bumdes.index');
             Route::get('create', \App\Livewire\Admin\Bumdes\Create::class)->name('admin.bumdes.create');
