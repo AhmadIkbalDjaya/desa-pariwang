@@ -1,9 +1,13 @@
 <div>
   {{-- The whole world belongs to you. --}}
-  <section class="hero md:h-[90vh] h-[50vh] bg-gray-800 grid place-items-center">
-    <p class="text-white text-4xl">
-      Coming Soon
-    </p>
+  <section class="hero bg-cover bg-center bg-blend-multiply md:h-[93vh] h-[50vh] bg-gray-400 grid place-items-center"
+    style="background-image: url('images/village-2.webp')">
+    <div class="text-center text-white font-protestStrike">
+      <p class="md:text-6xl text-5xl">
+        Selamat Datang <br> Website Resmi Desa Pariwang
+      </p>
+      <p>Dapatkan Informasi Terbaru Mengenai Desa Pariwang</p>
+    </div>
   </section>
 
   <section id="welcome" class="font-plusJakartaSans md:flex md:mx-20 md:my-20 mx-7 my-8">
@@ -111,18 +115,63 @@
       <div class="flex flex-wrap md:justify-center justify-between md:gap-12 gap-0">
         <div class="max-w-[9rem] md:max-w-[17rem] mb-6 md:mb-0 bg-white shadow-lg rounded-md overflow-hidden">
           <div class="md:m-5 m-1">
-            <img class="w-42 h-42 md:w-56 md:h-56 object-cover object-center" src="{{ asset('images/village-2.webp') }}"
+            <img class="w-32 h-32 md:w-56 md:h-56 object-cover object-center" src="{{ asset('images/village-2.webp') }}"
               alt="Gambar">
           </div>
         </div>
         <div class="max-w-[9rem] md:max-w-[17rem] mb-6 md:mb-0 bg-white shadow-lg rounded-md overflow-hidden">
           <div class="md:m-5 m-1">
-            <img class="w-42 h-42 md:w-56 md:h-56 object-cover object-center" src="{{ asset('images/village-2.webp') }}"
+            <img class="w-32 h-32 md:w-56 md:h-56 object-cover object-center" src="{{ asset('images/village-2.webp') }}"
               alt="Gambar">
           </div>
         </div>
       </div>
     </div>
-</div>
-</section>
+  </section>
+
+  <section id="feedBack" class="md:mx-32 md:my-20 mx-7 mt-6">
+    <h1 class="text-center text-green-700 text-2xl md:text-3xl font-semibold">
+      Kirimkan Pesan Kepada Kami
+    </h1>
+    <p class="pt-8 text-sm md:text-base text-center text-slate-700 md:px-48">
+      Kirimkan pesan kepada kami untuk berbagi informasi, permintaan, atau komentar apa pun yang ingin Anda sampaikan.
+      kami dengan senang hati dan akan meresponsnya
+    </p>
+    <div class="form-box md:px-20 my-12">
+      <form action="" method="post">
+        <div class="md:flex md:gap-14">
+          <div class="mb-4 md:basis-1/2">
+            <label for="name" class="block font-semibold">Nama Lengkap <x-public.ui.input-required /></label>
+            <input type="text" name="name" id=""
+              class="w-full border-gray-400 border-solid border rounded-md px-3 py-2 mt-1 bg-transparent focus:outline-none focus:border-green-500">
+          </div>
+          <div class="mb-4 md:basis-1/2">
+            <label for="email" class="block font-semibold">Email</label>
+            <input type="email" name="email" id=""
+              class="w-full border-gray-400 border-solid border rounded-md px-3 py-2 mt-1 bg-transparent focus:outline-none focus:border-green-500">
+          </div>
+        </div>
+        <div class="md:flex md:gap-14">
+          <div class="mb-4 md:basis-1/2">
+            <label for="name" class="block font-semibold">Telepon/WhatsApp</label>
+            <input type="text" name="name" id=""
+              class="w-full border-gray-400 border-solid border rounded-md px-3 py-2 mt-1 bg-transparent focus:outline-none focus:border-green-500">
+          </div>
+          <div class="mb-4 md:basis-1/2">
+            <label for="email" class="block font-semibold">Instansi</label>
+            <input type="email" name="email" id=""
+              class="w-full border-gray-400 border-solid border rounded-md px-3 py-2 mt-1 bg-transparent focus:outline-none focus:border-green-500">
+          </div>
+        </div>
+        <div class="mb-4 md:basis-1/2">
+          <label for="email" class="block font-semibold">Deskripsi <x-public.ui.input-required /></label>
+          <textarea type="email" name="email" id="" rows="5"
+            class="w-full border-gray-400 border-solid border rounded-md px-3 py-2 mt-1 bg-transparent focus:outline-none focus:border-green-500 resize-none"></textarea>
+        </div>
+        <button type="submit"
+          class="text-center text-white font-semibold bg-green-700 w-full rounded py-1 shadow-md">Kirim</button>
+      </form>
+    </div>
+  </section>
+
 </div>

@@ -6,6 +6,7 @@ export default {
             fontFamily: {
                 justMeAgainDownHere: ["Just Me Again Down Here", "sans-serif"],
                 plusJakartaSans: ["Plus Jakarta Sans", "sans-serif"],
+                protestStrike: ["Protest Strike", "sans-serif"]
             },
             backgroundImage: {
                 "home-hero1": "url('/public/image/village-2.webp')",
