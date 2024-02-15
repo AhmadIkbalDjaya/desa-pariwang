@@ -18,7 +18,10 @@
 
 <body class="bg-gray-50">
   <livewire:public.components.navbar />
-  {{ $slot }}
+  <div class="pt-14 min-h-screen">
+    {{ $slot }}
+  </div>
+  <livewire:public.components.footer />
 </body>
 
 </html>
