@@ -7,7 +7,13 @@ export default {
                 justMeAgainDownHere: ["Just Me Again Down Here", "sans-serif"],
                 plusJakartaSans: ["Plus Jakarta Sans", "sans-serif"],
             },
-        }, 
+            backgroundImage: {
+                "home-hero1": "url('/public/image/village-2.webp')",
+                "home-hero2": "url('public/image/village-2.webp')",
+                "home-hero3": "url('/image/village-2.webp')",
+                "home-hero4": "url('image/village-2.webp')",
+            },
+        },
     },
     plugins: [],
 };

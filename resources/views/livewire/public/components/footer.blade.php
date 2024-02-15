@@ -1,4 +1,4 @@
-<div class="bg-green-600">
+<div class="bg-white">
   {{-- Knowing others is intelligence; knowing yourself is true wisdom. --}}
   footer
 </div>
