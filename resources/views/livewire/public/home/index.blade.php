@@ -41,7 +41,7 @@
     </div>
   </section>
 
-  <section id="article" class="md:mx-32 md:my-20 mx-7 mt-6 ">
+  <section id="article" class="md:mx-32 md:my-20 mx-7 mt-6">
     <h1 class="text-green-700 text-3xl font-bold font-plusJakartaSans text-center">Berita & Kegiatan</h1>
     <div class="pt-10 flex flex-wrap md:justify-between justify-around">
       <div class="max-w-[17rem] mb-6 md:mb-0 bg-white shadow-lg rounded-lg overflow-hidden">
