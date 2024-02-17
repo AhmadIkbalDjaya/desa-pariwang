@@ -1,5 +1,4 @@
 <div>
-  {{-- Stop trying to control. --}}
   <section class="hero bg-cover bg-center bg-blend-multiply md:h-[93vh] h-[50vh] bg-gray-400 grid place-items-center"
     style="background-image: url('images/village-2.webp')">
     <div class="text-center text-white font-protestStrike">

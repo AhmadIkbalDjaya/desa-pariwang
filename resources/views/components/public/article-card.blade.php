@@ -9,7 +9,7 @@
       asperiores quae sequi unde!
     </p>
     <div class="text-end">
-      <a href="" wire:navigate class="text-xs text-green-700 font-semibold">
+      <a href="{{ route('article.show', ['article' => '1']) }}" wire:navigate class="text-xs text-green-700 font-semibold">
         Baca Selengkapnya
       </a>
     </div>

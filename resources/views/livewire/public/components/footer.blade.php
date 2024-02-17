@@ -29,11 +29,11 @@
   <span class="block h-[0.5px] mx-5 md:mx-10 bg-gray-300"></span>
   <div class="flex flex-wrap justify-center md:justify-between  mx-20 mt-4">
     <div class="flex gap-4 font-semibold">
-      <a href="" class="text-xs text-gray-700">Beranda</a>
-      <a href="" class="text-xs text-gray-700">Berita</a>
-      <a href="" class="text-xs text-gray-700">Bumdes</a>
-      <a href="" class="text-xs text-gray-700">Kelembagaan</a>
-      <a href="" class="text-xs text-gray-700">Tentang</a>
+      <a href="{{ route('home') }}" wire:navigate class="text-xs text-gray-700">Beranda</a>
+      <a href="{{ route('article') }}" wire:navigate class="text-xs text-gray-700">Berita</a>
+      <a href="{{ route('bumdes') }}" wire:navigate class="text-xs text-gray-700">Bumdes</a>
+      <a href="{{ route('institution') }}" wire:navigate class="text-xs text-gray-700">Kelembagaan</a>
+      <a href="{{ route('about') }}" wire:navigate class="text-xs text-gray-700">Tentang</a>
     </div>
     <p class="text-xs text-gray-700 flex flex-wrap justify-center mt-2 font-medium">&copy;2024, Develop by&nbsp;
       <span class="text-green-700 font-semibold">

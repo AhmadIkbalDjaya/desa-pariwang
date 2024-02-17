@@ -75,20 +75,20 @@
   <section id="village-aparatus" class="md:mx-32 md:my-20 mx-3 mt-6">
     <h1 class="text-green-700 text-3xl font-bold font-plusJakartaSans text-center">Perangkat Desa</h1>
     <div class="flex flex-wrap gap-x-3 md:gap-x-10 py-3">
-      <x-public.institution-member-card />
-      <x-public.institution-member-card />
-      <x-public.institution-member-card />
-      <x-public.institution-member-card />
-      <x-public.institution-member-card />
-      <x-public.institution-member-card />
-      <x-public.institution-member-card />
-      <x-public.institution-member-card />
+      <x-public.village-aparatus-card />
+      <x-public.village-aparatus-card />
+      <x-public.village-aparatus-card />
+      <x-public.village-aparatus-card />
+      <x-public.village-aparatus-card />
+      <x-public.village-aparatus-card />
+      <x-public.village-aparatus-card />
+      <x-public.village-aparatus-card />
     </div>
   </section>
 
   <section id="welcome" class="font-plusJakartaSans md:mx-40 md:my-20 mx-7 my-8">
     <h1 class="text-green-700 text-3xl font-bold font-plusJakartaSans text-center pb-3">Lokasi Desa</h1>
-    <div class="md:flex md:gap-5 md:bg-white">
+    <div class="md:flex md:gap-5 md:bg-white md:rounded-sm shadow-sm">
       <div class="md:basis-1/2">
         {{-- @if ($profile->latitude != null && $profile->longitude != null) --}}
         <div id="maps" style="height: 300px;" class="rounded-2 z-0 rounded-lg"></div>

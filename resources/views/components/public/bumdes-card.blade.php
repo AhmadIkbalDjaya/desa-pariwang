@@ -13,7 +13,8 @@
       <p class="">+621241250245</p>
     </div>
     <div class="text-end">
-      <a href="" wire:navigate class="text-xs text-green-700 font-semibold">
+      <a href="{{ route('bumdes.show', ['bumdes' => '1']) }}" wire:navigate
+        class="text-xs text-green-700 font-semibold">
         Baca Selengkapnya
       </a>
     </div>

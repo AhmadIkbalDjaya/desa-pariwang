@@ -28,7 +28,7 @@
         <li class="my-3 md:my-0">
           <div class="relative pb-1 text-center">
             <span
-              class="{{ Request::is('berita-&-kegiatan') ? 'block' : 'hidden' }} bg-green-700 h-1 md:w-2/4 w-8 absolute bottom-0 rounded-lg inset-x-1/2 -translate-x-1/2 md:inset-x-0 md:translate-x-0"></span>
+              class="{{ Request::is('berita-&-kegiatan*') ? 'block' : 'hidden' }} bg-green-700 h-1 md:w-2/4 w-8 absolute bottom-0 rounded-lg inset-x-1/2 -translate-x-1/2 md:inset-x-0 md:translate-x-0"></span>
             <a wire:navigate href="{{ route('article') }}" wire:navigate
               class="md:flex gap-x-1 font-plusJakartaSans font-semibold text-base text-green-700">
               Berita
@@ -38,7 +38,7 @@
         <li class="my-3 md:my-0">
           <div class="relative pb-1 text-center">
             <span
-              class="{{ Request::is('bumdes') ? 'block' : 'hidden' }} bg-green-700 h-1 md:w-2/4 w-8 absolute bottom-0 rounded-lg inset-x-1/2 -translate-x-1/2 md:inset-x-0 md:translate-x-0"></span>
+              class="{{ Request::is('bumdes*') ? 'block' : 'hidden' }} bg-green-700 h-1 md:w-2/4 w-8 absolute bottom-0 rounded-lg inset-x-1/2 -translate-x-1/2 md:inset-x-0 md:translate-x-0"></span>
             <a wire:navigate href="{{ route('bumdes') }}" wire:navigate
               class="md:flex gap-x-1 font-plusJakartaSans font-semibold text-base text-green-700">
               Bumdes
