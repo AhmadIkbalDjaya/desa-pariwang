@@ -1,11 +1,11 @@
 <div>
-  @push('userScript')
+  @push('script')
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
     <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
     <script>
       console.log('{{ $profile->latitude }}');
       console.log('{{ $profile->longitude }}');
-      var map = L.map("maps").setView(["{{ $profile->latitude }}", "{{ $profile->longitude }}"], 10);
+      var map = L.map("maps").setView(["-3.670752842865715", "119.83000797006216"], 10);
 
       L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
         attribution: "© OpenStreetMap contributors",
@@ -13,8 +13,8 @@
 
       var desaLocations = [{
         nama: "Desa A",
-        latitude: "{{ $profile->latitude }}",
-        longitude: "{{ $profile->longitude }}"
+        latitude: "-3.670752842865715",
+        longitude: "119.83000797006216"
       }, ];
 
       desaLocations.forEach(function(desa) {
@@ -125,7 +125,7 @@
         <div class="card-body px-0 py-3">
           <h5 class="card-title mb-9 fw-bolder px-4">Kunjungi Desa Sekarang</h5>
           <hr>
-          <div class="row">
+          <div class="row px-2">
             <div class="col-md-12">
               <div>
                 @if ($profile->latitude != null && $profile->longitude != null)
@@ -219,4 +219,30 @@
       </div>
     </div>
   </div>
+  {{-- <div class="row">
+    @if ($profile->latitude != null && $profile->longitude != null)
+      <section id="map" class="py-5">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-12 text-center mb-2">
+              <h4 class="title-section">Kunjungi Desa Sekarang</h4>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-12">
+              <div>
+                @if ($profile->latitude != null && $profile->longitude != null)
+                  <div id="maps" style="height: 350px;" class="rounded-2"></div>
+                @else
+                  <h5 class="text-center my-5">
+                    Data Lokasi Belum Ditambahkan
+                  </h5>
+                @endif
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    @endif
+  </div> --}}
 </div>

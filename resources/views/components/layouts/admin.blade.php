@@ -8,7 +8,6 @@
   <link rel="shortcut icon" type="image/png" href="{{ asset('admin/assets/images/logos/favicon.png') }}" />
   <link rel="stylesheet" href="{{ asset('admin/assets/css/styles.min.css') }}" />
   <link rel="stylesheet" href="{{ asset('admin/css/style.css') }}" />
-  @stack('script')
 </head>
 
 <body>
@@ -31,6 +30,7 @@
   <script src="{{ asset('admin/assets/js/dashboard.js') }}"></script>
   <script src="{{ asset('js/modal.js') }}"></script>
   <script src="{{ asset('js/toast.js') }}"></script>
+  @stack('script')
 </body>
 
 </html>

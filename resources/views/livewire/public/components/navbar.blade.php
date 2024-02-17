@@ -1,4 +1,4 @@
-<div class="shadow w-full fixed top-0 left-0 z-1 bg-white">
+<div class="shadow w-full fixed top-0 left-0 z-10 bg-white">
   <header class="px-0 md:px-20 py-0 md:py-3 md:flex md:items-baseline md:gap-x-3">
     <div class="flex justify-between items-center py-3 md:py-0 px-3 md:px-0">
       <a wire:navigate href=""

@@ -37,7 +37,7 @@
     </div>
     <p class="text-xs text-gray-700 flex flex-wrap justify-center mt-2 font-medium">&copy;2024, Develop by&nbsp;
       <span class="text-green-700 font-semibold">
-        POSKO 11 KKN UIANM 74
+        POSKO 11 KKN UINAM 74
       </span>
     </p>
   </div>

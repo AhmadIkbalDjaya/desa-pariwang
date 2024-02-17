@@ -10,11 +10,7 @@
   </section>
 
   <section id="article-list" class="md:mx-32 md:my-20 mx-5 mt-6">
-    <div class="flex">
-      <x-public.institution-member-card />
-      <x-public.institution-member-card />
-      <x-public.institution-member-card />
-      <x-public.institution-member-card />
-    </div>
+    <x-public.institution-container />
+    <x-public.institution-container />
   </section>
 </div>

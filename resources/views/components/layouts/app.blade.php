@@ -28,5 +28,7 @@
   </div>
   <livewire:public.components.footer />
 </body>
+@stack('script')
+
 
 </html>
