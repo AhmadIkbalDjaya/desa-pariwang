@@ -19,6 +19,7 @@ class BumdesFactory extends Factory
         return [
             'name' => $this->faker->company,
             'director' => $this->faker->name,
+            'description' => $this->faker->sentence(10),
             'certification_status' => $this->faker->boolean,
             'total_employee' => $this->faker->numberBetween(1, 100),
             'unit' => $this->faker->randomElement(['A', 'B', 'C']),

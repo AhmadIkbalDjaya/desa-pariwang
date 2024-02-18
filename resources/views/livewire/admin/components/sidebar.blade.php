@@ -64,9 +64,10 @@
           </a>
         </li>
         <li class="sidebar-item {{ Request::is('addes/complaint*') ? 'selected' : '' }}">
-          <a class="sidebar-link" href="{{ route('admin.complaint.index') }}" wire:navigate.hover aria-expanded="false">
+          <a class="sidebar-link" href="{{ route('admin.complaint.index') }}" wire:navigate.hover
+            aria-expanded="false">
             <span>
-              <i class="ti ti-news"></i>
+              <i class="ti ti-messages"></i>
             </span>
             <span class="hide-menu">Kritik & Masukan</span>
           </a>

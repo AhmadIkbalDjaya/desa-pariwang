@@ -8,12 +8,17 @@
     </div>
   </section>
 
-  <section id="article-list" class="md:mx-32 md:my-20 mx-5 mt-6">
-    <div class="flex flex-wrap justify-between">
-      <x-public.article-card />
-      <x-public.article-card />
-      <x-public.article-card />
-      <x-public.article-card />
-    </div>
+  <section id="article-list" class="md:mx-32 md:my-20 mx-2 mt-6">
+    @if ($articles->count() > 0)
+      <div class="flex flex-wrap justify-around">
+        @foreach ($articles as $article)
+          <x-public.article-card responsive='1' :article="$article" />
+        @endforeach
+      </div>
+    @else
+      <p class="text-center text-base md:text-lg font-medium text-gray-400 pt-3">
+        Belum Ada Berita Yang Ditambahkan
+      </p>
+    @endif
   </section>
 </div>

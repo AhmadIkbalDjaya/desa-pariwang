@@ -14,6 +14,7 @@ return new class extends Migration
         Schema::create('bumdes', function (Blueprint $table) {
             $table->id();
             $table->string('name');
+            $table->string('description');
             $table->string('director');
             $table->boolean('certification_status')->default(false);
             $table->integer('total_employee')->unsigned();

@@ -10,7 +10,12 @@
   </section>
 
   <section id="article-list" class="md:mx-32 md:my-20 mx-5 mt-6">
-    <x-public.institution-container />
-    <x-public.institution-container />
+    @if ($institutions->count() > 0)
+      @foreach ($institutions as $institution)
+        <x-public.institution-container :institution="$institution" />
+      @endforeach
+    @else
+      Belum Ada Lembaga Yang Ditambahkan
+    @endif
   </section>
 </div>

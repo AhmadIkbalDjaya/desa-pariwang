@@ -74,16 +74,17 @@
 
   <section id="village-aparatus" class="md:mx-32 md:my-20 mx-3 mt-6">
     <h1 class="text-green-700 text-3xl font-bold font-plusJakartaSans text-center">Perangkat Desa</h1>
-    <div class="flex flex-wrap gap-x-3 md:gap-x-10 py-3">
-      <x-public.village-aparatus-card />
-      <x-public.village-aparatus-card />
-      <x-public.village-aparatus-card />
-      <x-public.village-aparatus-card />
-      <x-public.village-aparatus-card />
-      <x-public.village-aparatus-card />
-      <x-public.village-aparatus-card />
-      <x-public.village-aparatus-card />
-    </div>
+    @if ($village_aparatus->count() > 0)
+      <div class="flex flex-wrap gap-x-3 md:gap-x-10 py-3">
+        @foreach ($village_aparatus as $aparatus)
+          <x-public.village-aparatus-card :villageAparatus="$aparatus" />
+        @endforeach
+      </div>
+    @else
+      <p class="text-center text-base md:text-lg font-medium text-gray-400 pt-3">
+        Belum Ada Aparat Desa Yang Ditambahkan
+      </p>
+    @endif
   </section>
 
   <section id="welcome" class="font-plusJakartaSans md:mx-40 md:my-20 mx-7 my-8">

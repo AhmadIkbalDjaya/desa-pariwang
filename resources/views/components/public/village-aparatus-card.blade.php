@@ -8,8 +8,8 @@
       </div>
     </div>
     <div class="mt-1">
-      <p class="text-center text-xs">Nama Anggota</p>
-      <p class="text-center text-xs font-bold text-green-700">Jabatan</p>
+      <p class="text-center text-xs">{{ $villageAparatus->name }}</p>
+      <p class="text-center text-xs font-bold text-green-700">{{ $villageAparatus->position }}</p>
     </div>
   </div>
 </div>

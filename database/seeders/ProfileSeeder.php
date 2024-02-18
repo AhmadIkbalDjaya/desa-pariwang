@@ -19,8 +19,8 @@ class ProfileSeeder extends Seeder
             "potency" => "-",
             "population" => "275",
             "contact" => "081241250245",
-            "longitude" => "-----",
-            "latitude" => "-----",
+            "longitude" => "-3.670752842865715",
+            "latitude" => "119.83000797006216",
             "video_link" => "-----",
             "village_status_id" => "1",
         ];
