@@ -19,7 +19,7 @@ Route::get('bumdes', \App\Livewire\Public\Bumdes\Index::class)->name("bumdes");
 Route::get('bumdes/{bumdes}', \App\Livewire\Public\Bumdes\Show::class)->name("bumdes.show");
 Route::get('kelembagaan', \App\Livewire\Public\Institution\Index::class)->name("institution");
 Route::get('berita-&-kegiatan', \App\Livewire\Public\Article\Index::class)->name("article");
-Route::get('berita-&-kegiatan/{article}', \App\Livewire\Public\Article\Show::class)->name('article.show');
+Route::get('berita-&-kegiatan/{article:slug}', \App\Livewire\Public\Article\Show::class)->name('article.show');
 
 Route::middleware(['guest'])->group(function () {
     Route::get('login', \App\Livewire\Admin\Login::class)->name('login');

@@ -1,10 +1,13 @@
 <div>
   {{-- The whole world belongs to you. --}}
-  <section class="hero bg-cover bg-center bg-blend-multiply md:h-[93vh] h-[50vh] bg-gray-400 grid place-items-center"
+  <section class="hero bg-cover bg-center bg-blend-multiply md:h-[93vh] h-[75vh] bg-gray-400 grid place-items-center"
     style="background-image: url('images/village-2.webp')">
     <div class="text-center text-white font-protestStrike">
-      <p class="md:text-6xl text-5xl">
-        Selamat Datang <br> Website Resmi Desa Pariwang
+      <p class="md:text-6xl text-4xl">
+        Selamat Datang
+      <p class="md:text-6xl text-3xl">
+        Website Resmi Desa Pariwang
+      </p>
       </p>
       <p>Dapatkan Informasi Terbaru Mengenai Desa Pariwang</p>
     </div>
@@ -16,10 +19,12 @@
     </div>
     <div class="md:basis-1/2">
       <h1 class="text-green-700 text-2xl font-semibold mb-5">Desa Pariwang</h1>
-      <p class="font-medium text-justify indent-10">
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam alias porro
-        aliquam, cum laborum facilis aliquid dolor repudiandae reprehenderit deleniti enim cumque eius, dicta beatae
-        nulla nemo velit quidem, illum molestiae corrupti itaque incidunt vitae.
+      <p class="font-medium text-justify indent-10 line-clamp-4">
+        Desa Pariwang adalah sebuah desa yang terletak di Kabupaten Enrekang, Selawesi Selatan. Desa ini berada
+        di Kecamatan Maiwa. Pariwang memiliki potensi yang menarik, terutama karena keindahan alamnya
+        yang masih alami. Di sini, kita dapat menikmati pemandangan pegunungan, lembah hijau, serta keunikan budaya
+        lokal. Desa Pariwang memiliki jumlah populasi sekitar beberapa ribu penduduk, yang mayoritas menggantungkan
+        hidup dari sektor pertanian dan peternakan.
       </p>
       <div class="mt-2">
         <a href="{{ route('about') }}" wire:navigate class="text-green-700 font-semibold">
@@ -54,8 +59,9 @@
           Lainnya</a>
       </div>
     @else
-      <p class="text-center text-base md:text-lg font-medium text-gray-400 pt-3">
-        Belum Ada Bumdes Yang Ditambahkan
+      <img class="mx-auto h-24 object-center" src="{{ asset('images/empty.png') }}" alt="Gambar">
+      <p class="text-center text-sm md:text-base font-medium text-gray-400 pt-0">
+        Belum Ada Berita Yang Ditambahkan
       </p>
     @endif
   </section>
@@ -72,8 +78,8 @@
       </a>
     </div>
     <div class="w-full pt-10 md:pt-0">
-      <div class="flex flex-wrap md:justify-center justify-between md:gap-12 gap-0">
-        @if ($bumdeses->count() > 0)
+      @if ($bumdeses->count() > 0)
+        <div class="flex flex-wrap md:justify-center justify-between md:gap-12 gap-0">
           @foreach ($bumdeses as $bumdes)
             <div class="max-w-[9rem] md:max-w-[17rem] mb-6 md:mb-0 bg-white shadow-lg rounded-md overflow-hidden">
               <div class="md:m-5 m-1">
@@ -82,12 +88,15 @@
               </div>
             </div>
           @endforeach
-        @else
-          <p class="text-center text-base md:text-lg font-medium text-gray-400 pt-3">
+        </div>
+      @else
+        <div class="py-5">
+          <img class="mx-auto h-24 object-center" src="{{ asset('images/empty.png') }}" alt="Gambar">
+          <p class="text-center text-sm md:text-base font-medium text-gray-400 pt-0">
             Belum Ada Bumdes Yang Ditambahkan
           </p>
-        @endif
-      </div>
+        </div>
+      @endif
     </div>
   </section>
 

@@ -7,7 +7,8 @@
       @endforeach
     </div>
   @else
-    <p class="text-center text-base md:text-lg font-medium text-gray-400 pt-3">
+    <img class="mx-auto h-24 object-center" src="{{ asset('images/empty.png') }}" alt="Gambar">
+    <p class="text-center text-sm md:text-base font-medium text-gray-400 pt-0">
       Belum Ada Anggota {{ $institution->name }}
     </p>
   @endif

@@ -1,16 +1,23 @@
 <div>
   {{-- Stop trying to control. --}}
-  <section class="hero bg-cover bg-center bg-blend-multiply md:h-[93vh] h-[50vh] bg-gray-400 grid place-items-center"
-    style="background-image: url('images/village-2.webp')">
-    <div class="text-center text-white font-protestStrike">
-      <p class="md:text-6xl text-5xl">
+  <section
+    class="hero bg-cover bg-center bg-blend-multiply md:h-[95vh] h-[65vh] bg-gray-300 grid place-items-center md:place-items-start"
+    style="background-image: url('images/profile-1.jpg')">
+    <div
+      class="text-white h-full w-full bg-gradient-to-b from-green-100/50 to-green-700 flex flex-col justify-center px-5
+      md:w-1/2 md:ps-20 md:pe-32 md:bg-gradient-to-r md:from-green-600/[.80] md:from-95% md:to-green-300/50 md:to-100%">
+      <p class="md:text-4xl text-4xl font-semibold opacity-100 pb-5">
         Tentang
+      </p>
+      <p class="text-justify indent-10 md:text-lg font-medium">
+        Dapatkan infomasi lebih lengkap menganai desa pariwang seperti visi misi, perangkat desa, lokasi desa dan
+        informasi lainnya
       </p>
     </div>
   </section>
 
   <section id="welcome" class="font-plusJakartaSans md:flex md:mx-40 md:my-20 mx-7 my-8">
-    <div class="md:basis-1/2 grid place-items-center mb-6">
+    <div class="md:basis-1/2 grid place-items-center mb-6 md:mb-0">
       <div class="">
         <div class="w-full h-full">
           <div class="relative bottom-0 right-0 bg-gray-200 min-w-[250px] min-h-[250px] rounded-sm">
@@ -26,9 +33,11 @@
     <div class="md:basis-1/2">
       <h1 class="text-green-700 text-2xl font-semibold mb-5">Desa Pariwang</h1>
       <p class="font-medium text-justify indent-10">
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam alias porro
-        aliquam, cum laborum facilis aliquid dolor repudiandae reprehenderit deleniti enim cumque eius, dicta beatae
-        nulla nemo velit quidem, illum molestiae corrupti itaque incidunt vitae.
+        Desa Pariwang adalah sebuah desa yang terletak di Kabupaten Enrekang, Selawesi Selatan. Desa ini berada
+        di Kecamatan Maiwa. Pariwang memiliki potensi yang menarik, terutama karena keindahan alamnya
+        yang masih alami. Di sini, kita dapat menikmati pemandangan pegunungan, lembah hijau, serta keunikan budaya
+        lokal. Desa Pariwang memiliki jumlah populasi sekitar beberapa ribu penduduk, yang mayoritas menggantungkan
+        hidup dari sektor pertanian dan peternakan.
       </p>
     </div>
   </section>
@@ -56,14 +65,14 @@
         </ol>
       </div>
     </div>
-    <div class="md:basis-1/2 grid place-items-end mb-6">
+    <div class="md:basis-1/2 hidden md:grid place-items-end mb-6">
       <div class="">
         <div class="w-full h-full">
           <div class="relative bottom-0 right-0 bg-gray-200 min-w-[250px] min-h-[250px] rounded-sm">
             <div
               class="absolute bottom-3 right-3 w-[250px] h-[250px] flex justify-center items-end rounded-md transition-transform duration-500 transform hover:translate-x-[-8px] hover:translate-y-[-8px]">
-              <img class="w-full h-full object-cover object-center rounded-sm"
-                src="{{ asset('images/village-2.webp') }}" alt="Gambar">
+              <img class="w-full h-full object-cover object-center rounded-sm" src="{{ asset('images/profile-2.jpg') }}"
+                alt="Gambar">
             </div>
           </div>
         </div>
@@ -81,8 +90,9 @@
         @endforeach
       </div>
     @else
-      <p class="text-center text-base md:text-lg font-medium text-gray-400 pt-3">
-        Belum Ada Aparat Desa Yang Ditambahkan
+      <img class="mx-auto h-24 object-center" src="{{ asset('images/empty.png') }}" alt="Gambar">
+      <p class="text-center text-sm md:text-base font-medium text-gray-400 pt-0">
+        Belum Ada Perangkat Desa Yang Ditambahkan
       </p>
     @endif
   </section>

@@ -3,7 +3,7 @@
   <div class="md:flex gap-10">
     <div class="md:basis-5/12">
       <img class="mx-auto md:w-3/4 h-52 md:h-72 object-cover object-center rounded-sm"
-        src="{{ asset('images/village-2.webp') }}" alt="Gambar">
+        src="{{ asset('images/bumdes-icon2.webp') }}" alt="Gambar">
     </div>
     <div class="md:basis-7/12">
       <h1 class="text-green-700 font-semibold text-2xl text-center md:text-left">{{ $bumdes->name }}</h1>
