@@ -38,6 +38,14 @@
             <span class="hide-menu">Perangkat Desa</span>
           </a>
         </li>
+        <li class="sidebar-item {{ Request::is('addes/location*') ? 'selected' : '' }}">
+          <a class="sidebar-link" href="{{ route('admin.location.index') }}" wire:navigate.hover aria-expanded="false">
+            <span>
+              <i class="ti ti-location"></i>
+            </span>
+            <span class="hide-menu">Lokasi</span>
+          </a>
+        </li>
         <li class="sidebar-item {{ Request::is('addes/bumdes*') ? 'selected' : '' }}">
           <a class="sidebar-link" href="{{ route('admin.bumdes.index') }}" wire:navigate.hover aria-expanded="false">
             <span>

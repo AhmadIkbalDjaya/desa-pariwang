@@ -3,8 +3,8 @@
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
     <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
     <script>
-      console.log('{{ $profile->latitude }}');
-      console.log('{{ $profile->longitude }}');
+      // console.log('{{ $profile->latitude }}');
+      // console.log('{{ $profile->longitude }}');
       var map = L.map("maps").setView(["-3.670752842865715", "119.83000797006216"], 10);
 
       L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {

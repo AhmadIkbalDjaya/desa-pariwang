@@ -15,15 +15,11 @@ return new class extends Migration
         Schema::create('profiles', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            // $table->string('address');
             $table->longText('description');
             $table->string('potency');
             $table->bigInteger('population');
             $table->string('contact')->nullable();
             $table->string('email')->nullable();
-            // $table->string('longitude')->nullable();
-            // $table->string('latitude')->nullable();
-            // $table->string('video_link')->nullable();
             $table->foreignIdFor(VillageStatus::class)->nullable()->references("id")->on("village_statuses")->onDelete("set null");
             $table->timestamps();
         });

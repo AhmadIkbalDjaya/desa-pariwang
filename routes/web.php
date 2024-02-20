@@ -28,9 +28,8 @@ Route::middleware(['guest'])->group(function () {
 Route::middleware(['auth'])->group(function () {
     Route::prefix("addes")->group(function () {
         Route::get('', \App\Livewire\Admin\Index::class)->name('admin.index');
-        Route::prefix("profile")->group(function () {
-            Route::get('', \App\Livewire\Admin\Profile\Index::class)->name('admin.profile.index');
-        });
+        Route::get('profile', \App\Livewire\Admin\Profile\Index::class)->name('admin.profile.index');
+        Route::get('location', \App\Livewire\Admin\Location\Index::class)->name('admin.location.index');
         Route::get('adminProfile/changePass', \App\Livewire\Admin\AdminProfile\ChangePass::class)->name('admin.admin-profile.changePass');
         Route::prefix("bumdes")->group(function () {
             Route::get('', \App\Livewire\Admin\Bumdes\Index::class)->name('admin.bumdes.index');

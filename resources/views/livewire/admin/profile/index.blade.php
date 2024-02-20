@@ -35,12 +35,11 @@
         </div>
         <div class="row mb-3">
           <div class="col-5 col-lg-4">
-            <p class="fs-4">Alamat</p>
+            <p class="fs-4">Deskripsi Desa</p>
           </div>
           <div class="col-7 col-lg-8">
-            <input wire:model.live='form.address' class="form-control @error('form.address') is-invalid @enderror"
-              type="text" placeholder="Masukkan Alamat Desa">
-            @error('form.address')
+            <textarea wire:model.live='form.description' name="" id="" rows="6" class="form-control w-100"></textarea>
+            @error('form.description')
               <div class="invalid-feedback text-start">{{ $message }}</div>
             @enderror
           </div>
@@ -63,7 +62,7 @@
           </div>
           <div class="col-7 col-lg-8">
             <input wire:model.live='form.population' class="form-control @error('form.population') is-invalid @enderror"
-              type="text" placeholder="Masukkan Populasi Desa">
+              type="number" placeholder="Masukkan Populasi Desa">
             @error('form.population')
               <div class="invalid-feedback text-start">{{ $message }}</div>
             @enderror
@@ -83,36 +82,12 @@
         </div>
         <div class="row mb-3">
           <div class="col-5 col-lg-4">
-            <p class="fs-4">Longitude</p>
+            <p class="fs-4">Email</p>
           </div>
           <div class="col-7 col-lg-8">
-            <input wire:model.live='form.longitude' class="form-control @error('form.longitude') is-invalid @enderror"
-              type="text" placeholder="Masukkan Longitude Desa">
-            @error('form.longitude')
-              <div class="invalid-feedback text-start">{{ $message }}</div>
-            @enderror
-          </div>
-        </div>
-        <div class="row mb-3">
-          <div class="col-5 col-lg-4">
-            <p class="fs-4">Latitude</p>
-          </div>
-          <div class="col-7 col-lg-8">
-            <input wire:model.live='form.latitude' class="form-control @error('form.latitude') is-invalid @enderror"
-              type="text" placeholder="Masukkan Latitude Desa">
-            @error('form.latitude')
-              <div class="invalid-feedback text-start">{{ $message }}</div>
-            @enderror
-          </div>
-        </div>
-        <div class="row mb-3">
-          <div class="col-5 col-lg-4">
-            <p class="fs-4">Video Profil</p>
-          </div>
-          <div class="col-7 col-lg-8">
-            <input wire:model.live='form.video_link' class="form-control @error('form.video_link') is-invalid @enderror"
-              type="text" placeholder="Masukkan Link Video Profil Desa">
-            @error('form.video_link')
+            <input wire:model.live='form.email' class="form-control @error('form.email') is-invalid @enderror"
+              type="text" placeholder="Masukkan Kontak Desa">
+            @error('form.email')
               <div class="invalid-feedback text-start">{{ $message }}</div>
             @enderror
           </div>
@@ -137,6 +112,171 @@
           <button class="btn btn-primary" type="submit">Simpan</button>
         </div>
       </form>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-body">
+      <h5 class="card-title fw-semibold mb-3">Dusun Desa {{ $form->name }}</h5>
+      <div class="d-flex justify-content-between">
+        <div>
+          <input wire:model.live="search" class="form-control" type="text" placeholder="Cari Dusun"
+            aria-label="default input example">
+        </div>
+        <button wire:click='resetHamlet' class="btn btn-primary add-button" data-bs-toggle="modal"
+          data-bs-target="#createModal">
+          <span class="text-white">
+            <i class="ti ti-plus"></i> Dusun
+          </span>
+        </button>
+      </div>
+      <div class="table-responsive">
+        <table class="table datatable">
+          <thead>
+            <tr>
+              <th scope="col" style="white-space: nowrap">Nama Dusun </th>
+              <th scope="col" style="white-space: nowrap">Kepala Dusun</th>
+              <th scope="col">Aksi</th>
+            </tr>
+          </thead>
+          <tbody>
+            @foreach ($hamlets as $hamlet)
+              <tr wire:key="{{ $hamlet->id }}">
+                <td style="white-space: nowrap">{{ $hamlet->name }}</td>
+                <td style="white-space: nowrap">{{ $hamlet->chief }}</td>
+                <td style="white-space: nowrap">
+                  <span class="badge bg-warning text-white" style="cursor: pointer" data-bs-toggle="modal"
+                    data-bs-target="#editModal" wire:click="setHamlet({{ $hamlet->id }})">
+                    <i class="ti ti-edit"></i>
+                  </span>
+                  <span class="badge bg-danger text-white" style="cursor: pointer" data-bs-toggle="modal"
+                    data-bs-target="#deleteModal" wire:click="setHamlet({{ $hamlet->id }})">
+                    <i class="ti ti-trash"></i>
+                  </span>
+                </td>
+              </tr>
+            @endforeach
+          </tbody>
+        </table>
+      </div>
+      <x-pagination :items="$hamlets" />
+    </div>
+  </div>
+
+  {{-- delete modal --}}
+  <div wire:ignore.self class="modal fade" id="deleteModal" tabindex="-1" aria-labelledby="deleteModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="deleteModalLabel">Konfirmasi Hapus</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body text-center">
+          <p class="fs-5">Yakin Ingin Menghapus Dusun {{ $hamletForm->name }}?</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" wire:click='resetHamlet' class="btn btn-secondary"
+            data-bs-dismiss="modal">Cancel</button>
+          <button type="button" class="btn btn-danger" wire:click="destroyHamlet">Hapus</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  {{-- create modal --}}
+  <div wire:ignore.self class="modal fade" id="createModal" tabindex="-1" aria-labelledby="createModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="createModalLabel">Tambah Dusun</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <form action="" wire:submit='storeHamlet' enctype="multipart/form-data">
+            <div class="row mb-3">
+              <div class="col-5 col-lg-4">
+                <p class="fs-4">Nama</p>
+              </div>
+              <div class="col-7 col-lg-8">
+                <input wire:model.live='hamletForm.name'
+                  class="form-control @error('hamletForm.name') is-invalid @enderror" type="text"
+                  placeholder="Masukkan Nama Dusun">
+                @error('hamletForm.name')
+                  <div class="invalid-feedback text-start">{{ $message }}</div>
+                @enderror
+              </div>
+            </div>
+            <div class="row mb-3">
+              <div class="col-5 col-lg-4">
+                <p class="fs-4">Kepala Dusun</p>
+              </div>
+              <div class="col-7 col-lg-8">
+                <input wire:model.live='hamletForm.chief'
+                  class="form-control @error('hamletForm.chief') is-invalid @enderror" type="text"
+                  placeholder="Masukkan Nama Kepala Dusun">
+                @error('hamletForm.chief')
+                  <div class="invalid-feedback text-start">{{ $message }}</div>
+                @enderror
+              </div>
+            </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" wire:click='resetHamlet' class="btn btn-secondary"
+            data-bs-dismiss="modal">Cancel</button>
+          <button class="btn btn-primary" type="submit">Simpan</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  {{-- edit modal --}}
+  <div wire:ignore.self class="modal fade" id="editModal" tabindex="-1" aria-labelledby="editModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="editModalLabel">Edit Dusun</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <form action="" wire:submit='updateHamlet' enctype="multipart/form-data">
+            <div class="row mb-3">
+              <div class="col-5 col-lg-4">
+                <p class="fs-4">Nama Dusun</p>
+              </div>
+              <div class="col-7 col-lg-8">
+                <input wire:model.live='hamletForm.name'
+                  class="form-control @error('hamletForm.name') is-invalid @enderror" type="text"
+                  placeholder="Masukkan Nama Dusun">
+                @error('hamletForm.name')
+                  <div class="invalid-feedback text-start">{{ $message }}</div>
+                @enderror
+              </div>
+            </div>
+            <div class="row mb-3">
+              <div class="col-5 col-lg-4">
+                <p class="fs-4">Kepala Dusun</p>
+              </div>
+              <div class="col-7 col-lg-8">
+                <input wire:model.live='hamletForm.chief'
+                  class="form-control @error('hamletForm.chief') is-invalid @enderror" type="text"
+                  placeholder="Masukkan Nama Kepala Dusun">
+                @error('hamletForm.chief')
+                  <div class="invalid-feedback text-start">{{ $message }}</div>
+                @enderror
+              </div>
+            </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" wire:click='resetHamlet' class="btn btn-secondary"
+            data-bs-dismiss="modal">Cancel</button>
+          <button class="btn btn-warning" type="submit">Edit</button>
+          </form>
+        </div>
+      </div>
     </div>
   </div>
 </div>
