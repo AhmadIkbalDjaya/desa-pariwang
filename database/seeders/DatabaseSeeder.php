@@ -31,5 +31,7 @@ class DatabaseSeeder extends Seeder
         Article::factory(15)->create();
         $this->call(VillageAparatusSeeder::class);
         $this->call(ProfileSeeder::class);
+        $this->call(LocationSeeder::class);
+        $this->call(HamletSeeder::class);
     }
 }

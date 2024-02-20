@@ -1,28 +1,29 @@
 <div class="bg-white pt-8 pb-5">
   {{-- Knowing others is intelligence; knowing yourself is true wisdom. --}}
-  <p class="text-center text-green-700 text-3xl font-justMeAgainDownHere whitespace-nowrap font-bold">
-    DESA PARIWANG
+  <p class="text-center text-green-700 text-3xl font-justMeAgainDownHere whitespace-nowrap font-bold uppercase">
+    DESA {{ $profile->name }}
   </p>
   <div class="contact flex flex-wrap justify-around md:mx-60 mx-12 mt-4">
     <div class="basis-full md:basis-auto mb-5 flex items-center gap-2">
       <i class="ti ti-phone text-3xl text-gray-300"></i>
       <div>
         <p class="text-sm text-gray-400">Telepon</p>
-        <p class="text-sm font-bold text-green-700">+621241250245</p>
+        <p class="text-sm font-bold text-green-700">{{ $profile->contact }}</p>
       </div>
     </div>
     <div class="basis-full md:basis-auto mb-5 flex items-center gap-2">
       <i class="ti ti-mail text-3xl text-gray-300"></i>
       <div>
         <p class="text-sm text-gray-400">Email</p>
-        <p class="text-sm font-bold text-green-700">pariwang@gmail.com</p>
+        <p class="text-sm font-bold text-green-700">{{ $profile->email }}</p>
       </div>
     </div>
     <div class="basis-full md:basis-auto mb-5 flex items-center gap-2">
       <i class="ti ti-map-pin text-3xl text-gray-300"></i>
       <div>
         <p class="text-sm text-gray-400">Alamat</p>
-        <p class="text-sm font-bold text-green-700">Kec. Maiwa Kab Enrekang</p>
+        <p class="text-sm font-bold text-green-700 capitalize">Kec. {{ $location->district }} Kab.
+          {{ $location->regency }}</p>
       </div>
     </div>
   </div>

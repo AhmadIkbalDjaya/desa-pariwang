@@ -1,15 +1,15 @@
 <div>
   {{-- The whole world belongs to you. --}}
   <section class="hero bg-cover bg-center bg-blend-multiply md:h-[93vh] h-[75vh] bg-gray-400 grid place-items-center"
-    style="background-image: url('images/village-2.webp')">
+    style="background-image: url('images/profile-1.jpg')">
     <div class="text-center text-white font-protestStrike">
       <p class="md:text-6xl text-4xl">
         Selamat Datang
       <p class="md:text-6xl text-3xl">
-        Website Resmi Desa Pariwang
+        Website Resmi Desa {{ $profile->name }}
       </p>
       </p>
-      <p>Dapatkan Informasi Terbaru Mengenai Desa Pariwang</p>
+      <p>Dapatkan Informasi Terbaru Mengenai Desa {{ $profile->name }}</p>
     </div>
   </section>
 
@@ -18,13 +18,14 @@
       <p class="md:text-4xl text-3xl text-green-700 font-semibold">Selamat Datang</p>
     </div>
     <div class="md:basis-1/2">
-      <h1 class="text-green-700 text-2xl font-semibold mb-5">Desa Pariwang</h1>
+      <h1 class="text-green-700 text-2xl font-semibold mb-5">Desa {{ $profile->name }}</h1>
       <p class="font-medium text-justify indent-10 line-clamp-4">
-        Desa Pariwang adalah sebuah desa yang terletak di Kabupaten Enrekang, Selawesi Selatan. Desa ini berada
+        {{ $profile->description }}
+        {{-- Desa Pariwang adalah sebuah desa yang terletak di Kabupaten Enrekang, Selawesi Selatan. Desa ini berada
         di Kecamatan Maiwa. Pariwang memiliki potensi yang menarik, terutama karena keindahan alamnya
         yang masih alami. Di sini, kita dapat menikmati pemandangan pegunungan, lembah hijau, serta keunikan budaya
         lokal. Desa Pariwang memiliki jumlah populasi sekitar beberapa ribu penduduk, yang mayoritas menggantungkan
-        hidup dari sektor pertanian dan peternakan.
+        hidup dari sektor pertanian dan peternakan. --}}
       </p>
       <div class="mt-2">
         <a href="{{ route('about') }}" wire:navigate class="text-green-700 font-semibold">
@@ -71,7 +72,8 @@
       <p class="text-2xl font-light">Badan Usaha</p>
       <p class="text-4xl font-semibold">Milik Desa</p>
       <p class="text-justify text-sm indent-12 py-6">
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed inventore similique non, dolorum cum aspernatur.
+        Bumdes adalah singkatan dari Badan Usaha Milik Desa, sebuah inisiatif di mana masyarakat desa mengelola bisnis
+        untuk memajukan ekonomi lokal dan meningkatkan kesejahteraan.
       </p>
       <a href="{{ route('bumdes') }}" wire:navigate class="text-sm underline underline-offset-8">
         Lihat lebih banyak >
@@ -84,7 +86,7 @@
             <div class="max-w-[9rem] md:max-w-[17rem] mb-6 md:mb-0 bg-white shadow-lg rounded-md overflow-hidden">
               <div class="md:m-5 m-1">
                 <img class="w-32 h-32 md:w-56 md:h-56 object-cover object-center"
-                  src="{{ asset('images/village-2.webp') }}" alt="Gambar">
+                  src="{{ asset('images/bumdes-icon2.webp') }}" alt="Gambar">
               </div>
             </div>
           @endforeach

@@ -31,13 +31,9 @@
       </div>
     </div>
     <div class="md:basis-1/2">
-      <h1 class="text-green-700 text-2xl font-semibold mb-5">Desa Pariwang</h1>
+      <h1 class="text-green-700 text-2xl font-semibold mb-5">Desa {{ $profile->name }}</h1>
       <p class="font-medium text-justify indent-10">
-        Desa Pariwang adalah sebuah desa yang terletak di Kabupaten Enrekang, Selawesi Selatan. Desa ini berada
-        di Kecamatan Maiwa. Pariwang memiliki potensi yang menarik, terutama karena keindahan alamnya
-        yang masih alami. Di sini, kita dapat menikmati pemandangan pegunungan, lembah hijau, serta keunikan budaya
-        lokal. Desa Pariwang memiliki jumlah populasi sekitar beberapa ribu penduduk, yang mayoritas menggantungkan
-        hidup dari sektor pertanian dan peternakan.
+        {{ $profile->description }}
       </p>
     </div>
   </section>
@@ -148,33 +144,19 @@
             <p class="font-semibold">Jumlah Dusun</p>
           </div>
           <div class="basis-1/2">
-            <p class="font-medium">3 Dusun</p>
+            <p class="font-medium">{{ $hamlets->count() }} Dusun</p>
           </div>
         </div>
-        <div class="flex my-1">
-          <div class="basis-1/2 text-gray-500">
-            <p class="font-semibold">Dusun 1</p>
+        @foreach ($hamlets as $index => $hamlet)
+          <div class="flex my-1">
+            <div class="basis-1/2 text-gray-500">
+              {{-- <p class="font-semibold">Dusun {{ $index + 1 }}</p> --}}
+            </div>
+            <div class="basis-1/2">
+              <p class="font-medium">Dusun {{ $hamlet->name }}</p>
+            </div>
           </div>
-          <div class="basis-1/2">
-            <p class="font-medium">Dusun Pariwang</p>
-          </div>
-        </div>
-        <div class="flex my-1">
-          <div class="basis-1/2 text-gray-500">
-            <p class="font-semibold">Dusun 2</p>
-          </div>
-          <div class="basis-1/2">
-            <p class="font-medium">Dusun Bampu</p>
-          </div>
-        </div>
-        <div class="flex my-1">
-          <div class="basis-1/2 text-gray-500">
-            <p class="font-semibold">Dusun 3</p>
-          </div>
-          <div class="basis-1/2">
-            <p class="font-medium">Dusun Ketapi</p>
-          </div>
-        </div>
+        @endforeach
       </div>
     </div>
   </section>
@@ -198,21 +180,21 @@
         <div class="flex">
           <div class="basis-1/2">
             <p class="font-semibold">Utara</p>
-            <p class="font-medium">Desa Palakka/Limbuang</p>
+            <p class="font-medium">{{ $location->border_north }}</p>
           </div>
           <div class="basis-1/2">
             <p class="font-semibold">Timur</p>
-            <p class="font-medium">Desa Kaluppang</p>
+            <p class="font-medium">{{ $location->border_east }}</p>
           </div>
         </div>
         <div class="flex">
           <div class="basis-1/2">
             <p class="font-semibold">Selatan</p>
-            <p class="font-medium">Desa Batu Mila</p>
+            <p class="font-medium">{{ $location->border_south }}</p>
           </div>
           <div class="basis-1/2">
             <p class="font-semibold">Barat</p>
-            <p class="font-medium">Desa Karrang</p>
+            <p class="font-medium">{{ $location->border_west }}</p>
           </div>
         </div>
         <div class="flex">
@@ -222,7 +204,7 @@
             </h6>
           </div>
           <div class="basis-1/2">
-            <p>10.330.000 m</p>
+            <p>{{ $location->area }} m</p>
           </div>
         </div>
       </div>
