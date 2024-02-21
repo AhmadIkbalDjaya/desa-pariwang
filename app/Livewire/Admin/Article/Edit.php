@@ -20,7 +20,7 @@ class Edit extends Component
 
     public function render()
     {
-        return view('livewire.admin.article.edit');
+        return view('livewire.admin.article.edit')->title("Edit Berita");
     }
 
     public function update() {

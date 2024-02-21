@@ -86,7 +86,8 @@
             <div class="max-w-[9rem] md:max-w-[17rem] mb-6 md:mb-0 bg-white shadow-lg rounded-md overflow-hidden">
               <div class="md:m-5 m-1">
                 <img class="w-32 h-32 md:w-56 md:h-56 object-cover object-center"
-                  src="{{ asset('images/bumdes-icon2.webp') }}" alt="Gambar">
+                  src="{{ $bumdes->image ? asset('storage/' . $bumdes->image) : asset('images/bumdes-icon2.webp') }}"
+                  alt="Gambar">
               </div>
             </div>
           @endforeach

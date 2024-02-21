@@ -19,7 +19,8 @@ return new class extends Migration
             $table->boolean('certification_status')->default(false);
             $table->integer('total_employee')->unsigned();
             $table->string('unit')->nullable();
-            $table->string('certificate_file')->nullable();
+            // $table->string('certificate_file')->nullable();
+            $table->string('image')->nullable();
             $table->string('phone')->nullable();
             $table->timestamps();
         });

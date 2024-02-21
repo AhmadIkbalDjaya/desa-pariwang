@@ -20,11 +20,11 @@
           <input wire:model.live="search" class="form-control" type="text" placeholder="Cari Lembaga"
             aria-label="default input example">
         </div>
-        <button class="btn btn-primary add-button">
-          <a href="{{ route('admin.institution.create') }}" wire:navigate class="text-white">
+        <a href="{{ route('admin.institution.create') }}" wire:navigate class="text-white">
+          <button class="btn btn-primary add-button">
             <i class="ti ti-plus"></i> Lembaga
-          </a>
-        </button>
+          </button>
+        </a>
       </div>
       <div class="table-responsive">
         <table class="table datatable">

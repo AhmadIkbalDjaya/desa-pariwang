@@ -3,18 +3,16 @@
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
     <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
     <script>
-      // console.log('{{ $profile->latitude }}');
-      // console.log('{{ $profile->longitude }}');
-      var map = L.map("maps").setView(["-3.670752842865715", "119.83000797006216"], 10);
+      var map = L.map("maps").setView(["{{ $location->latitude }}", "{{ $location->longitude }}"], 10);
 
       L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
         attribution: "© OpenStreetMap contributors",
       }).addTo(map);
 
       var desaLocations = [{
-        nama: "Desa A",
-        latitude: "-3.670752842865715",
-        longitude: "119.83000797006216"
+        name: "Desa {{ $profile->name }}",
+        latitude: "{{ $location->latitude }}",
+        longitude: "{{ $location->longitude }}"
       }, ];
 
       desaLocations.forEach(function(desa) {
@@ -128,7 +126,7 @@
           <div class="row px-2">
             <div class="col-md-12">
               <div>
-                @if ($profile->latitude != null && $profile->longitude != null)
+                @if ($location->latitude != null && $location->longitude != null)
                   <div id="maps" style="height: 250px;" class="rounded-2"></div>
                 @else
                   <h5 class="text-center my-5">

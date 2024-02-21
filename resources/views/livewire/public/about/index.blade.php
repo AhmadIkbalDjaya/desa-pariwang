@@ -165,13 +165,14 @@
     <h1 class="text-green-700 text-3xl font-bold font-plusJakartaSans text-center pb-3">Lokasi Desa</h1>
     <div class="md:flex md:gap-5 md:bg-white md:rounded-sm shadow-sm">
       <div class="md:basis-1/2">
-        {{-- @if ($profile->latitude != null && $profile->longitude != null) --}}
-        <div id="maps" style="height: 300px;" class="rounded-2 z-0 rounded-lg"></div>
-        {{-- @else
-          <h5 class="text-center my-5">
+        @if ($profile->latitude != null && $profile->longitude != null)
+          <div id="maps" style="height: 300px;" class="rounded-2 z-0 rounded-lg"></div>
+        @else
+          <img class="mx-auto h-24 object-center" src="{{ asset('images/empty.png') }}" alt="Gambar">
+          <p class="text-center text-sm md:text-base font-medium text-gray-400 pt-0">
             Data Lokasi Belum Ditambahkan
-          </h5>
-        @endif --}}
+          </p>
+        @endif
       </div>
       <div class="md:basis-1/2 bg-white p-3 text-lg md:flex md:flex-col md:justify-between md:pb-16">
         <h6 class="font-semibold text-gray-400">
@@ -215,16 +216,16 @@
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
     <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
     <script>
-      var map = L.map("maps").setView(["-3.670752842865715", "119.83000797006216"], 10);
+      var map = L.map("maps").setView(["{{ $location->latitude }}", "{{ $location->longitude }}"], 10);
 
       L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
         attribution: "© OpenStreetMap contributors",
       }).addTo(map);
 
       var desaLocations = [{
-        nama: "Desa A",
-        latitude: "-3.670752842865715",
-        longitude: "119.83000797006216"
+        name: "Desa {{ $profile->name }}",
+        latitude: "{{ $location->latitude }}",
+        longitude: "{{ $location->longitude }}"
       }, ];
 
       desaLocations.forEach(function(desa) {

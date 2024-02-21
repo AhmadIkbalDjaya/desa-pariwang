@@ -13,7 +13,7 @@ class ArticleForm extends Form
     public ?Article $article;
     #[Validate("required|string")]
     public $title;
-    #[Validate("required|string")]
+    #[Validate("required|string|min:250")]
     public $body;
     #[Validate("nullable|image")]
     public $image;
@@ -24,7 +24,7 @@ class ArticleForm extends Form
         $this->article = $article;
         $this->title = $article->title;
         $this->body = $article->body;
-        $this->immage = $article->immage;
+        // $this->image = $article->image;
         $this->publish_date = $article->publish_date;
     }
 

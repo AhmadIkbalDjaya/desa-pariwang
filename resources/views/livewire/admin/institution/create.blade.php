@@ -19,7 +19,7 @@
       <h5 class="card-title fw-semibold mb-3">Tambah Lembaga Desa</h5>
       <p class="mb-2">Tambah Data Lembaga Desa Dibawah Ini</p>
       <div class="d-flex justify-content-end">
-        <a href="{{ route('admin.bumdes.index') }}" wire:navigate>
+        <a href="{{ route('admin.institution.index') }}" wire:navigate>
           <button class="btn btn-danger">Cancel</button>
         </a>
       </div>
@@ -31,7 +31,7 @@
       <form action="" wire:submit='store' enctype="multipart/form-data">
         <div class="row mb-3">
           <div class="col-5 col-lg-4">
-            <p class="fs-4">Nama Lembaga</p>
+            <p class="fs-4">Nama Lembaga <x-admin.form.required /> </p>
           </div>
           <div class="col-7 col-lg-8">
             <input wire:model.live='form.name' class="form-control @error('form.name') is-invalid @enderror"
@@ -46,8 +46,9 @@
             <p class="fs-4">Singkatan</p>
           </div>
           <div class="col-7 col-lg-8">
-            <input wire:model.live='form.abbreviation' class="form-control @error('form.abbreviation') is-invalid @enderror"
-              type="text" placeholder="Singkatan Nama Lembaga">
+            <input wire:model.live='form.abbreviation'
+              class="form-control @error('form.abbreviation') is-invalid @enderror" type="text"
+              placeholder="Singkatan Nama Lembaga">
             @error('form.abbreviation')
               <div class="invalid-feedback text-start">{{ $message }}</div>
             @enderror

@@ -14,9 +14,9 @@ class VillageAparatusForm extends Form
     public $name;
     #[Validate("required|string")]
     public $position;
-    #[Validate("required|string")]
+    #[Validate("nullable|string")]
     public $pob;
-    #[Validate("required|date")]
+    #[Validate("nullable|date")]
     public $dob;
     #[Validate("required|in:male,female")]
     public $gender;

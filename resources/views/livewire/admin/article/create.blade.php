@@ -31,24 +31,12 @@
       <form action="" wire:submit='store' enctype="multipart/form-data">
         <div class="row mb-3">
           <div class="col-5 col-lg-4">
-            <p class="fs-4">Nama Bumdes</p>
+            <p class="fs-4">Judul Berita <x-admin.form.required /> </p>
           </div>
           <div class="col-7 col-lg-8">
             <input wire:model.live='form.title' class="form-control @error('form.title') is-invalid @enderror"
-              type="text" placeholder="Nama Badan Usaha">
+              type="text" placeholder="Judul Berita">
             @error('form.title')
-              <div class="invalid-feedback text-start">{{ $message }}</div>
-            @enderror
-          </div>
-        </div>
-        <div class="row mb-3">
-          <div class="col-5 col-lg-4">
-            <p class="fs-4">Isi Berita</p>
-          </div>
-          <div class="col-7 col-lg-8">
-            <input wire:model.live='form.body' class="form-control @error('form.body') is-invalid @enderror"
-              type="text" placeholder="Nama Direktur Bumdes">
-            @error('form.body')
               <div class="invalid-feedback text-start">{{ $message }}</div>
             @enderror
           </div>
@@ -59,7 +47,7 @@
           </div>
           <div class="col-7 col-lg-8">
             <input wire:model.live='form.image' class="form-control @error('form.image') is-invalid @enderror"
-              type="file" placeholder="Nama Direktur Bumdes">
+              type="file" placeholder="Gambar Berita">
             @error('form.image')
               <div class="invalid-feedback text-start">{{ $message }}</div>
             @enderror
@@ -72,8 +60,20 @@
           <div class="col-7 col-lg-8">
             <input wire:model.live='form.publish_date'
               class="form-control @error('form.publish_date') is-invalid @enderror" type="date"
-              placeholder="Nama Direktur Bumdes">
+              placeholder="Tanggal Publish Berita">
             @error('form.publish_date')
+              <div class="invalid-feedback text-start">{{ $message }}</div>
+            @enderror
+          </div>
+        </div>
+        <div class="row mb-3">
+          <div class="col-5 col-lg-4">
+            <p class="fs-4">Isi Berita <x-admin.form.required /> </p>
+          </div>
+          <div class="col-7 col-lg-8">
+            <textarea wire:model.live='form.body' class="form-control @error('form.body') is-invalid @enderror" id=""
+              rows="5"></textarea>
+            @error('form.body')
               <div class="invalid-feedback text-start">{{ $message }}</div>
             @enderror
           </div>

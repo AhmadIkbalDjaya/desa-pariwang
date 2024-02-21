@@ -21,7 +21,7 @@ class ProfileForm extends Form
     public $contact;
     #[Validate("required|email")]
     public $email;
-    #[Validate("required|exists:id,village_statuses")]
+    #[Validate("required|exists:village_statuses,id")]
     public $village_status_id;
 
     public function setProfile(Profile $profile) {

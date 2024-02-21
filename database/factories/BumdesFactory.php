@@ -23,7 +23,7 @@ class BumdesFactory extends Factory
             'certification_status' => $this->faker->boolean,
             'total_employee' => $this->faker->numberBetween(1, 100),
             'unit' => $this->faker->randomElement(['A', 'B', 'C']),
-            'certificate_file' => $this->faker->imageUrl(),
+            // 'certificate_file' => $this->faker->imageUrl(),
             'phone' => $this->faker->phoneNumber,
         ];
     }

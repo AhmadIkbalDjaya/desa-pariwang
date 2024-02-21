@@ -31,7 +31,7 @@
       <form action="" wire:submit='update' enctype="multipart/form-data">
         <div class="row mb-3">
           <div class="col-5 col-lg-4">
-            <p class="fs-4">Nama Bumdes</p>
+            <p class="fs-4">Nama Bumdes <x-admin.form.required /> </p>
           </div>
           <div class="col-7 col-lg-8">
             <input wire:model.live='form.name' class="form-control @error('form.name') is-invalid @enderror"
@@ -43,7 +43,19 @@
         </div>
         <div class="row mb-3">
           <div class="col-5 col-lg-4">
-            <p class="fs-4">Direktur</p>
+            <p class="fs-4">Deskripsi Bumdes <x-admin.form.required /> </p>
+          </div>
+          <div class="col-7 col-lg-8">
+            <textarea wire:model.live='form.description' class="form-control @error('form.description') is-invalid @enderror"
+              id="" rows="5"></textarea>
+            @error('form.description')
+              <div class="invalid-feedback text-start">{{ $message }}</div>
+            @enderror
+          </div>
+        </div>
+        <div class="row mb-3">
+          <div class="col-5 col-lg-4">
+            <p class="fs-4">Direktur <x-admin.form.required /> </p>
           </div>
           <div class="col-7 col-lg-8">
             <input wire:model.live='form.director' class="form-control @error('form.director') is-invalid @enderror"
@@ -55,7 +67,7 @@
         </div>
         <div class="row mb-3">
           <div class="col-5 col-lg-4">
-            <p class="fs-4">Status</p>
+            <p class="fs-4">Status <x-admin.form.required /> </p>
           </div>
           <div class="col-7 col-lg-8">
             <div class="row">
@@ -76,7 +88,7 @@
         </div>
         <div class="row mb-3">
           <div class="col-5 col-lg-4">
-            <p class="fs-4">Jumlah Pegawai</p>
+            <p class="fs-4">Jumlah Pegawai <x-admin.form.required /> </p>
           </div>
           <div class="col-7 col-lg-8">
             <input wire:model.live='form.total_employee'
@@ -89,7 +101,7 @@
         </div>
         <div class="row mb-3">
           <div class="col-5 col-lg-4">
-            <p class="fs-4">Unit Usaha</p>
+            <p class="fs-4">Unit Usaha <x-admin.form.required /> </p>
           </div>
           <div class="col-7 col-lg-8">
             <input wire:model.live='form.unit' class="form-control @error('form.unit') is-invalid @enderror"
@@ -113,6 +125,18 @@
             </div>
           </div>
         @endif --}}
+        <div class="row mb-3">
+          <div class="col-5 col-lg-4">
+            <p class="fs-4">Foto Bumdes</p>
+          </div>
+          <div class="col-7 col-lg-8">
+            <input wire:model.live='form.image' class="form-control @error('form.image') is-invalid @enderror"
+              type="file" placeholder="Upload Gambar Bumdes">
+            @error('form.image')
+              <div class="invalid-feedback text-start">{{ $message }}</div>
+            @enderror
+          </div>
+        </div>
         <div class="row mb-3">
           <div class="col-5 col-lg-4">
             <p class="fs-4">Kontak</p>

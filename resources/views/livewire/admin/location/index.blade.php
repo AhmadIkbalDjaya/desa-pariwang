@@ -24,7 +24,7 @@
       <form action="" wire:submit='update' enctype="multipart/form-data">
         <div class="row mb-3">
           <div class="col-5 col-lg-4">
-            <p class="fs-4">Longitude</p>
+            <p class="fs-4">Longitude <x-admin.form.required /> </p>
           </div>
           <div class="col-7 col-lg-8">
             <input wire:model.live='form.longitude' class="form-control @error('form.longitude') is-invalid @enderror"
@@ -36,7 +36,7 @@
         </div>
         <div class="row mb-3">
           <div class="col-5 col-lg-4">
-            <p class="fs-4">Latitude</p>
+            <p class="fs-4">Latitude <x-admin.form.required /> </p>
           </div>
           <div class="col-7 col-lg-8">
             <input wire:model.live='form.latitude' class="form-control @error('form.latitude') is-invalid @enderror"
@@ -48,7 +48,7 @@
         </div>
         <div class="row mb-3">
           <div class="col-5 col-lg-4">
-            <p class="fs-4">Provinsi</p>
+            <p class="fs-4">Provinsi <x-admin.form.required /> </p>
           </div>
           <div class="col-7 col-lg-8">
             <input wire:model.live='form.province' class="form-control @error('form.province') is-invalid @enderror"
@@ -60,7 +60,7 @@
         </div>
         <div class="row mb-3">
           <div class="col-5 col-lg-4">
-            <p class="fs-4">Kabupaten</p>
+            <p class="fs-4">Kabupaten <x-admin.form.required /> </p>
           </div>
           <div class="col-7 col-lg-8">
             <input wire:model.live='form.regency' class="form-control @error('form.regency') is-invalid @enderror"
@@ -72,7 +72,7 @@
         </div>
         <div class="row mb-3">
           <div class="col-5 col-lg-4">
-            <p class="fs-4">Kecamatan</p>
+            <p class="fs-4">Kecamatan <x-admin.form.required /> </p>
           </div>
           <div class="col-7 col-lg-8">
             <input wire:model.live='form.district' class="form-control @error('form.district') is-invalid @enderror"
@@ -84,7 +84,7 @@
         </div>
         <div class="row mb-3">
           <div class="col-5 col-lg-4">
-            <p class="fs-4">Batas Timut</p>
+            <p class="fs-4">Batas Timut <x-admin.form.required /> </p>
           </div>
           <div class="col-7 col-lg-8">
             <input wire:model.live='form.border_east'
@@ -97,7 +97,7 @@
         </div>
         <div class="row mb-3">
           <div class="col-5 col-lg-4">
-            <p class="fs-4">Batas Barat</p>
+            <p class="fs-4">Batas Barat <x-admin.form.required /> </p>
           </div>
           <div class="col-7 col-lg-8">
             <input wire:model.live='form.border_west'
@@ -110,7 +110,7 @@
         </div>
         <div class="row mb-3">
           <div class="col-5 col-lg-4">
-            <p class="fs-4">Batas Selatan</p>
+            <p class="fs-4">Batas Selatan <x-admin.form.required /> </p>
           </div>
           <div class="col-7 col-lg-8">
             <input wire:model.live='form.border_south'
@@ -123,7 +123,7 @@
         </div>
         <div class="row mb-3">
           <div class="col-5 col-lg-4">
-            <p class="fs-4">Batas Utara</p>
+            <p class="fs-4">Batas Utara <x-admin.form.required /> </p>
           </div>
           <div class="col-7 col-lg-8">
             <input wire:model.live='form.border_north'

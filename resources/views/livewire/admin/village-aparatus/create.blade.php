@@ -32,7 +32,7 @@
       <form action="" wire:submit='store' enctype="multipart/form-data">
         <div class="row mb-3">
           <div class="col-5 col-lg-4">
-            <p class="fs-4">Nama</p>
+            <p class="fs-4">Nama <x-admin.form.required /> </p>
           </div>
           <div class="col-7 col-lg-8">
             <input wire:model.live='form.name' class="form-control @error('form.name') is-invalid @enderror"
@@ -44,7 +44,7 @@
         </div>
         <div class="row mb-3">
           <div class="col-5 col-lg-4">
-            <p class="fs-4">Jabatan</p>
+            <p class="fs-4">Jabatan <x-admin.form.required /> </p>
           </div>
           <div class="col-7 col-lg-8">
             <input wire:model.live='form.position' class="form-control @error('form.position') is-invalid @enderror"
@@ -79,7 +79,7 @@
         </div>
         <div class="row mb-3">
           <div class="col-5 col-lg-4">
-            <p class="fs-4">Jenis Kelamin</p>
+            <p class="fs-4">Jenis Kelamin <x-admin.form.required /> </p>
           </div>
           <div class="col-7 col-lg-8">
             <select wire:model.live='form.gender' class="form-select @error('form.gender') is-invalid @enderror"

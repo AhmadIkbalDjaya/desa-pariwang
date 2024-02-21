@@ -23,7 +23,7 @@
       <form action="" wire:submit='update' enctype="multipart/form-data">
         <div class="row mb-3">
           <div class="col-5 col-lg-4">
-            <p class="fs-4">Nama Desa</p>
+            <p class="fs-4">Nama Desa <x-admin.form.required /> </p>
           </div>
           <div class="col-7 col-lg-8">
             <input wire:model.live='form.name' class="form-control @error('form.name') is-invalid @enderror"
@@ -35,7 +35,7 @@
         </div>
         <div class="row mb-3">
           <div class="col-5 col-lg-4">
-            <p class="fs-4">Deskripsi Desa</p>
+            <p class="fs-4">Deskripsi Desa <x-admin.form.required /> </p>
           </div>
           <div class="col-7 col-lg-8">
             <textarea wire:model.live='form.description' name="" id="" rows="6" class="form-control w-100"></textarea>
@@ -46,7 +46,7 @@
         </div>
         <div class="row mb-3">
           <div class="col-5 col-lg-4">
-            <p class="fs-4">Potensi Desa</p>
+            <p class="fs-4">Potensi Desa <x-admin.form.required /> </p>
           </div>
           <div class="col-7 col-lg-8">
             <input wire:model.live='form.potency' class="form-control @error('form.potency') is-invalid @enderror"
@@ -58,7 +58,7 @@
         </div>
         <div class="row mb-3">
           <div class="col-5 col-lg-4">
-            <p class="fs-4">Populasi</p>
+            <p class="fs-4">Populasi <x-admin.form.required /> </p>
           </div>
           <div class="col-7 col-lg-8">
             <input wire:model.live='form.population' class="form-control @error('form.population') is-invalid @enderror"
@@ -70,7 +70,7 @@
         </div>
         <div class="row mb-3">
           <div class="col-5 col-lg-4">
-            <p class="fs-4">Kontak</p>
+            <p class="fs-4">Kontak <x-admin.form.required /> </p>
           </div>
           <div class="col-7 col-lg-8">
             <input wire:model.live='form.contact' class="form-control @error('form.contact') is-invalid @enderror"
@@ -82,7 +82,7 @@
         </div>
         <div class="row mb-3">
           <div class="col-5 col-lg-4">
-            <p class="fs-4">Email</p>
+            <p class="fs-4">Email <x-admin.form.required /> </p>
           </div>
           <div class="col-7 col-lg-8">
             <input wire:model.live='form.email' class="form-control @error('form.email') is-invalid @enderror"
@@ -94,7 +94,7 @@
         </div>
         <div class="row mb-3">
           <div class="col-5 col-lg-4">
-            <p class="fs-4">Status Desa</p>
+            <p class="fs-4">Status Desa <x-admin.form.required /> </p>
           </div>
           <div class="col-7 col-lg-8">
             <select wire:model.live='form.village_status_id'
@@ -197,7 +197,7 @@
           <form action="" wire:submit='storeHamlet' enctype="multipart/form-data">
             <div class="row mb-3">
               <div class="col-5 col-lg-4">
-                <p class="fs-4">Nama</p>
+                <p class="fs-4">Nama <x-admin.form.required /> </p>
               </div>
               <div class="col-7 col-lg-8">
                 <input wire:model.live='hamletForm.name'
@@ -210,7 +210,7 @@
             </div>
             <div class="row mb-3">
               <div class="col-5 col-lg-4">
-                <p class="fs-4">Kepala Dusun</p>
+                <p class="fs-4">Kepala Dusun <x-admin.form.required /> </p>
               </div>
               <div class="col-7 col-lg-8">
                 <input wire:model.live='hamletForm.chief'
@@ -245,7 +245,7 @@
           <form action="" wire:submit='updateHamlet' enctype="multipart/form-data">
             <div class="row mb-3">
               <div class="col-5 col-lg-4">
-                <p class="fs-4">Nama Dusun</p>
+                <p class="fs-4">Nama Dusun <x-admin.form.required /> </p>
               </div>
               <div class="col-7 col-lg-8">
                 <input wire:model.live='hamletForm.name'
@@ -258,7 +258,7 @@
             </div>
             <div class="row mb-3">
               <div class="col-5 col-lg-4">
-                <p class="fs-4">Kepala Dusun</p>
+                <p class="fs-4">Kepala Dusun <x-admin.form.required /> </p>
               </div>
               <div class="col-7 col-lg-8">
                 <input wire:model.live='hamletForm.chief'
