@@ -4,3 +4,19 @@
   overflow: hidden;
   text-overflow: ellipsis;
 } */
+/* body {
+  background-color: red !important;
+} */
+
+.article-card-body p {
+  display: none;
+}
+
+.article-card-body p:first-child {
+  display: block !important;
+  margin-top: 2px;
+  color: #666;
+  text-align: justify;
+  font-size: 12px;
+  line-clamp: 3;
+}

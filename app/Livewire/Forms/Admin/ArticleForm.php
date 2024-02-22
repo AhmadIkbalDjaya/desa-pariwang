@@ -13,7 +13,7 @@ class ArticleForm extends Form
     public ?Article $article;
     #[Validate("required|string")]
     public $title;
-    #[Validate("required|string|min:250")]
+    #[Validate("required|string")]
     public $body;
     #[Validate("nullable|image")]
     public $image;

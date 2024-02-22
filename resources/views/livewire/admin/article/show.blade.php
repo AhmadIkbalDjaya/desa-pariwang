@@ -49,7 +49,7 @@
           <p class="fs-4">Isi Berita</p>
         </div>
         <div class="col-7 col-lg-8">
-          <p class="fs-4">{{ $article->body }}</p>
+          <p class="fs-4">{!! $article->body !!}</p>
         </div>
       </div>
       <div class="row mb-3">

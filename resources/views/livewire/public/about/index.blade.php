@@ -165,13 +165,15 @@
     <h1 class="text-green-700 text-3xl font-bold font-plusJakartaSans text-center pb-3">Lokasi Desa</h1>
     <div class="md:flex md:gap-5 md:bg-white md:rounded-sm shadow-sm">
       <div class="md:basis-1/2">
-        @if ($profile->latitude != null && $profile->longitude != null)
+        @if ($location->latitude != null && $location->longitude != null)
           <div id="maps" style="height: 300px;" class="rounded-2 z-0 rounded-lg"></div>
         @else
-          <img class="mx-auto h-24 object-center" src="{{ asset('images/empty.png') }}" alt="Gambar">
-          <p class="text-center text-sm md:text-base font-medium text-gray-400 pt-0">
-            Data Lokasi Belum Ditambahkan
-          </p>
+          <div class="py-6">
+            <img class="mx-auto h-24 object-center" src="{{ asset('images/empty.png') }}" alt="Gambar">
+            <p class="text-center text-sm md:text-base font-medium text-gray-400 pt-0">
+              Data Lokasi Belum Ditambahkan
+            </p>
+          </div>
         @endif
       </div>
       <div class="md:basis-1/2 bg-white p-3 text-lg md:flex md:flex-col md:justify-between md:pb-16">

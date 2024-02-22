@@ -1,5 +1,19 @@
 <div>
   {{-- Stop trying to control. --}}
+  @push('script')
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+      integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <script src="https://cdn.ckeditor.com/4.21.0/standard/ckeditor.js"></script>
+    <script>
+      $(document).ready(function() {
+        const body = CKEDITOR.replace('body');
+        body.on('change', function(event) {
+          console.log(event.editor.getData());
+          @this.set('form.body', event.editor.getData());
+        });
+      });
+    </script>
+  @endpush
   <nav
     style="--bs-breadcrumb-divider: url(&#34;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='8' height='8'%3E%3Cpath d='M2.5 0L1 1.5 3.5 4 1 6.5 2.5 8l4-4-4-4z' fill='%236c757d'/%3E%3C/svg%3E&#34;);"
     aria-label="breadcrumb">
@@ -71,11 +85,17 @@
             <p class="fs-4">Isi Berita <x-admin.form.required /> </p>
           </div>
           <div class="col-7 col-lg-8">
-            <textarea wire:model.live='form.body' class="form-control @error('form.body') is-invalid @enderror" id=""
-              rows="5"></textarea>
+            <div wire:ignore>
+              <textarea wire:model.live="form.body" name="body" id="body" rows="10" cols="80"></textarea>
+            </div>
             @error('form.body')
               <div class="invalid-feedback text-start">{{ $message }}</div>
             @enderror
+            {{-- <textarea wire:model.live='form.body' class="form-control @error('form.body') is-invalid @enderror" id=""
+              rows="5"></textarea> --}}
+            {{-- @error('form.body')
+              <div class="invalid-feedback text-start">{{ $message }}</div>
+            @enderror --}}
           </div>
         </div>
         <div class="row mb-3">

@@ -24,6 +24,46 @@ class VillageAparatusSeeder extends Seeder
                 "position" => "Sekretaris Desa",
                 "gender" => "male",
             ],
+            [
+                "name" => "Kamisa, S.Pd",
+                "position" => "Kasi Pemerintahan",
+                "gender" => "male",
+            ],
+            [
+                "name" => "Rusman, A.Md",
+                "position" => "Kasi Kesejahteraan",
+                "gender" => "male",
+            ],
+            [
+                "name" => "Mahmuddin",
+                "position" => "Kasi Pelayanan",
+                "gender" => "male",
+            ],
+            [
+                "name" => "Jusria Kasman, S.Ap",
+                "position" => "Kaur Keuangan",
+                "gender" => "female",
+            ],
+            [
+                "name" => "Kaur Perencanaan",
+                "position" => "Kaur Perencaan",
+                "gender" => "female",
+            ],
+            [
+                "name" => "Nawar",
+                "position" => "Kadus Ketapi",
+                "gender" => "male",
+            ],
+            [
+                "name" => "ABD Jalil, SP",
+                "position" => "Kadus Pariwang",
+                "gender" => "male",
+            ],
+            [
+                "name" => "Yusuf",
+                "position" => "Kadus Bampu",
+                "gender" => "male",
+            ],
         ];
         foreach ($persons as $person) {
             VillageAparatus::create($person);

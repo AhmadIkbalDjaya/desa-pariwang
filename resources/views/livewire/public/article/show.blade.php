@@ -7,6 +7,6 @@
   <p class="py-4 italic text-gray-400">Dipublikasi pada {{ $article->publish_date }}</p>
   {{-- <p class="py-4 italic text-gray-400">Dipublikasi pada 17 - Feb - 2023</p> --}}
   <div class="text-justify text-base">
-    {{ $article->body }}
+    {!! $article->body !!}
   </div>
 </div>

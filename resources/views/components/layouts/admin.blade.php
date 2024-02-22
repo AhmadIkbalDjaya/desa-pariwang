@@ -8,6 +8,8 @@
   <link rel="shortcut icon" type="image/png" href="{{ asset('admin/assets/images/logos/favicon.png') }}" />
   <link rel="stylesheet" href="{{ asset('admin/assets/css/styles.min.css') }}" />
   <link rel="stylesheet" href="{{ asset('admin/css/style.css') }}" />
+  {{-- <script src="https://cdn.ckeditor.com/ckeditor5/41.1.0/classic/ckeditor.js"></script> --}}
+  @stack('style')
 </head>
 
 <body>

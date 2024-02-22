@@ -18,6 +18,7 @@
     rel="stylesheet"> --}}
 
   <link rel="stylesheet" href="{{ asset('admin/assets/css/icons/tabler-icons/tabler-icons.css') }}" />
+  <link rel="stylesheet" href="{{ asset('css/style.css') }}">
   @vite('resources/css/app.css')
 </head>
 

@@ -20,11 +20,11 @@
           <input wire:model.live="search" class="form-control" type="text" placeholder="Cari Berita"
             aria-label="default input example">
         </div>
-        <button class="btn btn-primary add-button">
-          <a href="{{ route('admin.article.create') }}" wire:navigate class="text-white">
+        <a href="{{ route('admin.article.create') }}" wire:navigate class="text-white">
+          <button class="btn btn-primary add-button">
             <i class="ti ti-plus"></i> Berita
-          </a>
-        </button>
+          </button>
+        </a>
       </div>
       <div class="table-responsive">
         <table class="table datatable">
@@ -40,7 +40,7 @@
             @foreach ($articles as $article)
               <tr wire:key="{{ $article->id }}">
                 <td style="white-space: nowrap">{{ Str::limit($article->title, $limit = 25, '...') }}</td>
-                <td style="white-space: nowrap">{{ Str::limit($article->body, $limit = 40, '...') }}</td>
+                <td style="white-space: nowrap">{!! Str::limit($article->body, $limit = 40, '...') !!}</td>
                 <td style="white-space: nowrap">{{ $article->publish_date }}</td>
                 <td style="white-space: nowrap">
                   <a href="{{ route('admin.article.show', ['article' => $article->id]) }}" wire:navigate>
