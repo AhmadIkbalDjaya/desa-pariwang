@@ -15,8 +15,6 @@ class ProfileForm extends Form
     public $description;
     #[Validate("required|string")]
     public $potency;
-    #[Validate("required|numeric")]
-    public $population;
     #[Validate("required|string")]
     public $contact;
     #[Validate("required|email")]
@@ -29,7 +27,6 @@ class ProfileForm extends Form
         $this->name = $profile->name;
         $this->description = $profile->description;
         $this->potency = $profile->potency;
-        $this->population = $profile->population;
         $this->contact = $profile->contact;
         $this->email = $profile->email;
         $this->village_status_id = $profile->village_status_id;

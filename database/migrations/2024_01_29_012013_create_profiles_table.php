@@ -17,7 +17,6 @@ return new class extends Migration
             $table->string('name');
             $table->longText('description');
             $table->string('potency');
-            $table->bigInteger('population');
             $table->string('contact')->nullable();
             $table->string('email')->nullable();
             $table->foreignIdFor(VillageStatus::class)->nullable()->references("id")->on("village_statuses")->onDelete("set null");

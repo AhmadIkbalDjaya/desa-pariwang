@@ -22,8 +22,12 @@ class DatabaseSeeder extends Seeder
         //     'email' => 'test@example.com',
         // ]);
         User::create([
+            "username" => "adminpariwang",
+            "password" => "pariwang789",
+        ]);
+        User::create([
             "username" => "admin",
-            "password" => "admin123",
+            "password" => "admin456",
         ]);
         $this->call(VillageStatusSeeder::class);
         Bumdes::factory(30)->create();
@@ -34,5 +38,6 @@ class DatabaseSeeder extends Seeder
         $this->call(LocationSeeder::class);
         $this->call(HamletSeeder::class);
         $this->call(ArticleSeeder::class);
+        $this->call(PopulationSeeder::class);
     }
 }

@@ -13,7 +13,7 @@ class ComplaintForm extends Form
     public $name;
     #[Validate("nullable|string")]
     public $email;
-    #[Validate("nullable|string")]
+    #[Validate("nullable|phone:ID")]
     public $phone;
     #[Validate("nullable|string")]
     public $institute;

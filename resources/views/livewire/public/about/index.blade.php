@@ -107,22 +107,6 @@
         </div>
         <div class="flex my-1">
           <div class="basis-1/2 text-gray-500">
-            <p class="font-semibold">Alamat</p>
-          </div>
-          <div class="basis-1/2">
-            <p class="font-medium">{{ $profile->address }}</p>
-          </div>
-        </div>
-        <div class="flex my-1">
-          <div class="basis-1/2 text-gray-500">
-            <p class="font-semibold">Potensi Desa</p>
-          </div>
-          <div class="basis-1/2">
-            <p class="font-medium">{{ $profile->potency }}</p>
-          </div>
-        </div>
-        <div class="flex my-1">
-          <div class="basis-1/2 text-gray-500">
             <p class="font-semibold">Status Desa</p>
           </div>
           <div class="basis-1/2">
@@ -131,10 +115,22 @@
         </div>
         <div class="flex my-1">
           <div class="basis-1/2 text-gray-500">
-            <p class="font-semibold">Jumlah Populasi</p>
+            <p class="font-semibold">Alamat</p>
           </div>
           <div class="basis-1/2">
-            <p class="font-medium">{{ $profile->population }} Jiwa</p>
+            <p class="font-medium">
+              {{ $location->province }} <br>
+              Kab. {{ $location->regency }} <br>
+              Kec. {{ $location->district }}
+            </p>
+          </div>
+        </div>
+        <div class="flex my-1">
+          <div class="basis-1/2 text-gray-500">
+            <p class="font-semibold">Potensi Desa</p>
+          </div>
+          <div class="basis-1/2">
+            <p class="font-medium">{{ $profile->potency }}</p>
           </div>
         </div>
       </div>
@@ -207,7 +203,7 @@
             </h6>
           </div>
           <div class="basis-1/2">
-            <p>{{ $location->area }} m</p>
+            <p>{{ $location->area }} m&sup2</p>
           </div>
         </div>
       </div>

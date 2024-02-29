@@ -106,8 +106,8 @@
             </div>
             <div class="col-7 col-lg-8">
               <p class="fs-4">:
-                @if ($bumdes->contact)
-                  {{ $bumdes->contact }}
+                @if ($bumdes->phone)
+                  {{ $bumdes->phone }}
                 @else
                   -
                 @endif

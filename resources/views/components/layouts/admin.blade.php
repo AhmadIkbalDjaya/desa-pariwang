@@ -5,10 +5,11 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>{{ $title ?? '' }}</title>
-  <link rel="shortcut icon" type="image/png" href="{{ asset('admin/assets/images/logos/favicon.png') }}" />
+  {{-- <link rel="shortcut icon" type="image/png" href="{{ asset('images/enrekang.png') }}" /> --}}
+  <link rel="shortcut icon" href="{{ asset('images/favicon.ico') }}" type="image/x-icon">
+  <link rel="icon" href="{{ asset('images/favicon.ico') }}" type="image/x-icon">
   <link rel="stylesheet" href="{{ asset('admin/assets/css/styles.min.css') }}" />
   <link rel="stylesheet" href="{{ asset('admin/css/style.css') }}" />
-  {{-- <script src="https://cdn.ckeditor.com/ckeditor5/41.1.0/classic/ckeditor.js"></script> --}}
   @stack('style')
 </head>
 

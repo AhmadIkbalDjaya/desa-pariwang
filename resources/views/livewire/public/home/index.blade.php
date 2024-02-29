@@ -67,6 +67,53 @@
     @endif
   </section>
 
+  <section id="article" class="md:mx-32 md:my-20 mx-5 mt-6">
+    <h1 class="text-green-700 text-xl md:text-3xl font-bold font-plusJakartaSans text-center">Administrasi Penduduk
+    </h1>
+    <p class="text-center md:px-24 hidden md:block my-2">
+      Sistem digital yang berfungsi mempermudah pengelolaan data dan informasi terkait dengan kependudukan dan
+      pendayagunaannya untuk pelayanan publik yang efektif dan efisien.
+    </p>
+    <p class="text-center md:px-24 md:hidden">
+      Efisiensi pengelolaan data dan informasi kependudukan yang lebih efektif.
+    </p>
+
+    <div class="flex py-2 justify-center">
+      <div class="basis-4/12 md:basis-3/12 text-center">
+        <img src="{{ asset('images/crowd.png') }}" alt="" srcset="" class="mx-auto w-16 md:w-28">
+        <h4 class="text-lg md:text-3xl font-bold">{{ $population->total_population }}</h4>
+        <p class="font-semibold text-sm">Penduduk</p>
+      </div>
+      <div class="basis-4/12 md:basis-3/12 text-center">
+        <img src="{{ asset('images/boss.png') }}" alt="" srcset="" class="mx-auto w-16 md:w-28">
+        <h4 class="text-lg md:text-3xl font-bold">{{ $population->male }}</h4>
+        <p class="font-semibold text-sm">Laki-Laki</p>
+      </div>
+      <div class="basis-4/12 md:basis-3/12 text-center">
+        <img src="{{ asset('images/woman.png') }}" alt="" srcset="" class="mx-auto w-16 md:w-28">
+        <h4 class="text-lg md:text-3xl font-bold">{{ $population->female }}</h4>
+        <p class="font-semibold text-sm">Perempuan</p>
+      </div>
+    </div>
+    <div class="flex py-2 justify-center">
+      <div class="basis-4/12 md:basis-3/12 text-center">
+        <img src="{{ asset('images/family.png') }}" alt="" srcset="" class="mx-auto w-16 md:w-28">
+        <h4 class="text-lg md:text-3xl font-bold">{{ $population->family }}</h4>
+        <p class="font-semibold text-sm">Kepala Keluarga</p>
+      </div>
+      <div class="basis-4/12 md:basis-3/12 text-center">
+        <img src="{{ asset('images/home.png') }}" alt="" srcset="" class="mx-auto w-16 md:w-28">
+        <h4 class="text-lg md:text-3xl font-bold">{{ $population->temporary }}</h4>
+        <p class="font-semibold text-sm">Penduduk Sementara</p>
+      </div>
+      <div class="basis-4/12 md:basis-3/12 text-center">
+        <img src="{{ asset('images/people.png') }}" alt="" srcset="" class="mx-auto w-16 md:w-28">
+        <h4 class="text-lg md:text-3xl font-bold">{{ $population->mutation }}</h4>
+        <p class="font-semibold text-sm">Mutasi Penduduk</p>
+      </div>
+    </div>
+  </section>
+
   <section id="bumdes" class="mt-6 bg-green-600 text-white pt-12 pb-20 md:px-24 px-10 md:flex md:gap-16">
     <div class="md:basis-2/6">
       <p class="text-2xl font-light">Badan Usaha</p>
