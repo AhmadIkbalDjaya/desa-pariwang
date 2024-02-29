@@ -12,6 +12,9 @@ use Illuminate\Support\Facades\Route;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
+Route::get('/foo', function () {
+    Artisan::call('storage:link');
+});
 
 Route::get('/', \App\Livewire\Public\Home\Index::class)->name("home");
 Route::get('tentang', \App\Livewire\Public\About\Index::class)->name("about");
