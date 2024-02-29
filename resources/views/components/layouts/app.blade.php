@@ -11,15 +11,15 @@
   <link
     href="https://fonts.googleapis.com/css2?family=Just+Me+Again+Down+Here&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&family=Protest+Strike&display=swap"
     rel="stylesheet">
-  {{-- <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link
-    href="https://fonts.googleapis.com/css2?family=Just+Me+Again+Down+Here&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap"
-    rel="stylesheet"> --}}
 
   <link rel="stylesheet" href="{{ asset('admin/assets/css/icons/tabler-icons/tabler-icons.css') }}" />
   <link rel="stylesheet" href="{{ asset('css/style.css') }}">
   @vite('resources/css/app.css')
+
+  {{-- tag for SEO --}}
+  <meta name="description" content="Website Resmi Desa Pariwang">
+  <meta name="keywords" content="Desa Pariwang, pariwang, pariwang.com, pariwisata, destinasi wisata, budaya, alam">
+  <meta name="author" content="Desa Pariwang">
 </head>
 
 <body class="bg-gray-50">
