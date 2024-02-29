@@ -38,6 +38,15 @@
             <span class="hide-menu">Perangkat Desa</span>
           </a>
         </li>
+        <li class="sidebar-item {{ Request::is('addes/population*') ? 'selected' : '' }}">
+          <a class="sidebar-link" href="{{ route('admin.population.index') }}" wire:navigate.hover
+            aria-expanded="false">
+            <span>
+              <i class="ti ti-users"></i>
+            </span>
+            <span class="hide-menu">Kependudukan</span>
+          </a>
+        </li>
         <li class="sidebar-item {{ Request::is('addes/location*') ? 'selected' : '' }}">
           <a class="sidebar-link" href="{{ route('admin.location.index') }}" wire:navigate.hover aria-expanded="false">
             <span>

@@ -12,9 +12,6 @@ use Illuminate\Support\Facades\Route;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
-Route::get('/foo', function () {
-    Artisan::call('storage:link');
-});
 
 Route::get('/', \App\Livewire\Public\Home\Index::class)->name("home");
 Route::get('tentang', \App\Livewire\Public\About\Index::class)->name("about");
@@ -31,6 +28,7 @@ Route::middleware(['guest'])->group(function () {
 Route::middleware(['auth'])->group(function () {
     Route::prefix("addes")->group(function () {
         Route::get('', \App\Livewire\Admin\Index::class)->name('admin.index');
+        Route::get('population', \App\Livewire\Admin\Poppulation\Index::class)->name('admin.population.index');
         Route::get('profile', \App\Livewire\Admin\Profile\Index::class)->name('admin.profile.index');
         Route::get('location', \App\Livewire\Admin\Location\Index::class)->name('admin.location.index');
         Route::get('adminProfile/changePass', \App\Livewire\Admin\AdminProfile\ChangePass::class)->name('admin.admin-profile.changePass');

@@ -26,7 +26,8 @@ class BumdesForm extends Form
     public $image;
     // #[Validate("file")]
     // public $certificate_file;
-    #[Validate("nullable|string|regex:/^0\d{9,11}$/")]
+    // #[Validate("nullable|string|regex:/^0\d{9,11}$/")]
+    #[Validate("nullable|phone:ID")]
     public $phone;
     
     public function setBumdes(Bumdes $bumdes) {

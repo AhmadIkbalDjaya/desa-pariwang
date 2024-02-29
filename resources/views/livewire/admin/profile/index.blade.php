@@ -58,18 +58,6 @@
         </div>
         <div class="row mb-3">
           <div class="col-5 col-lg-4">
-            <p class="fs-4">Populasi <x-admin.form.required /> </p>
-          </div>
-          <div class="col-7 col-lg-8">
-            <input wire:model.live='form.population' class="form-control @error('form.population') is-invalid @enderror"
-              type="number" placeholder="Masukkan Populasi Desa">
-            @error('form.population')
-              <div class="invalid-feedback text-start">{{ $message }}</div>
-            @enderror
-          </div>
-        </div>
-        <div class="row mb-3">
-          <div class="col-5 col-lg-4">
             <p class="fs-4">Kontak <x-admin.form.required /> </p>
           </div>
           <div class="col-7 col-lg-8">
