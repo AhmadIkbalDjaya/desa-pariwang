@@ -2,7 +2,7 @@
   {{-- Stop trying to control. --}}
   <section
     class="hero bg-cover bg-center bg-blend-multiply md:h-[95vh] h-[65vh] bg-gray-300 grid place-items-center md:place-items-start"
-    style="background-image: url('images/profile-1.jpg')">
+    style="background-image: url('images/profile-1.webp')">
     <div
       class="text-white h-full w-full bg-gradient-to-b from-green-100/50 to-green-700 flex flex-col justify-center px-5
       md:w-1/2 md:ps-20 md:pe-32 md:bg-gradient-to-r md:from-green-600/[.80] md:from-95% md:to-green-300/50 md:to-100%">
@@ -67,8 +67,8 @@
           <div class="relative bottom-0 right-0 bg-gray-200 min-w-[250px] min-h-[250px] rounded-sm">
             <div
               class="absolute bottom-3 right-3 w-[250px] h-[250px] flex justify-center items-end rounded-md transition-transform duration-500 transform hover:translate-x-[-8px] hover:translate-y-[-8px]">
-              <img class="w-full h-full object-cover object-center rounded-sm" src="{{ asset('images/profile-2.jpg') }}"
-                alt="Gambar">
+              <img class="w-full h-full object-cover object-center rounded-sm"
+                src="{{ asset('images/profile-2.webp') }}" alt="Gambar">
             </div>
           </div>
         </div>
@@ -86,7 +86,7 @@
         @endforeach
       </div>
     @else
-      <img class="mx-auto h-24 object-center" src="{{ asset('images/empty.png') }}" alt="Gambar">
+      <img class="mx-auto h-24 object-center" src="{{ asset('images/empty.webp') }}" alt="Gambar">
       <p class="text-center text-sm md:text-base font-medium text-gray-400 pt-0">
         Belum Ada Perangkat Desa Yang Ditambahkan
       </p>
@@ -165,7 +165,7 @@
           <div id="maps" style="height: 300px;" class="rounded-2 z-0 rounded-lg"></div>
         @else
           <div class="py-6">
-            <img class="mx-auto h-24 object-center" src="{{ asset('images/empty.png') }}" alt="Gambar">
+            <img class="mx-auto h-24 object-center" src="{{ asset('images/empty.webp') }}" alt="Gambar">
             <p class="text-center text-sm md:text-base font-medium text-gray-400 pt-0">
               Data Lokasi Belum Ditambahkan
             </p>

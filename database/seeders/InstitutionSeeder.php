@@ -19,18 +19,13 @@ class InstitutionSeeder extends Seeder
                 "abbreviation" => "BPD",
             ],
             [
-                "name" => "Posyandu",
+                "name" => "Pustu",
             ],
             [
                 "name" => "Karang Taruna",
-                // "abbreviation" => "KPM",
             ],
             [
-                "name" => "Kader Pembangunan Manusia",
-                "abbreviation" => "KPM",
-            ],
-            [
-                "name" => "PKK",
+                "name" => "Pemberdayaan dan Kesejahteraan Keluarga",
                 "abbreviation" => "PKK",
             ],
         ];

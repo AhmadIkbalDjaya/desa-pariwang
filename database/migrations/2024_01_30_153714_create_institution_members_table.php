@@ -16,6 +16,8 @@ return new class extends Migration
             $table->id();
             $table->string('name');
             $table->string('position');
+            $table->string('photo')->nullable();
+            $table->enum('gender', ['male', 'female']);
             $table->foreignIdFor(Institution::class)->references("id")->on("institutions")->onDelete('cascade');
             $table->timestamps();
         });

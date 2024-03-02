@@ -1,4 +1,5 @@
 <div>
+  <x-toast />
   {{-- Do your work, then step back. --}}
   <nav
     style="--bs-breadcrumb-divider: url(&#34;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='8' height='8'%3E%3Cpath d='M2.5 0L1 1.5 3.5 4 1 6.5 2.5 8l4-4-4-4z' fill='%236c757d'/%3E%3C/svg%3E&#34;);"
@@ -36,6 +37,7 @@
             <tr>
               <th scope="col" style="white-space: nowrap">Nama </th>
               <th scope="col" style="white-space: nowrap">Jabatan</th>
+              <th scope="col" style="white-space: nowrap">Jenis Kelamin</th>
               <th scope="col">Aksi</th>
             </tr>
           </thead>
@@ -44,6 +46,7 @@
               <tr wire:key="{{ $member->id }}">
                 <td style="white-space: nowrap">{{ $member->name }}</td>
                 <td style="white-space: nowrap">{{ $member->position }}</td>
+                <td style="white-space: nowrap">{{ $member->gender == 'male' ? 'Laki-Laki' : 'Perempuan' }}</td>
                 <td style="white-space: nowrap">
                   <span class="badge bg-warning text-white" style="cursor: pointer" data-bs-toggle="modal"
                     data-bs-target="#editModal" wire:click="setInstitutionMember({{ $member->id }})">
@@ -120,6 +123,34 @@
                 @enderror
               </div>
             </div>
+            <div class="row mb-3">
+              <div class="col-5 col-lg-4">
+                <p class="fs-4">Jenis Kelamin <x-admin.form.required /> </p>
+              </div>
+              <div class="col-7 col-lg-8">
+                <select wire:model.live='form.gender' class="form-select @error('form.gender') is-invalid @enderror"
+                  name="" id="">
+                  <option>Jenis Kelamin</option>
+                  <option value="male">Laki-laki</option>
+                  <option value="female">Perempuan</option>
+                </select>
+                @error('form.gender')
+                  <div class="invalid-feedback text-start">{{ $message }}</div>
+                @enderror
+              </div>
+            </div>
+            <div class="row mb-3">
+              <div class="col-5 col-lg-4">
+                <p class="fs-4">Foto</p>
+              </div>
+              <div class="col-7 col-lg-8">
+                <input wire:model.live='form.photo' class="form-control @error('form.photo') is-invalid @enderror"
+                  type="file" accept="image/*" placeholder="Upload Gambar Bumdes">
+                @error('form.photo')
+                  <div class="invalid-feedback text-start">{{ $message }}</div>
+                @enderror
+              </div>
+            </div>
         </div>
         <div class="modal-footer">
           <button type="button" wire:click='resetInstitutionMember' class="btn btn-secondary"
@@ -163,6 +194,34 @@
                   class="form-control @error('form.position') is-invalid @enderror" type="text"
                   placeholder="Jabatan Anggota ">
                 @error('form.position')
+                  <div class="invalid-feedback text-start">{{ $message }}</div>
+                @enderror
+              </div>
+            </div>
+            <div class="row mb-3">
+              <div class="col-5 col-lg-4">
+                <p class="fs-4">Jenis Kelamin <x-admin.form.required /> </p>
+              </div>
+              <div class="col-7 col-lg-8">
+                <select wire:model.live='form.gender' class="form-select @error('form.gender') is-invalid @enderror"
+                  name="" id="">
+                  <option>Jenis Kelamin</option>
+                  <option value="male">Laki-laki</option>
+                  <option value="female">Perempuan</option>
+                </select>
+                @error('form.gender')
+                  <div class="invalid-feedback text-start">{{ $message }}</div>
+                @enderror
+              </div>
+            </div>
+            <div class="row mb-3">
+              <div class="col-5 col-lg-4">
+                <p class="fs-4">Foto</p>
+              </div>
+              <div class="col-7 col-lg-8">
+                <input wire:model.live='form.photo' class="form-control @error('form.photo') is-invalid @enderror"
+                  type="file" accept="image/*" placeholder="Upload Gambar Bumdes">
+                @error('form.photo')
                   <div class="invalid-feedback text-start">{{ $message }}</div>
                 @enderror
               </div>

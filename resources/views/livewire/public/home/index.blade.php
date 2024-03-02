@@ -1,15 +1,15 @@
 <div>
   {{-- The whole world belongs to you. --}}
   <section class="hero bg-cover bg-center bg-blend-multiply md:h-[93vh] h-[75vh] bg-gray-400 grid place-items-center"
-    style="background-image: url('images/profile-1.jpg')">
+    style="background-image: url('images/profile-1.webp')">
     <div class="text-center text-white font-protestStrike">
       <p class="md:text-6xl text-4xl">
         Selamat Datang
-      <p class="md:text-6xl text-3xl">
+      <h1 class="md:text-6xl text-3xl">
         Website Resmi Desa {{ $profile->name }}
+      </h1>
       </p>
-      </p>
-      <p>Dapatkan Informasi Terbaru Mengenai Desa {{ $profile->name }}</p>
+      <h1>Dapatkan Informasi Terbaru Mengenai Desa {{ $profile->name }}</h1>
     </div>
   </section>
 
@@ -60,7 +60,7 @@
           Lainnya</a>
       </div>
     @else
-      <img class="mx-auto h-24 object-center" src="{{ asset('images/empty.png') }}" alt="Gambar">
+      <img class="mx-auto h-24 object-center" src="{{ asset('images/empty.webp') }}" alt="Gambar">
       <p class="text-center text-sm md:text-base font-medium text-gray-400 pt-0">
         Belum Ada Berita Yang Ditambahkan
       </p>
@@ -80,34 +80,34 @@
 
     <div class="flex py-2 justify-center">
       <div class="basis-4/12 md:basis-3/12 text-center">
-        <img src="{{ asset('images/crowd.png') }}" alt="" srcset="" class="mx-auto w-16 md:w-28">
+        <img src="{{ asset('images/crowd.webp') }}" alt="" srcset="" class="mx-auto w-16 md:w-28">
         <h4 class="text-lg md:text-3xl font-bold">{{ $population->total_population }}</h4>
         <p class="font-semibold text-sm">Penduduk</p>
       </div>
       <div class="basis-4/12 md:basis-3/12 text-center">
-        <img src="{{ asset('images/boss.png') }}" alt="" srcset="" class="mx-auto w-16 md:w-28">
+        <img src="{{ asset('images/boss.webp') }}" alt="" srcset="" class="mx-auto w-16 md:w-28">
         <h4 class="text-lg md:text-3xl font-bold">{{ $population->male }}</h4>
         <p class="font-semibold text-sm">Laki-Laki</p>
       </div>
       <div class="basis-4/12 md:basis-3/12 text-center">
-        <img src="{{ asset('images/woman.png') }}" alt="" srcset="" class="mx-auto w-16 md:w-28">
+        <img src="{{ asset('images/woman.webp') }}" alt="" srcset="" class="mx-auto w-16 md:w-28">
         <h4 class="text-lg md:text-3xl font-bold">{{ $population->female }}</h4>
         <p class="font-semibold text-sm">Perempuan</p>
       </div>
     </div>
     <div class="flex py-2 justify-center">
       <div class="basis-4/12 md:basis-3/12 text-center">
-        <img src="{{ asset('images/family.png') }}" alt="" srcset="" class="mx-auto w-16 md:w-28">
+        <img src="{{ asset('images/family.webp') }}" alt="" srcset="" class="mx-auto w-16 md:w-28">
         <h4 class="text-lg md:text-3xl font-bold">{{ $population->family }}</h4>
         <p class="font-semibold text-sm">Kepala Keluarga</p>
       </div>
       <div class="basis-4/12 md:basis-3/12 text-center">
-        <img src="{{ asset('images/home.png') }}" alt="" srcset="" class="mx-auto w-16 md:w-28">
+        <img src="{{ asset('images/home.webp') }}" alt="" srcset="" class="mx-auto w-16 md:w-28">
         <h4 class="text-lg md:text-3xl font-bold">{{ $population->temporary }}</h4>
         <p class="font-semibold text-sm">Penduduk Sementara</p>
       </div>
       <div class="basis-4/12 md:basis-3/12 text-center">
-        <img src="{{ asset('images/people.png') }}" alt="" srcset="" class="mx-auto w-16 md:w-28">
+        <img src="{{ asset('images/people.webp') }}" alt="" srcset="" class="mx-auto w-16 md:w-28">
         <h4 class="text-lg md:text-3xl font-bold">{{ $population->mutation }}</h4>
         <p class="font-semibold text-sm">Mutasi Penduduk</p>
       </div>
@@ -141,7 +141,7 @@
         </div>
       @else
         <div class="py-5">
-          <img class="mx-auto h-24 object-center" src="{{ asset('images/empty.png') }}" alt="Gambar">
+          <img class="mx-auto h-24 object-center" src="{{ asset('images/empty.webp') }}" alt="Gambar">
           <p class="text-center text-sm md:text-base font-medium text-gray-400 pt-0">
             Belum Ada Bumdes Yang Ditambahkan
           </p>

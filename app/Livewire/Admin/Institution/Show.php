@@ -7,11 +7,13 @@ use App\Models\Institution;
 use App\Models\InstitutionMember;
 use Livewire\Attributes\Layout;
 use Livewire\Component;
+use Livewire\WithFileUploads;
 use Livewire\WithPagination;
 
 class Show extends Component
 {
     use WithPagination;
+    use WithFileUploads;
     #[Layout('components.layouts.admin')]
     public $perpage = 10;
     public $search = "";

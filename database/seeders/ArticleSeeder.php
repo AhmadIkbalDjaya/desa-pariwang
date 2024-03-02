@@ -24,6 +24,7 @@ class ArticleSeeder extends Seeder
                             &quot;Semoga kegiatan ini bermanfaat bagi masyarakat di desa Pariwang .&quot; Ungkap Andi Abdi Mulki Nugraha selaku Kordinator Desa (Kordes)di desa Pariwang.<br />
                             Setelah seminar pembuatan Biopeptisida ini selesai,masyarakat berharap mahasiswa KKN bisa membantu dalam pembuatan Biopeptisida tersebut untuk digunakan pada tanaman mereka masing-masing.</p>",
                 "publish_date"  => "2024-02-17",
+                "image" => "article/Os5uR5bGJEDFoRmNxOxANTUxZFx7gJHJq2c5yFZN.jpg",
             ],
             [
                 "title" => "Festival Anak Sholeh Mahasiswa KKN UIN Alauddin Makassar Angkatan 74",
@@ -35,6 +36,7 @@ class ArticleSeeder extends Seeder
                 Kegiatan seperti ini akan membantu membangun minat mengaji anak-anak di desa. ujar Salmansyah selaku pengurus masjid desa Pariwang.<br />
                 &quot;saya suka kalau ada kegiatan seperti ini,mudah-mudahan ada terus kegiatan seperti ini nantinya.&quot;lanjutnya.</p>",
                 "publish_date"  => "2024-02-7",
+                "image" => "article/DrpGIclR884rhUnjmMHl4PlsJlPG2FNNQ9f1Gl6o.jpg",
             ],
         ];
         foreach ($articles as $article) {
