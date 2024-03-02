@@ -23,7 +23,6 @@ class ArticleFactory extends Factory
         return [
             "title" => fake()->sentence(5),
             "body" => fake()->paragraph(),
-            "image" => "article/article-$imageNumber.jpg",
             "publish_date" => fake()->dateTimeBetween("-1 years", Carbon::now()->addDays(90)),
         ];
     }

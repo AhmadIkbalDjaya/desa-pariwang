@@ -91,6 +91,23 @@
           <p class="fs-4">: {{ $village_aparatus->religion }}</p>
         </div>
       </div>
+      <div class="row mb-3">
+        <div class="col-5 col-lg-4">
+          <p class="fs-4">Foto</p>
+        </div>
+        <div class="col-7 col-lg-8">
+          <p class="fs-4">
+            @if ($village_aparatus->photo)
+              <img src="{{ asset('storage/' . $village_aparatus->photo) }}" class="img-fluid" width="200"
+                alt="...">
+            @else
+              <img
+                src="{{ $village_aparatus->gender == 'male' ? asset('images/user_male.webp') : asset('images/user_female.webp') }}"
+                class="img-fluid" width="200" alt="...">
+            @endif
+          </p>
+        </div>
+      </div>
     </div>
   </div>
 

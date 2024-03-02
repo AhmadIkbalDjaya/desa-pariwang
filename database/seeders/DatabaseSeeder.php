@@ -30,14 +30,15 @@ class DatabaseSeeder extends Seeder
             "password" => "admin456",
         ]);
         $this->call(VillageStatusSeeder::class);
-        Bumdes::factory(30)->create();
+        Bumdes::factory(6)->create();
         $this->call(InstitutionSeeder::class);
-        Article::factory(15)->create();
         $this->call(VillageAparatusSeeder::class);
         $this->call(ProfileSeeder::class);
         $this->call(LocationSeeder::class);
         $this->call(HamletSeeder::class);
         $this->call(ArticleSeeder::class);
+        Article::factory(10)->create();
         $this->call(PopulationSeeder::class);
+        $this->call(InstitutionMemberSeeder::class);
     }
 }

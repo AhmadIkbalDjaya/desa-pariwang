@@ -27,7 +27,7 @@ class VillageAparatusForm extends Form
     #[Validate("nullable|string")]
     public $job;
     #[Validate("nullable|in:Islam,Kristen Protestan,Kristen Katolik,Hindu,Buddha,Konghucu")]
-    public $religion;
+    public $religion = "Islam";
 
     public function setVillageAparatus(VillageAparatus $village_aparatus) {
         $this->village_aparatus = $village_aparatus;
@@ -36,7 +36,6 @@ class VillageAparatusForm extends Form
         $this->pob = $village_aparatus->pob;
         $this->dob = $village_aparatus->dob;
         $this->gender = $village_aparatus->gender;
-        $this->photo = $village_aparatus->photo;
         $this->education = $village_aparatus->education;
         $this->job = $village_aparatus->job;
         $this->religion = $village_aparatus->religion;
@@ -58,6 +57,9 @@ class VillageAparatusForm extends Form
             if (Storage::exists($this->photo)) {
                 Storage::delete($this->photo);
             }
+            $validated["photo"] = $this->photo->storePublicly("bumdes");
+        } else {
+            unset($validated["photo"]);
         }
         $this->village_aparatus->update($validated);
     }

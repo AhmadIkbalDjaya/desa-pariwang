@@ -138,6 +138,18 @@
           </div>
         </div>
         <div class="row mb-3">
+          <div class="col-5 col-lg-4">
+            <p class="fs-4">Foto</p>
+          </div>
+          <div class="col-7 col-lg-8">
+            <input wire:model.live='form.photo' class="form-control @error('form.photo') is-invalid @enderror"
+              type="file" accept="image/*" placeholder="Upload Gambar Perangkat Desa">
+            @error('form.photo')
+              <div class="invalid-feedback text-start">{{ $message }}</div>
+            @enderror
+          </div>
+        </div>
+        <div class="row mb-3">
           <button class="btn btn-primary" type="submit">Simpan</button>
         </div>
       </form>
