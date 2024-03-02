@@ -162,7 +162,7 @@
     <div class="md:flex md:gap-5 md:bg-white md:rounded-sm shadow-sm">
       <div class="md:basis-1/2">
         @if ($location->latitude != null && $location->longitude != null)
-          <div id="maps" style="height: 300px;" class="rounded-2 z-0 rounded-lg"></div>
+          <div id="map" style="height: 300px;" class="rounded-2 z-0 rounded-lg"></div>
         @else
           <div class="py-6">
             <img class="mx-auto h-24 object-center" src="{{ asset('images/empty.webp') }}" alt="Gambar">
@@ -210,7 +210,7 @@
     </div>
   </section>
 
-  @push('script')
+  {{-- @push('script')
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
     <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
     <script>
@@ -231,5 +231,111 @@
         marker.bindPopup(`<b>${desa.name}</b>`);
       });
     </script>
+  @endpush --}}
+  @push('script')
+    <script src="https://unpkg.com/maplibre-gl/dist/maplibre-gl.js"></script>
+    <link rel="stylesheet" href="https://unpkg.com/maplibre-gl/dist/maplibre-gl.css">
+    <script>
+      var latitude = "{{ $location->latitude }}"
+      var longitude = "{{ $location->longitude }}"
+      var map = new maplibregl.Map({
+        container: 'map', // container id
+        style: 'https://api.maptiler.com/maps/hybrid/style.json?key=get_your_own_OpIi9ZULNHzrESv6T2vL', // satelit
+        // style: 'https://api.maptiler.com/maps/basic-v2/style.json?key=59l19GYa3vqXGGIlpAez', // basic
+        // style: 'https://api.maptiler.com/maps/streets-v2/style.json?key=59l19GYa3vqXGGIlpAez', // street
+
+        center: [longitude, latitude], // starting position [lng, lat]
+        zoom: 12 // starting zoom
+      });
+
+      map.addControl(new maplibregl.NavigationControl());
+      map.scrollZoom.disable();
+
+      // // markers
+      // const monument = [119.8295304629999, -3.672330042457889];
+      // // create the popup
+      // const popup = new maplibregl.Popup({
+      //   offset: 25
+      // }).setText(
+      //   'Construction on the Washington Monument began in 1848.'
+      // );
+
+      // // create DOM element for the marker
+      // const el = document.createElement('div');
+      // // el.id = 'marker';
+
+      // // create the marker
+      // new maplibregl.Marker({
+      //     // element: el
+      //   })
+      //   .setLngLat(monument)
+      //   .setPopup(popup) // sets a popup on this marker
+      //   .addTo(map);
+
+      // polygon area
+      map.on('load', () => {
+        map.addSource('maine', {
+          'type': 'geojson',
+          'data': {
+            'type': 'Feature',
+            'geometry': {
+              'type': 'Polygon',
+              'coordinates': [
+                [
+                  [119.827353, -3.649504],
+                  [119.819429, -3.652094],
+                  [119.819220, -3.651920],
+                  [119.815155, -3.664098],
+                  [119.813282, -3.683219],
+                  [119.814223, -3.687010],
+                  [119.814157, -3.689090],
+                  [119.835379, -3.686904],
+                  [119.843314, -3.688304],
+                  [119.845423, -3.685982],
+                  [119.845531, -3.683871],
+                  [119.842532, -3.676241],
+                  [119.842315, -3.668247],
+                  [119.840970, -3.664153],
+                  [119.837878, -3.659067],
+                  [119.837889, -3.658972],
+                  [119.827353, -3.649504],
+                ]
+              ]
+            }
+          }
+        });
+        map.addLayer({
+          'id': 'maine',
+          'type': 'fill',
+          'source': 'maine',
+          'layout': {},
+          'paint': {
+            'fill-color': '#8ff2a9',
+            'fill-opacity': 0.25,
+          }
+        });
+      });
+    </script>
+  @endpush
+  @push('style')
+    <style>
+      .maplibregl-compact {
+        display: none !important;
+      }
+
+      .maplibregl-popup {
+        max-width: 200px;
+      }
+
+      .maplibregl-popup-content {
+        position: relative !important;
+      }
+
+      .maplibregl-popup-close-button {
+        position: absolute !important;
+        padding: 0px 5px !important;
+        font-size: 14px
+      }
+    </style>
   @endpush
 </div>
