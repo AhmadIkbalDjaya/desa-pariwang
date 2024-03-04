@@ -5,18 +5,19 @@
         display: none !important;
       }
 
-      .maplibregl-popup {
-        max-width: 200px;
-      }
+      /* .maplibregl-popup {
+          max-width: 200px;
+        } */
 
       .maplibregl-popup-content {
-        position: relative !important;
+        padding: 0px !important;
+        height: 80px;
+        width: 320px;
+        box-sizing: border-box !important;
       }
 
       .maplibregl-popup-close-button {
-        position: absolute !important;
         padding: 0px 5px !important;
-        font-size: 14px
       }
     </style>
   @endpush
@@ -130,8 +131,8 @@
     </div>
   </section>
 
-  {{-- <section id="welcome" class="font-plusJakartaSans md:mx-40 md:my-20 mx-7 my-8"> --}}
-  {{-- <div class="maplibregl-popup-content flex">
+  <section id="welcome" class="font-plusJakartaSans md:mx-40 md:my-20 mx-7 my-8">
+    {{-- <div class="maplibregl-popup-content flex">
       <div class="basis-1/2">
         <img src="{{ asset('images/profile-1.webp') }}" style="width: 100%" alt="">
       </div>
@@ -141,9 +142,9 @@
           ipsa minus?</p>
       </div>
     </div> --}}
-  {{-- <h1 class="text-green-700 text-3xl font-bold font-plusJakartaSans text-center pb-3">Lokasi Desa</h1>
+    <h1 class="text-green-700 text-3xl font-bold font-plusJakartaSans text-center pb-3">Lokasi Desa</h1>
     <div id="map" style="height: 475px;" class="rounded-sm z-0"></div>
-  </section> --}}
+  </section>
 
   <section id="bumdes" class="mt-6 bg-green-600 text-white pt-12 pb-20 md:px-24 px-10 md:flex md:gap-16">
     <div class="md:basis-2/6">
@@ -233,7 +234,7 @@
       var longitude = "{{ $location->longitude }}"
       var map = new maplibregl.Map({
         container: 'map', // container id
-        style: 'https://api.maptiler.com/maps/hybrid/style.json?key=get_your_own_OpIi9ZULNHzrESv6T2vL', // satelit
+        style: 'https://api.maptiler.com/maps/hybrid/style.json?key=59l19GYa3vqXGGIlpAez', // satelit
         // style: 'https://api.maptiler.com/maps/basic-v2/style.json?key=59l19GYa3vqXGGIlpAez', // basic
         // style: 'https://api.maptiler.com/maps/streets-v2/style.json?key=59l19GYa3vqXGGIlpAez', // street
 
@@ -308,6 +309,34 @@
           }
         });
       });
+
+      const marker = new maplibregl.Marker()
+        .setLngLat([119.8295304629999, -3.672330042457889])
+        .addTo(map);
+      const popup = new maplibregl.Popup()
+        .setHTML(
+          `<div class="flex max-h-full">
+            <div class="basis-3/12">
+              <img src="{{ asset('images/profile-1.webp') }}" class="h-full" alt="">
+            </div>
+            <div class="basis-9/12 px-2 pt-1">
+              <h1 class="font-semibold line-clamp-1">Nama tempat</h1>
+              <p class="text-justify text-[0.7rem] line-clamp-2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat numquam dolor qui cum
+                ipsa minus?</p>
+              <div class="text-xs flex justify-end">
+                  <a href='https://maps.google.com/?q=-3.672330042457889,119.8295304629999' target='_blank' class='flex text-blue-200 underline'>
+                    <img src="{{ asset('images/maps_logo.png') }}" width='15px' />
+                    Maps
+                  </a>
+                </div>
+            </div>
+          </div>`
+        );
+      marker.setPopup(popup);
+
+      const marker2 = new maplibregl.Marker()
+        .setLngLat([119.83122879125847, -3.6742039289841375])
+        .addTo(map);
     </script>
   @endpush
 
