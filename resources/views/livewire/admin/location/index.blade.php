@@ -84,7 +84,7 @@
         </div>
         <div class="row mb-3">
           <div class="col-5 col-lg-4">
-            <p class="fs-4">Batas Timut <x-admin.form.required /> </p>
+            <p class="fs-4">Batas Timur <x-admin.form.required /> </p>
           </div>
           <div class="col-7 col-lg-8">
             <input wire:model.live='form.border_east'

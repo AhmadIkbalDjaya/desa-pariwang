@@ -43,21 +43,17 @@
       <div class="">
         <h1 class="text-green-700 text-2xl font-semibold mb-5">Visi</h1>
         <p class="font-medium text-justify">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam sapiente amet debitis cumque a, nihil odio
-          aspernatur explicabo cum aliquid consequuntur consectetur minus eaque saepe?
+          {{ $visi->content }}
         </p>
       </div>
       <div class="mt-3">
-        <h1 class="text-green-700 text-2xl font-semibold mb-5">Misi</h1>
+        <h1 class="text-green-700 text-2xl font-semibold mb-5 mb-2">Misi</h1>
         <ol class="ms-5 font-medium text-justify list-decimal">
-          <li class="my-2">
-            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Harum laudantium esse consequatur aliquid, quasi
-            quae!
-          </li>
-          <li>
-            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Harum laudantium esse consequatur aliquid, quasi
-            quae!
-          </li>
+          @foreach ($mision as $misi)
+            <li>
+              {{ $misi->content }}
+            </li>
+          @endforeach
         </ol>
       </div>
     </div>

@@ -29,6 +29,15 @@
             <span class="hide-menu">Profil</span>
           </a>
         </li>
+        <li class="sidebar-item {{ Request::is('addes/vision-mision*') ? 'selected' : '' }}">
+          <a class="sidebar-link" href="{{ route('admin.vision-mision.index') }}" wire:navigate.hover
+            aria-expanded="false">
+            <span>
+              <i class="ti ti-vocabulary"></i>
+            </span>
+            <span class="hide-menu">Visi Misi</span>
+          </a>
+        </li>
         <li class="sidebar-item {{ Request::is('addes/village-aparatus*') ? 'selected' : '' }}">
           <a class="sidebar-link" href="{{ route('admin.village-aparatus.index') }}" wire:navigate.hover
             aria-expanded="false">
