@@ -6,6 +6,7 @@ use App\Livewire\Forms\Admin\ComplaintForm;
 use App\Models\Article;
 use App\Models\Bumdes;
 use App\Models\Location;
+use App\Models\Marker;
 use App\Models\Population;
 use App\Models\Profile;
 use Livewire\Component;
@@ -21,6 +22,7 @@ class Index extends Component
             "profile" => Profile::get()->first(),
             "population" => Population::get()->first(),
             "location" => Location::get()->first(),
+            "markers" => Marker::get(),
         ])->title("Desa Pariwang");
     }
 

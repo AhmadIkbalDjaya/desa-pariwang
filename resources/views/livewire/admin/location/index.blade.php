@@ -8,7 +8,7 @@
       <li class="breadcrumb-item">
         <a href="{{ route('admin.index') }}" wire:navigate class="text-body-secondary fs-4"><i class="ti ti-home"></i></a>
       </li>
-      <li class="breadcrumb-item active" aria-current="page">Location</li>
+      <li class="breadcrumb-item active" aria-current="page">Lokasi & Penanda</li>
     </ol>
   </nav>
 
@@ -138,6 +138,79 @@
           <button class="btn btn-primary" type="submit">Simpan</button>
         </div>
       </form>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-body">
+      <h5 class="card-title fw-semibold mb-3">Penanda Lokasi</h5>
+      <div class="d-flex justify-content-between">
+        <div>
+          <input wire:model.live="search" class="form-control" type="text" placeholder="Cari Tempat"
+            aria-label="default input example">
+        </div>
+        <a href="{{ route('admin.location.marker.create') }}" wire:navigate class="text-white">
+          <button class="btn btn-primary add-button">
+            <i class="ti ti-plus"></i> Penanda
+          </button>
+        </a>
+      </div>
+      <div class="table-responsive">
+        <table class="table datatable">
+          <thead>
+            <tr>
+              <th scope="col" style="white-space: nowrap">Nama Tempat </th>
+              <th scope="col" style="white-space: nowrap">Deskripsi</th>
+              <th scope="col" style="white-space: nowrap">Longitude</th>
+              <th scope="col" style="white-space: nowrap">Latitude</th>
+              <th scope="col">Aksi</th>
+            </tr>
+          </thead>
+          <tbody>
+            @foreach ($markers as $marker)
+              <tr wire:key="{{ $marker->id }}">
+                <td style="white-space: nowrap">{{ $marker->name }}</td>
+                <td style="">{{ $marker->description }}</td>
+                <td style="white-space: nowrap">{{ $marker->longitude }}</td>
+                <td style="white-space: nowrap">{{ $marker->latitude }}</td>
+                <td style="white-space: nowrap">
+                  <a href="{{ route('admin.location.marker.show', ['marker' => $marker->id]) }}" wire:navigate>
+                    <span class="badge bg-info text-white"><i class="ti ti-eye"></i></span>
+                  </a>
+                  <a href="{{ route('admin.location.marker.edit', ['marker' => $marker->id]) }}" wire:navigate>
+                    <span class="badge bg-warning text-white"><i class="ti ti-edit"></i></span>
+                  </a>
+                  <span class="badge bg-danger text-white" style="cursor: pointer" data-bs-toggle="modal"
+                    data-bs-target="#deleteModal" wire:click="setMarker({{ $marker->id }})">
+                    <i class="ti ti-trash"></i>
+                  </span>
+                </td>
+              </tr>
+            @endforeach
+          </tbody>
+        </table>
+      </div>
+      <x-pagination :items="$markers" />
+    </div>
+  </div>
+  {{-- delete modal --}}
+  <div wire:ignore.self class="modal fade" id="deleteModal" tabindex="-1" aria-labelledby="deleteModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="deleteModalLabel">Konfirmasi Hapus</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body text-center">
+          <p class="fs-5">Yakin Ingin Menghapus Penanda {{ $markerForm->name }}?</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" wire:click='resetMarker' class="btn btn-secondary"
+            data-bs-dismiss="modal">Cancel</button>
+          <button type="button" class="btn btn-danger" wire:click="destroyMarker">Hapus</button>
+        </div>
+      </div>
     </div>
   </div>
 </div>

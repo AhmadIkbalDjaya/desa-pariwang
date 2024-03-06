@@ -61,7 +61,7 @@
             <span>
               <i class="ti ti-location"></i>
             </span>
-            <span class="hide-menu">Lokasi</span>
+            <span class="hide-menu">Lokasi & Penanda</span>
           </a>
         </li>
         <li class="sidebar-item {{ Request::is('addes/bumdes*') ? 'selected' : '' }}">
