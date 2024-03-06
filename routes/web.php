@@ -30,7 +30,11 @@ Route::middleware(['auth'])->group(function () {
         Route::get('', \App\Livewire\Admin\Index::class)->name('admin.index');
         Route::get('population', \App\Livewire\Admin\Poppulation\Index::class)->name('admin.population.index');
         Route::get('profile', \App\Livewire\Admin\Profile\Index::class)->name('admin.profile.index');
+        Route::get('vision-mision', \App\Livewire\Admin\VisionMision\Index::class)->name('admin.vision-mision.index');
         Route::get('location', \App\Livewire\Admin\Location\Index::class)->name('admin.location.index');
+        Route::get('location/marker/create', \App\Livewire\Admin\Location\Marker\Create::class)->name('admin.location.marker.create');
+        Route::get('location/marker/{marker}', \App\Livewire\Admin\Location\Marker\Show::class)->name('admin.location.marker.show');
+        Route::get('location/marker/{marker}/edit', \App\Livewire\Admin\Location\Marker\Edit::class)->name('admin.location.marker.edit');
         Route::get('adminProfile/changePass', \App\Livewire\Admin\AdminProfile\ChangePass::class)->name('admin.admin-profile.changePass');
         Route::prefix("bumdes")->group(function () {
             Route::get('', \App\Livewire\Admin\Bumdes\Index::class)->name('admin.bumdes.index');

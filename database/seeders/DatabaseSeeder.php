@@ -40,5 +40,7 @@ class DatabaseSeeder extends Seeder
         Article::factory(10)->create();
         $this->call(PopulationSeeder::class);
         $this->call(InstitutionMemberSeeder::class);
+        $this->call(MarkerSeeder::class);
+        $this->call(VisionMissionSeeder::class);
     }
 }

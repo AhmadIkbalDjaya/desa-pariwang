@@ -1,4 +1,26 @@
 <div>
+  @push('style')
+    <style>
+      .maplibregl-compact {
+        display: none !important;
+      }
+
+      /* .maplibregl-popup {
+                                                                                                                                                                                      max-width: 200px;
+                                                                                                                                                                                    } */
+
+      .maplibregl-popup-content {
+        padding: 0px !important;
+        height: 80px;
+        width: 320px;
+        box-sizing: border-box !important;
+      }
+
+      .maplibregl-popup-close-button {
+        padding: 0px 5px !important;
+      }
+    </style>
+  @endpush
   {{-- The whole world belongs to you. --}}
   <section class="hero bg-cover bg-center bg-blend-multiply md:h-[93vh] h-[75vh] bg-gray-400 grid place-items-center"
     style="background-image: url('images/profile-1.webp')">
@@ -21,11 +43,6 @@
       <h1 class="text-green-700 text-2xl font-semibold mb-5">Desa {{ $profile->name }}</h1>
       <p class="font-medium text-justify indent-10 line-clamp-4">
         {{ $profile->description }}
-        {{-- Desa Pariwang adalah sebuah desa yang terletak di Kabupaten Enrekang, Selawesi Selatan. Desa ini berada
-        di Kecamatan Maiwa. Pariwang memiliki potensi yang menarik, terutama karena keindahan alamnya
-        yang masih alami. Di sini, kita dapat menikmati pemandangan pegunungan, lembah hijau, serta keunikan budaya
-        lokal. Desa Pariwang memiliki jumlah populasi sekitar beberapa ribu penduduk, yang mayoritas menggantungkan
-        hidup dari sektor pertanian dan peternakan. --}}
       </p>
       <div class="mt-2">
         <a href="{{ route('about') }}" wire:navigate class="text-green-700 font-semibold">
@@ -114,6 +131,11 @@
     </div>
   </section>
 
+  <section id="welcome" class="font-plusJakartaSans md:mx-40 md:my-20 mx-7 my-8">
+    <h1 class="text-green-700 text-3xl font-bold font-plusJakartaSans text-center pb-3">Lokasi Desa</h1>
+    <div id="map" style="height: 475px;" class="rounded-sm z-0"></div>
+  </section>
+
   <section id="bumdes" class="mt-6 bg-green-600 text-white pt-12 pb-20 md:px-24 px-10 md:flex md:gap-16">
     <div class="md:basis-2/6">
       <p class="text-2xl font-light">Badan Usaha</p>
@@ -194,5 +216,155 @@
       </form>
     </div>
   </section>
+  @push('script')
+    <script src="https://unpkg.com/maplibre-gl/dist/maplibre-gl.js"></script>
+    <link rel="stylesheet" href="https://unpkg.com/maplibre-gl/dist/maplibre-gl.css">
+    <script>
+      var latitude = "{{ $location->latitude }}"
+      var longitude = "{{ $location->longitude }}"
+      var map = new maplibregl.Map({
+        container: 'map', // container id
+        style: 'https://api.maptiler.com/maps/hybrid/style.json?key=59l19GYa3vqXGGIlpAez', // satelit
+        // style: 'https://api.maptiler.com/maps/basic-v2/style.json?key=59l19GYa3vqXGGIlpAez', // basic
+        // style: 'https://api.maptiler.com/maps/streets-v2/style.json?key=59l19GYa3vqXGGIlpAez', // street
 
+        center: [longitude, latitude], // starting position [lng, lat]
+        zoom: 12.80 // starting zoom
+      });
+
+      map.addControl(new maplibregl.NavigationControl());
+      map.scrollZoom.disable();
+
+      // polygon area
+      map.on('load', () => {
+        map.addSource('maine', {
+          'type': 'geojson',
+          'data': {
+            'type': 'Feature',
+            'geometry': {
+              'type': 'Polygon',
+              'coordinates': [
+                [
+                  [119.827353, -3.649504],
+                  [119.819429, -3.652094],
+                  [119.819220, -3.651920],
+                  [119.815155, -3.664098],
+                  [119.813282, -3.683219],
+                  [119.814223, -3.687010],
+                  [119.814157, -3.689090],
+                  [119.835379, -3.686904],
+                  [119.843314, -3.688304],
+                  [119.845423, -3.685982],
+                  [119.845531, -3.683871],
+                  [119.842532, -3.676241],
+                  [119.842315, -3.668247],
+                  [119.840970, -3.664153],
+                  [119.837878, -3.659067],
+                  [119.837889, -3.658972],
+                  [119.827353, -3.649504],
+                ]
+              ]
+            }
+          }
+        });
+        map.addLayer({
+          'id': 'maine',
+          'type': 'fill',
+          'source': 'maine',
+          'layout': {},
+          'paint': {
+            'fill-color': '#8ff2a9',
+            'fill-opacity': 0.25,
+          }
+        });
+      });
+
+      // @foreach ($markers as $marker)
+      //   console.log(`{{ $marker->name }}`);
+      // @endforeach
+      // var markers = [
+      //   @foreach ($markers as $marker)
+      //     {
+      //       "lngLat": [{{ $marker['longitude'] }}, {{ $marker['latitude'] }}],
+      //       "popupHTML": "{!! $marker['popupHTML'] !!}"
+      //     },
+      //   @endforeach
+      // ];
+
+      // markers.forEach(marker => {
+      //   console.log(marker.LngLat);
+      // });
+
+      // markers.forEach(marker => {
+      //   new maplibregl.Marker()
+      //     .setLngLat(marker.lngLat)
+      //     .addTo(map)
+      //     .setPopup(new maplibregl.Popup().setHTML(marker.popupHTML));
+      // });
+      //     const marker = new maplibregl.Marker()
+      //       .setLngLat([119.8295304629999, -3.672330042457889])
+      //       .addTo(map);
+      //     const popup = new maplibregl.Popup()
+      //       .setHTML(
+      //         `<div class="flex max-h-full">
+  //   <div class="basis-3/12">
+  //     <img src="{{ asset('images/profile-1.webp') }}" class="h-full" alt="">
+  //   </div>
+  //   <div class="basis-9/12 px-2 pt-1">
+  //     <h1 class="font-semibold line-clamp-1">Nama tempat</h1>
+  //     <p class="text-justify text-[0.7rem] line-clamp-2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat numquam dolor qui cum
+  //       ipsa minus?</p>
+  //     <div class="text-xs flex justify-end">
+  //         <a href='https://maps.google.com/?q=-3.672330042457889,119.8295304629999' target='_blank' class='flex text-blue-200 underline'>
+  //           <img src="{{ asset('images/maps_logo.png') }}" width='15px' />
+  //           Maps
+  //         </a>
+  //       </div>
+  //   </div>
+  // </div>`
+      //       );
+      //     marker.setPopup(popup);
+
+
+      let markerName = [];
+      let markerLongitude = [];
+      let markerLatitude = [];
+      let markerImage = [];
+      let markerDescription = [];
+    </script>
+    @foreach ($markers as $marker)
+      <script>
+        markerName.push("{{ $marker->name }}")
+        markerLongitude.push("{{ $marker->longitude }}")
+        markerLatitude.push("{{ $marker->latitude }}")
+        markerImage.push("{{ $marker->image }}")
+        markerDescription.push("{{ $marker->description }}")
+      </script>
+    @endforeach
+    <script>
+      markerName.forEach((name, index) => {
+        linkImage = markerImage[index] != '' ? 'storage/' + markerImage[index] : 'images/map.webp';
+        new maplibregl.Marker()
+          .setLngLat([markerLongitude[index], markerLatitude[index]])
+          .addTo(map)
+          .setPopup(new maplibregl.Popup().setHTML(`
+          <div class="flex">
+            <div class="basis-3/12">
+              <img src="{{ asset('${linkImage}') }}" class="h-full object-center" alt="" style="max-height: 80px">
+            </div>
+            <div class="basis-9/12 px-2 pt-1">
+              <h1 class="font-semibold line-clamp-1">${name}</h1>
+              <p class="text-justify text-[0.7rem] line-clamp-2">${markerDescription[index]}</p>
+              <div class="text-xs flex justify-end">
+                  <a href='https://maps.google.com/?q=${markerLatitude[index]},${markerLongitude[index]}' target='_blank' class='flex text-blue-200 underline'>
+                    <img src="{{ asset('images/maps_logo.png') }}" width='15px' />
+                    Maps
+                  </a>
+                </div>
+            </div>
+          </div>
+        `));
+      });
+    </script>
+  @endpush
 </div>
