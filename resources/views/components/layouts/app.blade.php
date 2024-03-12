@@ -20,9 +20,32 @@
   @vite('resources/css/app.css')
 
   {{-- tag for SEO --}}
-  <meta name="description" content="Website Resmi Desa Pariwang">
+  {{-- <meta name="description" content="Website Resmi Desa Pariwang">
   <meta name="keywords" content="Desa Pariwang, pariwang, pariwang.com, pariwisata, destinasi wisata, budaya, alam">
-  <meta name="author" content="Desa Pariwang">
+  <meta name="author" content="Desa Pariwang"> --}}
+  <meta name="description" content="Dapatkan Informasi Administrasi dan Berita Terkini Desa Pariwang">
+  <meta name="application-name" content="Website Profil Desa Pariwang">
+  <meta name="generator" content="Pariwang">
+  <meta name="keywords" content="website resmi desa Pariwang,bumdes,berita,kelembagaan">
+  <meta name="publisher" content="Pemerintah Desa Pariwang">
+  <meta name="robots" content="index, follow">
+  <meta property="og:title" content="Website Resmi Desa Pariwang">
+  <meta property="og:description" content="Dapatkan Informasi Administrasi dan Berita Terkini Desa Pariwang">
+  <meta property="og:url" content="https://pariwang.com/">
+  <meta property="og:site_name" content="Website Resmi Desa Pariwang">
+  <meta property="og:locale" content="id_ID">
+  <meta property="og:image" content="{{ asset('images/enrekang.webp') }}">
+  <meta property="og:image:width" content="256">
+  <meta property="og:image:height" content="256">
+  <meta property="og:image:alt" content="Logo Desa Pariwang">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Website Resmi Desa Pariwang">
+  <meta name="twitter:description" content="Dapatkan Informasi Administrasi dan Berita Terkini Desa Pariwang">
+  <meta name="twitter:image" content="{{ asset('images/enrekang.webp') }}">
+  <meta name="twitter:image:width" content="256">
+  <meta name="twitter:image:height" content="256">
+  <meta name="twitter:image:alt" content="Logo Desa Pariwang">
 </head>
 
 <body class="bg-gray-50">

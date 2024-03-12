@@ -5,18 +5,19 @@
         display: none !important;
       }
 
-      .maplibregl-popup {
-        max-width: 200px;
-      }
+      /* .maplibregl-popup {
+                                                                                                                                                                                                          max-width: 200px;
+                                                                                                                                                                                                        } */
 
       .maplibregl-popup-content {
-        position: relative !important;
+        padding: 0px !important;
+        height: 80px;
+        width: 320px;
+        box-sizing: border-box !important;
       }
 
       .maplibregl-popup-close-button {
-        position: absolute !important;
         padding: 0px 5px !important;
-        font-size: 14px
       }
     </style>
   @endpush
@@ -83,7 +84,7 @@
     @endif
   </section>
 
-  <section id="article" class="md:mx-32 md:my-20 mx-5 mt-6">
+  <section id="population" class="md:mx-32 md:my-20 mx-5 mt-6">
     <h1 class="text-green-700 text-xl md:text-3xl font-bold font-plusJakartaSans text-center">Administrasi Penduduk
     </h1>
     <p class="text-center md:px-24 hidden md:block my-2">
@@ -93,7 +94,6 @@
     <p class="text-center md:px-24 md:hidden">
       Efisiensi pengelolaan data dan informasi kependudukan yang lebih efektif.
     </p>
-
     <div class="flex py-2 justify-center">
       <div class="basis-4/12 md:basis-3/12 text-center">
         <img src="{{ asset('images/crowd.webp') }}" alt="" srcset="" class="mx-auto w-16 md:w-28">
@@ -130,20 +130,12 @@
     </div>
   </section>
 
-  {{-- <section id="welcome" class="font-plusJakartaSans md:mx-40 md:my-20 mx-7 my-8"> --}}
-  {{-- <div class="maplibregl-popup-content flex">
-      <div class="basis-1/2">
-        <img src="{{ asset('images/profile-1.webp') }}" style="width: 100%" alt="">
-      </div>
-      <div class="basis-1/2 px-2">
-        <h1 class="font-semibold">Nama tempat</h1>
-        <p class="text-justify">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat numquam dolor qui cum
-          ipsa minus?</p>
-      </div>
-    </div> --}}
-  {{-- <h1 class="text-green-700 text-3xl font-bold font-plusJakartaSans text-center pb-3">Lokasi Desa</h1>
+  <section id="village-map" class="font-plusJakartaSans md:mx-40 md:my-20 mx-7 my-8">
+    <h1 class="text-green-700 text-3xl font-bold font-plusJakartaSans text-center pb-1">Peta Desa</h1>
+    <p class="text-center pb-3 font-plusJakartaSans">Menampilkan Peta Desa Dengan Penanda Lokasi-Lakasi Tertentu di Desa
+    </p>
     <div id="map" style="height: 475px;" class="rounded-sm z-0"></div>
-  </section> --}}
+  </section>
 
   <section id="bumdes" class="mt-6 bg-green-600 text-white pt-12 pb-20 md:px-24 px-10 md:flex md:gap-16">
     <div class="md:basis-2/6">
@@ -225,6 +217,8 @@
       </form>
     </div>
   </section>
+
+
   @push('script')
     <script src="https://unpkg.com/maplibre-gl/dist/maplibre-gl.js"></script>
     <link rel="stylesheet" href="https://unpkg.com/maplibre-gl/dist/maplibre-gl.css">
@@ -233,7 +227,7 @@
       var longitude = "{{ $location->longitude }}"
       var map = new maplibregl.Map({
         container: 'map', // container id
-        style: 'https://api.maptiler.com/maps/hybrid/style.json?key=get_your_own_OpIi9ZULNHzrESv6T2vL', // satelit
+        style: 'https://api.maptiler.com/maps/hybrid/style.json?key=59l19GYa3vqXGGIlpAez', // satelit
         // style: 'https://api.maptiler.com/maps/basic-v2/style.json?key=59l19GYa3vqXGGIlpAez', // basic
         // style: 'https://api.maptiler.com/maps/streets-v2/style.json?key=59l19GYa3vqXGGIlpAez', // street
 
@@ -243,27 +237,6 @@
 
       map.addControl(new maplibregl.NavigationControl());
       map.scrollZoom.disable();
-
-      // // markers
-      // const monument = [119.8295304629999, -3.672330042457889];
-      // // create the popup
-      // const popup = new maplibregl.Popup({
-      //   offset: 25
-      // }).setText(
-      //   'Construction on the Washington Monument began in 1848.'
-      // );
-
-      // // create DOM element for the marker
-      // const el = document.createElement('div');
-      // // el.id = 'marker';
-
-      // // create the marker
-      // new maplibregl.Marker({
-      //     // element: el
-      //   })
-      //   .setLngLat(monument)
-      //   .setPopup(popup) // sets a popup on this marker
-      //   .addTo(map);
 
       // polygon area
       map.on('load', () => {
@@ -308,7 +281,95 @@
           }
         });
       });
+
+      // @foreach ($markers as $marker)
+      //   console.log(`{{ $marker->name }}`);
+      // @endforeach
+      // var markers = [
+      //   @foreach ($markers as $marker)
+      //     {
+      //       "lngLat": [{{ $marker['longitude'] }}, {{ $marker['latitude'] }}],
+      //       "popupHTML": "{!! $marker['popupHTML'] !!}"
+      //     },
+      //   @endforeach
+      // ];
+
+      // markers.forEach(marker => {
+      //   console.log(marker.LngLat);
+      // });
+
+      // markers.forEach(marker => {
+      //   new maplibregl.Marker()
+      //     .setLngLat(marker.lngLat)
+      //     .addTo(map)
+      //     .setPopup(new maplibregl.Popup().setHTML(marker.popupHTML));
+      // });
+      //     const marker = new maplibregl.Marker()
+      //       .setLngLat([119.8295304629999, -3.672330042457889])
+      //       .addTo(map);
+      //     const popup = new maplibregl.Popup()
+      //       .setHTML(
+      //         `<div class="flex max-h-full">
+  //   <div class="basis-3/12">
+  //     <img src="{{ asset('images/profile-1.webp') }}" class="h-full" alt="">
+  //   </div>
+  //   <div class="basis-9/12 px-2 pt-1">
+  //     <h1 class="font-semibold line-clamp-1">Nama tempat</h1>
+  //     <p class="text-justify text-[0.7rem] line-clamp-2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat numquam dolor qui cum
+  //       ipsa minus?</p>
+  //     <div class="text-xs flex justify-end">
+  //         <a href='https://maps.google.com/?q=-3.672330042457889,119.8295304629999' target='_blank' class='flex text-blue-200 underline'>
+  //           <img src="{{ asset('images/maps_logo.png') }}" width='15px' />
+  //           Maps
+  //         </a>
+  //       </div>
+  //   </div>
+  // </div>`
+      //       );
+      //     marker.setPopup(popup);
+
+
+      let markerName = [];
+      let markerLongitude = [];
+      let markerLatitude = [];
+      let markerImage = [];
+      let markerDescription = [];
+    </script>
+    @foreach ($markers as $marker)
+      <script>
+        markerName.push("{{ $marker->name }}")
+        markerLongitude.push("{{ $marker->longitude }}")
+        markerLatitude.push("{{ $marker->latitude }}")
+        markerImage.push("{{ $marker->image }}")
+        markerDescription.push("{{ $marker->description }}")
+      </script>
+    @endforeach
+    <script>
+      markerName.forEach((name, index) => {
+        linkImage = markerImage[index] != '' ? 'storage/' + markerImage[index] : 'images/map.webp';
+        new maplibregl.Marker()
+          .setLngLat([markerLongitude[index], markerLatitude[index]])
+          .addTo(map)
+          .setPopup(new maplibregl.Popup().setHTML(`
+          <div class="flex">
+            <div class="basis-3/12">
+              <img src="{{ asset('${linkImage}') }}" class="h-full object-center" alt="" style="max-height: 80px">
+            </div>
+            <div class="basis-9/12 px-2 pt-1 flex flex-col justify-between">
+              <div>
+                <h1 class="font-semibold line-clamp-1">${name}</h1>
+                <p class="text-justify text-[0.7rem] line-clamp-2">${markerDescription[index]}</p>
+              </div>
+              <div class="text-xs flex justify-end">
+                  <a href='https://maps.google.com/?q=${markerLatitude[index]},${markerLongitude[index]}' target='_blank' class='flex text-blue-200 underline'>
+                    <img src="{{ asset('images/maps_logo.png') }}" width='15px' />
+                    Maps
+                  </a>
+                </div>
+            </div>
+          </div>
+        `));
+      });
     </script>
   @endpush
-
 </div>

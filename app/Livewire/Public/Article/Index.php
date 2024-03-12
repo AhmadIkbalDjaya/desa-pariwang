@@ -10,7 +10,7 @@ class Index extends Component
     public function render()
     {
         return view('livewire.public.article.index',[
-            "articles" => Article::latest()->get(),
+            "articles" => Article::orderBy('publish_date', 'DESC')->get(),
         ])->title("Berita & Kegiatan");
     }
 }
