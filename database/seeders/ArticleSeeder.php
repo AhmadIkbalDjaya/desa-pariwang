@@ -23,8 +23,8 @@ class ArticleSeeder extends Seeder
                             &quot;Ini juga dibuat dari bahan alami seperti daun sirsak dan daun pepaya, sehingga sangat aman bagi kesehatan dan bisa mengurangi bahan kimia pada bahan pokok yang dikonsumsi sehari-hari oleh masyarakat di desa.&quot; Lanjutnya.<br />
                             &quot;Semoga kegiatan ini bermanfaat bagi masyarakat di desa Pariwang .&quot; Ungkap Andi Abdi Mulki Nugraha selaku Kordinator Desa (Kordes)di desa Pariwang.<br />
                             Setelah seminar pembuatan Biopeptisida ini selesai,masyarakat berharap mahasiswa KKN bisa membantu dalam pembuatan Biopeptisida tersebut untuk digunakan pada tanaman mereka masing-masing.</p>",
-                "publish_date"  => "2024-02-17",
-                "image" => "article/Os5uR5bGJEDFoRmNxOxANTUxZFx7gJHJq2c5yFZN.jpg",
+                "publish_date"  => "2024-02-7",
+                "image" => "article/YYyiiQ1Kc7moFlbIAhlmO8peTwn0OL4CCX6XDIyA.jpg",
             ],
             [
                 "title" => "Festival Anak Sholeh Mahasiswa KKN UIN Alauddin Makassar Angkatan 74",
@@ -35,8 +35,17 @@ class ArticleSeeder extends Seeder
                 Pengurus masjid desa sangat antusias dalam membantu kegiatan mahasiswa ini&nbsp;<br />
                 Kegiatan seperti ini akan membantu membangun minat mengaji anak-anak di desa. ujar Salmansyah selaku pengurus masjid desa Pariwang.<br />
                 &quot;saya suka kalau ada kegiatan seperti ini,mudah-mudahan ada terus kegiatan seperti ini nantinya.&quot;lanjutnya.</p>",
-                "publish_date"  => "2024-02-7",
+                "publish_date"  => "2024-02-17",
                 "image" => "article/DrpGIclR884rhUnjmMHl4PlsJlPG2FNNQ9f1Gl6o.jpg",
+            ],
+            [
+                "title" => "Pekan Olahraga Desa Pariwang (PORDES)",
+                "body"  => "<p>Karantaruna desa Pariwang bekerja sama dengan mahasiswa KKN Universitas Islam Negeri Alauddin Makassar angkatan 74, menyelenggarakan kegiatan Pekan Olahraga Desa Pariwang (PORDES) 21 Februari 2024 di Lapangan sepak bola pariwang. Kegiatan ini dimeriahkan dengan banyaknya lomba yang diadakan, mulai dari sepak bola, takraw, tarik tambang dan lain sebagainya.&nbsp;</p>
+                <p>Warga desa sangat antusias dalam kegiatan tersebut,itu terlihat dari banyaknya warga yg ikut serta dalam PORDES ini mulai dari anak kecil hingga orang dewasa.&nbsp;Kegiatan PORDES juga cukup membantu dalam menambah pendapatan warga desa, itu terlihat dari adanya beberapa warga yang berjualan di sekitar lapangan sepak bola.<br />
+                Fikri selaku mahasiswa KKN mengatakan bahwa program kerja ini menjadi program utama dari beberapa program kerja yang telah dicanangkan.&nbsp;&quot;Alhamdullahnya pemuda di desa sangat antusias dalam kegiatan kami dan bantuan tenaga dari warga membantu memperlancar kegiatan ini.&quot; Lanjutnya</p>
+                <p>PORDES ini membantu dalam mempererat silahturahmi warga di desa pariwang terutama para pemuda disini. Ungkap Mail selaku Ketua Karantaruna Desa Pariwang &quot;tidak usahmi mahal-mahal hadiahnya semampunya teman-teman mahasiswa KKN saja.&quot; lanjutnya.&nbsp;Kegiatan ini akan terus berlangsung hingga 29 februari mendatang.</p>",
+                "publish_date"  => "2024-02-21",
+                "image" => "article/WdMJaf1CxCo8PMkqdK0Bd5bwNPrXtY4oEzoy8SzM.jpg",
             ],
         ];
         foreach ($articles as $article) {

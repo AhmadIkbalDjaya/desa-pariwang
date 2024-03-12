@@ -45,7 +45,7 @@ class VillageAparatusSeeder extends Seeder
                 "gender" => "female",
             ],
             [
-                "name" => "Kaur Perencanaan",
+                "name" => "Salmia, SE",
                 "position" => "Kaur Perencaan",
                 "gender" => "female",
             ],

@@ -6,8 +6,8 @@
       }
 
       /* .maplibregl-popup {
-                                                                                                                                                                                      max-width: 200px;
-                                                                                                                                                                                    } */
+                                                                                                                                                                                                          max-width: 200px;
+                                                                                                                                                                                                        } */
 
       .maplibregl-popup-content {
         padding: 0px !important;
@@ -84,7 +84,7 @@
     @endif
   </section>
 
-  <section id="article" class="md:mx-32 md:my-20 mx-5 mt-6">
+  <section id="population" class="md:mx-32 md:my-20 mx-5 mt-6">
     <h1 class="text-green-700 text-xl md:text-3xl font-bold font-plusJakartaSans text-center">Administrasi Penduduk
     </h1>
     <p class="text-center md:px-24 hidden md:block my-2">
@@ -94,7 +94,6 @@
     <p class="text-center md:px-24 md:hidden">
       Efisiensi pengelolaan data dan informasi kependudukan yang lebih efektif.
     </p>
-
     <div class="flex py-2 justify-center">
       <div class="basis-4/12 md:basis-3/12 text-center">
         <img src="{{ asset('images/crowd.webp') }}" alt="" srcset="" class="mx-auto w-16 md:w-28">
@@ -131,8 +130,10 @@
     </div>
   </section>
 
-  <section id="welcome" class="font-plusJakartaSans md:mx-40 md:my-20 mx-7 my-8">
-    <h1 class="text-green-700 text-3xl font-bold font-plusJakartaSans text-center pb-3">Lokasi Desa</h1>
+  <section id="village-map" class="font-plusJakartaSans md:mx-40 md:my-20 mx-7 my-8">
+    <h1 class="text-green-700 text-3xl font-bold font-plusJakartaSans text-center pb-1">Peta Desa</h1>
+    <p class="text-center pb-3 font-plusJakartaSans">Menampilkan Peta Desa Dengan Penanda Lokasi-Lakasi Tertentu di Desa
+    </p>
     <div id="map" style="height: 475px;" class="rounded-sm z-0"></div>
   </section>
 
@@ -216,6 +217,8 @@
       </form>
     </div>
   </section>
+
+
   @push('script')
     <script src="https://unpkg.com/maplibre-gl/dist/maplibre-gl.js"></script>
     <link rel="stylesheet" href="https://unpkg.com/maplibre-gl/dist/maplibre-gl.css">
@@ -352,9 +355,11 @@
             <div class="basis-3/12">
               <img src="{{ asset('${linkImage}') }}" class="h-full object-center" alt="" style="max-height: 80px">
             </div>
-            <div class="basis-9/12 px-2 pt-1">
-              <h1 class="font-semibold line-clamp-1">${name}</h1>
-              <p class="text-justify text-[0.7rem] line-clamp-2">${markerDescription[index]}</p>
+            <div class="basis-9/12 px-2 pt-1 flex flex-col justify-between">
+              <div>
+                <h1 class="font-semibold line-clamp-1">${name}</h1>
+                <p class="text-justify text-[0.7rem] line-clamp-2">${markerDescription[index]}</p>
+              </div>
               <div class="text-xs flex justify-end">
                   <a href='https://maps.google.com/?q=${markerLatitude[index]},${markerLongitude[index]}' target='_blank' class='flex text-blue-200 underline'>
                     <img src="{{ asset('images/maps_logo.png') }}" width='15px' />

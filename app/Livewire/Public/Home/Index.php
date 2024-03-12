@@ -17,7 +17,7 @@ class Index extends Component
     public function render()
     {
         return view('livewire.public.home.index', [
-            "articles" => Article::latest()->limit(3)->get(),
+            "articles" => Article::orderBy('publish_date', 'DESC')->limit(3)->get(),
             "bumdeses" => Bumdes::latest()->limit(2)->get(),
             "profile" => Profile::get()->first(),
             "population" => Population::get()->first(),
