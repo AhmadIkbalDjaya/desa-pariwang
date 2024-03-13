@@ -15,15 +15,14 @@
     <div class="card-body">
       <h5 class="card-title fw-semibold mb-4">Berita</h5>
       <p class="mb-0">Berita Terkini Desa Pariwang</p>
-      <div class="d-flex justify-content-between">
-        <div>
+      <div class="row justify-content-between">
+        <div class="col-md-3 my-1 px-0">
           <input wire:model.live="search" class="form-control" type="text" placeholder="Cari Berita"
             aria-label="default input example">
         </div>
-        <a href="{{ route('admin.article.create') }}" wire:navigate class="text-white">
-          <button class="btn btn-primary add-button">
-            <i class="ti ti-plus"></i> Berita
-          </button>
+        <a href="{{ route('admin.article.create') }}" wire:navigate
+          class="btn btn-primary add-button text-white col-md-3 my-1">
+          <i class="ti ti-plus"></i> Berita
         </a>
       </div>
       <div class="table-responsive">

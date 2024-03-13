@@ -30,10 +30,10 @@
     <div class="card-body">
       <form action="" wire:submit='store' enctype="multipart/form-data">
         <div class="row mb-3">
-          <div class="col-5 col-lg-4">
+          <div class="col-12 col-md-4">
             <p class="fs-4">Nama Bumdes <x-admin.form.required /> </p>
           </div>
-          <div class="col-7 col-lg-8">
+          <div class="col-12 col-md-8">
             <input wire:model.live='form.name' class="form-control @error('form.name') is-invalid @enderror"
               type="text" placeholder="Nama Badan Usaha">
             @error('form.name')
@@ -42,10 +42,10 @@
           </div>
         </div>
         <div class="row mb-3">
-          <div class="col-5 col-lg-4">
+          <div class="col-12 col-md-4">
             <p class="fs-4">Deskripsi Bumdes <x-admin.form.required /> </p>
           </div>
-          <div class="col-7 col-lg-8">
+          <div class="col-12 col-md-8">
             <textarea wire:model.live='form.description' class="form-control @error('form.description') is-invalid @enderror"
               id="" rows="5"></textarea>
             @error('form.description')
@@ -54,10 +54,10 @@
           </div>
         </div>
         <div class="row mb-3">
-          <div class="col-5 col-lg-4">
+          <div class="col-12 col-md-4">
             <p class="fs-4">Direktur <x-admin.form.required /> </p>
           </div>
-          <div class="col-7 col-lg-8">
+          <div class="col-12 col-md-8">
             <input wire:model.live='form.director' class="form-control @error('form.director') is-invalid @enderror"
               type="text" placeholder="Nama Direktur Bumdes">
             @error('form.director')
@@ -66,10 +66,10 @@
           </div>
         </div>
         <div class="row mb-3">
-          <div class="col-5 col-lg-4">
+          <div class="col-12 col-md-4">
             <p class="fs-4">Status <x-admin.form.required /> </p>
           </div>
-          <div class="col-7 col-lg-8">
+          <div class="col-12 col-md-8">
             <div class="row">
               <div class="col-md-3 d-flex align-center gap-1">
                 <input type="radio" wire:model.live='form.certification_status' value="1"
@@ -88,10 +88,10 @@
         </div>
         {{-- @if ($form->certification_status)
           <div class="row mb-3">
-            <div class="col-5 col-lg-4">
+            <div class="col-12 col-md-4">
               <p class="fs-4">Sertifikat</p>
             </div>
-            <div class="col-7 col-lg-8">
+            <div class="col-12 col-md-8">
               <input wire:model.live='form.certificate_file'
                 class="form-control @error('form.certificate_file') is-invalid @enderror" type="file"
                 placeholder="Default input">
@@ -102,10 +102,10 @@
           </div>
         @endif --}}
         <div class="row mb-3">
-          <div class="col-5 col-lg-4">
+          <div class="col-12 col-md-4">
             <p class="fs-4">Jumlah Pegawai <x-admin.form.required /> </p>
           </div>
-          <div class="col-7 col-lg-8">
+          <div class="col-12 col-md-8">
             <input wire:model.live='form.total_employee'
               class="form-control @error('form.total_employee') is-invalid @enderror" type="number" min="0"
               placeholder="Jumlah Pegawai Bumdes">
@@ -115,10 +115,10 @@
           </div>
         </div>
         <div class="row mb-3">
-          <div class="col-5 col-lg-4">
+          <div class="col-12 col-md-4">
             <p class="fs-4">Unit Usaha <x-admin.form.required /> </p>
           </div>
-          <div class="col-7 col-lg-8">
+          <div class="col-12 col-md-8">
             <input wire:model.live='form.unit' class="form-control @error('form.unit') is-invalid @enderror"
               type="text" placeholder="Unit Usaha Bumdes">
             @error('form.unit')
@@ -127,10 +127,10 @@
           </div>
         </div>
         <div class="row mb-3">
-          <div class="col-5 col-lg-4">
+          <div class="col-12 col-md-4">
             <p class="fs-4">Foto Bumdes</p>
           </div>
-          <div class="col-7 col-lg-8">
+          <div class="col-12 col-md-8">
             <input wire:model.live='form.image' class="form-control @error('form.image') is-invalid @enderror"
               type="file" placeholder="Upload Gambar Bumdes">
             @error('form.image')
@@ -139,10 +139,10 @@
           </div>
         </div>
         <div class="row mb-3">
-          <div class="col-5 col-lg-4">
+          <div class="col-12 col-md-4">
             <p class="fs-4">Kontak</p>
           </div>
-          <div class="col-7 col-lg-8">
+          <div class="col-12 col-md-8">
             <input wire:model.live='form.phone' class="form-control @error('form.phone') is-invalid @enderror"
               type="number" placeholder="Kontak Bumdes">
             @error('form.phone')

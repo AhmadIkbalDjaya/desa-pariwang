@@ -36,45 +36,43 @@
 
   <div class="card">
     <div class="card-body">
-      <div class="row">
-        <div class="col-12 col-md-6">
-          <div class="row mb-3">
-            <div class="col-5 col-lg-4">
-              <p class="fs-4">Nama Tempat</p>
-            </div>
-            <div class="col-7 col-lg-8">
-              <p class="fs-4">: {{ $marker->name }}</p>
-            </div>
-          </div>
-          <div class="row mb-3">
-            <div class="col-5 col-lg-4">
-              <p class="fs-4">Deskripsi</p>
-            </div>
-            <div class="col-7 col-lg-8">
-              <p class="fs-4">: {{ $marker->description }}</p>
-            </div>
-          </div>
-          <div class="row mb-3">
-            <div class="col-5 col-lg-4">
-              <p class="fs-4">Longitude</p>
-            </div>
-            <div class="col-7 col-lg-8">
-              <p class="fs-4">: {{ $marker->longitude }}</p>
-            </div>
-          </div>
-          <div class="row mb-3">
-            <div class="col-5 col-lg-4">
-              <p class="fs-4">Latitude</p>
-            </div>
-            <div class="col-7 col-lg-8">
-              <p class="fs-4">: {{ $marker->latitude }}</p>
-            </div>
-          </div>
+      <div class="row mb-3">
+        <div class="col-5 col-md-4">
+          <p class="fs-4">Nama Tempat</p>
+        </div>
+        <div class="col-7 col-md-8">
+          <p class="fs-4">: {{ $marker->name }}</p>
         </div>
       </div>
-      <div class="col-12 col-md-6">
-        <img src="{{ $marker->image ? asset('storage/' . $marker->image) : asset('images/bumdes-icon2.webp') }}"
-          alt="" srcset="" class="img-fluid px-md-5">
+      <div class="row mb-3">
+        <div class="col-5 col-md-4">
+          <p class="fs-4">Deskripsi</p>
+        </div>
+        <div class="col-7 col-md-8">
+          <p class="fs-4">: {{ $marker->description }}</p>
+        </div>
+      </div>
+      <div class="row mb-3">
+        <div class="col-5 col-md-4">
+          <p class="fs-4">Longitude</p>
+        </div>
+        <div class="col-7 col-md-8">
+          <p class="fs-4">: {{ $marker->longitude }}</p>
+        </div>
+      </div>
+      <div class="row mb-3">
+        <div class="col-5 col-md-4">
+          <p class="fs-4">Latitude</p>
+        </div>
+        <div class="col-7 col-md-8">
+          <p class="fs-4">: {{ $marker->latitude }}</p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-6">
+          <img src="{{ $marker->image ? asset('storage/' . $marker->image) : asset('images/bumdes-icon2.webp') }}"
+            alt="" srcset="" class="img-fluid px-md-5">
+        </div>
       </div>
     </div>
   </div>

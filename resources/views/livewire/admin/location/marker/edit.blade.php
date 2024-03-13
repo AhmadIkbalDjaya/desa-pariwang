@@ -30,10 +30,10 @@
     <div class="card-body">
       <form action="" wire:submit='update' enctype="multipart/form-data">
         <div class="row mb-3">
-          <div class="col-5 col-lg-4">
+          <div class="col-12 col-md-4">
             <p class="fs-4">Nama Tempat <x-admin.form.required /> </p>
           </div>
-          <div class="col-7 col-lg-8">
+          <div class="col-12 col-md-8">
             <input wire:model.live='form.name' class="form-control @error('form.name') is-invalid @enderror"
               type="text" placeholder="Masukkan Nama Tempat">
             @error('form.name')
@@ -42,10 +42,10 @@
           </div>
         </div>
         <div class="row mb-3">
-          <div class="col-5 col-lg-4">
+          <div class="col-12 col-md-4">
             <p class="fs-4">Deskripsi <x-admin.form.required /> </p>
           </div>
-          <div class="col-7 col-lg-8">
+          <div class="col-12 col-md-8">
             <input wire:model.live='form.description'
               class="form-control @error('form.description') is-invalid @enderror" type="text"
               placeholder="Masukkan Deskripsi Tempat">
@@ -55,10 +55,10 @@
           </div>
         </div>
         <div class="row mb-3">
-          <div class="col-5 col-lg-4">
+          <div class="col-12 col-md-4">
             <p class="fs-4">Longitude <x-admin.form.required /> </p>
           </div>
-          <div class="col-7 col-lg-8">
+          <div class="col-12 col-md-8">
             <input wire:model.live='form.longitude' class="form-control @error('form.longitude') is-invalid @enderror"
               type="text" placeholder="Masukkan Longitude Tempat">
             @error('form.longitude')
@@ -67,10 +67,10 @@
           </div>
         </div>
         <div class="row mb-3">
-          <div class="col-5 col-lg-4">
+          <div class="col-12 col-md-4">
             <p class="fs-4">Latitude <x-admin.form.required /> </p>
           </div>
-          <div class="col-7 col-lg-8">
+          <div class="col-12 col-md-8">
             <input wire:model.live='form.latitude' class="form-control @error('form.latitude') is-invalid @enderror"
               type="text" placeholder="Masukkan Latitude Tempat">
             @error('form.latitude')
@@ -79,10 +79,10 @@
           </div>
         </div>
         <div class="row mb-3">
-          <div class="col-5 col-lg-4">
+          <div class="col-12 col-md-4">
             <p class="fs-4">Foto Tempat</p>
           </div>
-          <div class="col-7 col-lg-8">
+          <div class="col-12 col-md-8">
             <input wire:model.live='form.image' class="form-control @error('form.image') is-invalid @enderror"
               type="file" placeholder="Upload Gambar Tempat">
             @error('form.image')

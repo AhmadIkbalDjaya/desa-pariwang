@@ -31,10 +31,10 @@
     <div class="card-body">
       <form action="" wire:submit='update' enctype="multipart/form-data">
         <div class="row mb-3">
-          <div class="col-5 col-lg-4">
+          <div class="col-12 col-md-4">
             <p class="fs-4">Nama <x-admin.form.required /> </p>
           </div>
-          <div class="col-7 col-lg-8">
+          <div class="col-12 col-md-8">
             <input wire:model.live='form.name' class="form-control @error('form.name') is-invalid @enderror"
               type="text" placeholder="Nama Perangkat Desa">
             @error('form.name')
@@ -43,10 +43,10 @@
           </div>
         </div>
         <div class="row mb-3">
-          <div class="col-5 col-lg-4">
+          <div class="col-12 col-md-4">
             <p class="fs-4">Jabatan <x-admin.form.required /> </p>
           </div>
-          <div class="col-7 col-lg-8">
+          <div class="col-12 col-md-8">
             <input wire:model.live='form.position' class="form-control @error('form.position') is-invalid @enderror"
               type="text" placeholder="Jabatan Perangkat Desa">
             @error('form.position')
@@ -55,10 +55,10 @@
           </div>
         </div>
         <div class="row mb-3">
-          <div class="col-5 col-lg-4">
+          <div class="col-12 col-md-4">
             <p class="fs-4">Tempat, Tanggal Lahir</p>
           </div>
-          <div class="col-7 col-lg-8">
+          <div class="col-12 col-md-8">
             <div class="row">
               <div class="col-md-4">
                 <input wire:model.live='form.pob' class="form-control @error('form.pob') is-invalid @enderror"
@@ -78,10 +78,10 @@
           </div>
         </div>
         <div class="row mb-3">
-          <div class="col-5 col-lg-4">
+          <div class="col-12 col-md-4">
             <p class="fs-4">Jenis Kelamin <x-admin.form.required /> </p>
           </div>
-          <div class="col-7 col-lg-8">
+          <div class="col-12 col-md-8">
             <select wire:model.live='form.gender' class="form-select @error('form.gender') is-invalid @enderror"
               name="" id="">
               <option>Jenis Kelamin</option>
@@ -94,10 +94,10 @@
           </div>
         </div>
         <div class="row mb-3">
-          <div class="col-5 col-lg-4">
+          <div class="col-12 col-md-4">
             <p class="fs-4">Pendidikan</p>
           </div>
-          <div class="col-7 col-lg-8">
+          <div class="col-12 col-md-8">
             <input wire:model.live='form.education' class="form-control @error('form.education') is-invalid @enderror"
               type="text" placeholder="Pendidikan Terakhir">
             @error('form.education')
@@ -106,10 +106,10 @@
           </div>
         </div>
         <div class="row mb-3">
-          <div class="col-5 col-lg-4">
+          <div class="col-12 col-md-4">
             <p class="fs-4">Pekerjaan</p>
           </div>
-          <div class="col-7 col-lg-8">
+          <div class="col-12 col-md-8">
             <input wire:model.live='form.job' class="form-control @error('form.job') is-invalid @enderror"
               type="text" placeholder="Pendidikan Terakhir">
             @error('form.job')
@@ -118,10 +118,10 @@
           </div>
         </div>
         <div class="row mb-3">
-          <div class="col-5 col-lg-4">
+          <div class="col-12 col-md-4">
             <p class="fs-4">Agama</p>
           </div>
-          <div class="col-7 col-lg-8">
+          <div class="col-12 col-md-8">
             <select wire:model.live='form.religion' class="form-select @error('form.religion') is-invalid @enderror"
               name="" id="">
               <option>Agama</option>
@@ -138,10 +138,10 @@
           </div>
         </div>
         <div class="row mb-3">
-          <div class="col-5 col-lg-4">
+          <div class="col-12 col-md-4">
             <p class="fs-4">Foto</p>
           </div>
-          <div class="col-7 col-lg-8">
+          <div class="col-12 col-md-8">
             <input wire:model.live='form.photo' class="form-control @error('form.photo') is-invalid @enderror"
               type="file" accept="image/*" placeholder="Upload Gambar Perangkat Desa">
             @error('form.photo')
