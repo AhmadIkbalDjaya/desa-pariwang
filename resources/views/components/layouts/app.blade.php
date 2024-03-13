@@ -19,10 +19,16 @@
   <link rel="stylesheet" href="{{ asset('css/style.css') }}">
   @vite('resources/css/app.css')
 
+  <script type="application/ld+json">
+    {
+      "@context": "http://schema.org",
+      "@type": "Organization",
+      "name": "Nama Situs Anda",
+      "url": "{{ env('APP_URL') }}",
+      "logo": "{{ asset('images/enrekang.webp') }}"
+    }
+  </script>
   {{-- tag for SEO --}}
-  {{-- <meta name="description" content="Website Resmi Desa Pariwang">
-  <meta name="keywords" content="Desa Pariwang, pariwang, pariwang.com, pariwisata, destinasi wisata, budaya, alam">
-  <meta name="author" content="Desa Pariwang"> --}}
   <meta name="description" content="Dapatkan Informasi Administrasi dan Berita Terkini Desa Pariwang">
   <meta name="application-name" content="Website Profil Desa Pariwang">
   <meta name="generator" content="Pariwang">
