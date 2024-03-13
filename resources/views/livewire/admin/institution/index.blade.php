@@ -15,15 +15,14 @@
     <div class="card-body">
       <h5 class="card-title fw-semibold mb-4">Kelembagaan</h5>
       <p class="mb-0">Daftar Kelembagaan Yang Dimiliki Desa</p>
-      <div class="d-flex justify-content-between">
-        <div>
+      <div class="row justify-content-between">
+        <div class="col-md-3 my-1 px-0">
           <input wire:model.live="search" class="form-control" type="text" placeholder="Cari Lembaga"
             aria-label="default input example">
         </div>
-        <a href="{{ route('admin.institution.create') }}" wire:navigate class="text-white">
-          <button class="btn btn-primary add-button">
-            <i class="ti ti-plus"></i> Lembaga
-          </button>
+        <a href="{{ route('admin.institution.create') }}" wire:navigate
+          class="btn btn-primary add-button text-white col-md-3 my-1">
+          <i class="ti ti-plus"></i> Lembaga
         </a>
       </div>
       <div class="table-responsive">
@@ -75,7 +74,6 @@
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body text-center">
-          {{-- <p class="fs-5">Yakin Ingin Menghapus {{ $bumdes_name }}?</p> --}}
           <p class="fs-5">Yakin Ingin Menghapus {{ $form->name }}?</p>
         </div>
         <div class="modal-footer">

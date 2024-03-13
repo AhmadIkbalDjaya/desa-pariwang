@@ -23,10 +23,10 @@
     <div class="card-body">
       <form action="" wire:submit='update' enctype="multipart/form-data">
         <div class="row mb-3">
-          <div class="col-5 col-lg-4">
+          <div class="col-12 col-md-4">
             <p class="fs-4">Longitude <x-admin.form.required /> </p>
           </div>
-          <div class="col-7 col-lg-8">
+          <div class="col-12 col-md-8">
             <input wire:model.live='form.longitude' class="form-control @error('form.longitude') is-invalid @enderror"
               type="text" placeholder="Masukkan Longitude Desa">
             @error('form.longitude')
@@ -35,10 +35,10 @@
           </div>
         </div>
         <div class="row mb-3">
-          <div class="col-5 col-lg-4">
+          <div class="col-12 col-md-4">
             <p class="fs-4">Latitude <x-admin.form.required /> </p>
           </div>
-          <div class="col-7 col-lg-8">
+          <div class="col-12 col-md-8">
             <input wire:model.live='form.latitude' class="form-control @error('form.latitude') is-invalid @enderror"
               type="text" placeholder="Masukkan Latitude Desa">
             @error('form.latitude')
@@ -47,10 +47,10 @@
           </div>
         </div>
         <div class="row mb-3">
-          <div class="col-5 col-lg-4">
+          <div class="col-12 col-md-4">
             <p class="fs-4">Provinsi <x-admin.form.required /> </p>
           </div>
-          <div class="col-7 col-lg-8">
+          <div class="col-12 col-md-8">
             <input wire:model.live='form.province' class="form-control @error('form.province') is-invalid @enderror"
               type="text" placeholder="Masukkan Provinsi Desa">
             @error('form.province')
@@ -59,10 +59,10 @@
           </div>
         </div>
         <div class="row mb-3">
-          <div class="col-5 col-lg-4">
+          <div class="col-12 col-md-4">
             <p class="fs-4">Kabupaten <x-admin.form.required /> </p>
           </div>
-          <div class="col-7 col-lg-8">
+          <div class="col-12 col-md-8">
             <input wire:model.live='form.regency' class="form-control @error('form.regency') is-invalid @enderror"
               type="text" placeholder="Masukkan Kabupaten Desa">
             @error('form.regency')
@@ -71,10 +71,10 @@
           </div>
         </div>
         <div class="row mb-3">
-          <div class="col-5 col-lg-4">
+          <div class="col-12 col-md-4">
             <p class="fs-4">Kecamatan <x-admin.form.required /> </p>
           </div>
-          <div class="col-7 col-lg-8">
+          <div class="col-12 col-md-8">
             <input wire:model.live='form.district' class="form-control @error('form.district') is-invalid @enderror"
               type="text" placeholder="Masukkan Kecamatan Desa">
             @error('form.district')
@@ -83,10 +83,10 @@
           </div>
         </div>
         <div class="row mb-3">
-          <div class="col-5 col-lg-4">
+          <div class="col-12 col-md-4">
             <p class="fs-4">Batas Timur <x-admin.form.required /> </p>
           </div>
-          <div class="col-7 col-lg-8">
+          <div class="col-12 col-md-8">
             <input wire:model.live='form.border_east'
               class="form-control @error('form.border_east') is-invalid @enderror" type="text"
               placeholder="Masukkan Batas Timut Desa">
@@ -96,10 +96,10 @@
           </div>
         </div>
         <div class="row mb-3">
-          <div class="col-5 col-lg-4">
+          <div class="col-12 col-md-4">
             <p class="fs-4">Batas Barat <x-admin.form.required /> </p>
           </div>
-          <div class="col-7 col-lg-8">
+          <div class="col-12 col-md-8">
             <input wire:model.live='form.border_west'
               class="form-control @error('form.border_west') is-invalid @enderror" type="text"
               placeholder="Masukkan Batas Barat Desa">
@@ -109,10 +109,10 @@
           </div>
         </div>
         <div class="row mb-3">
-          <div class="col-5 col-lg-4">
+          <div class="col-12 col-md-4">
             <p class="fs-4">Batas Selatan <x-admin.form.required /> </p>
           </div>
-          <div class="col-7 col-lg-8">
+          <div class="col-12 col-md-8">
             <input wire:model.live='form.border_south'
               class="form-control @error('form.border_south') is-invalid @enderror" type="text"
               placeholder="Masukkan Batas Selatan Desa">
@@ -122,10 +122,10 @@
           </div>
         </div>
         <div class="row mb-3">
-          <div class="col-5 col-lg-4">
+          <div class="col-12 col-md-4">
             <p class="fs-4">Batas Utara <x-admin.form.required /> </p>
           </div>
-          <div class="col-7 col-lg-8">
+          <div class="col-12 col-md-8">
             <input wire:model.live='form.border_north'
               class="form-control @error('form.border_north') is-invalid @enderror" type="text"
               placeholder="Masukkan Batas Utara Desa">
@@ -144,15 +144,17 @@
   <div class="card">
     <div class="card-body">
       <h5 class="card-title fw-semibold mb-3">Penanda Lokasi</h5>
-      <div class="d-flex justify-content-between">
-        <div>
+      <div class="row justify-content-between">
+        <div class="col-md-3 my-1 px-0">
           <input wire:model.live="search" class="form-control" type="text" placeholder="Cari Tempat"
             aria-label="default input example">
         </div>
-        <a href="{{ route('admin.location.marker.create') }}" wire:navigate class="text-white">
-          <button class="btn btn-primary add-button">
-            <i class="ti ti-plus"></i> Penanda
-          </button>
+        <a href="{{ route('admin.location.marker.create') }}" wire:navigate
+          class="btn btn-primary add-button text-white col-md-3 my-1">
+          <i class="ti ti-plus"></i>
+          Penanda
+          {{-- <button class="btn btn-primary add-button">
+          </button> --}}
         </a>
       </div>
       <div class="table-responsive">

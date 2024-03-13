@@ -22,10 +22,10 @@
     <div class="card-body">
       <form action="" wire:submit='update' enctype="multipart/form-data">
         <div class="row mb-3">
-          <div class="col-5 col-lg-4">
+          <div class="col-12 col-md-4">
             <p class="fs-4">Nama Desa <x-admin.form.required /> </p>
           </div>
-          <div class="col-7 col-lg-8">
+          <div class="col-12 col-md-8">
             <input wire:model.live='form.name' class="form-control @error('form.name') is-invalid @enderror"
               type="text" placeholder="Masukkan Nama Desa">
             @error('form.name')
@@ -34,10 +34,10 @@
           </div>
         </div>
         <div class="row mb-3">
-          <div class="col-5 col-lg-4">
+          <div class="col-12 col-md-4">
             <p class="fs-4">Deskripsi Desa <x-admin.form.required /> </p>
           </div>
-          <div class="col-7 col-lg-8">
+          <div class="col-12 col-md-8">
             <textarea wire:model.live='form.description' name="" id="" rows="6" class="form-control w-100"></textarea>
             @error('form.description')
               <div class="invalid-feedback text-start">{{ $message }}</div>
@@ -45,10 +45,10 @@
           </div>
         </div>
         <div class="row mb-3">
-          <div class="col-5 col-lg-4">
+          <div class="col-12 col-md-4">
             <p class="fs-4">Potensi Desa <x-admin.form.required /> </p>
           </div>
-          <div class="col-7 col-lg-8">
+          <div class="col-12 col-md-8">
             <input wire:model.live='form.potency' class="form-control @error('form.potency') is-invalid @enderror"
               type="text" placeholder="Masukkan Potensi Desa">
             @error('form.potency')
@@ -57,10 +57,10 @@
           </div>
         </div>
         <div class="row mb-3">
-          <div class="col-5 col-lg-4">
+          <div class="col-12 col-md-4">
             <p class="fs-4">Kontak <x-admin.form.required /> </p>
           </div>
-          <div class="col-7 col-lg-8">
+          <div class="col-12 col-md-8">
             <input wire:model.live='form.contact' class="form-control @error('form.contact') is-invalid @enderror"
               type="text" placeholder="Masukkan Kontak Desa">
             @error('form.contact')
@@ -69,10 +69,10 @@
           </div>
         </div>
         <div class="row mb-3">
-          <div class="col-5 col-lg-4">
+          <div class="col-12 col-md-4">
             <p class="fs-4">Email <x-admin.form.required /> </p>
           </div>
-          <div class="col-7 col-lg-8">
+          <div class="col-12 col-md-8">
             <input wire:model.live='form.email' class="form-control @error('form.email') is-invalid @enderror"
               type="text" placeholder="Masukkan Kontak Desa">
             @error('form.email')
@@ -81,10 +81,10 @@
           </div>
         </div>
         <div class="row mb-3">
-          <div class="col-5 col-lg-4">
+          <div class="col-12 col-md-4">
             <p class="fs-4">Status Desa <x-admin.form.required /> </p>
           </div>
-          <div class="col-7 col-lg-8">
+          <div class="col-12 col-md-8">
             <select wire:model.live='form.village_status_id'
               class="form-select @error('form.village_status_id') is-invalid @enderror" name="" id="">
               @foreach ($village_statuses as $status)
@@ -106,12 +106,12 @@
   <div class="card">
     <div class="card-body">
       <h5 class="card-title fw-semibold mb-3">Dusun Desa {{ $form->name }}</h5>
-      <div class="d-flex justify-content-between">
-        <div>
+      <div class="row justify-content-between">
+        <div class="col-md-3 my-1 px-0">
           <input wire:model.live="search" class="form-control" type="text" placeholder="Cari Dusun"
             aria-label="default input example">
         </div>
-        <button wire:click='resetHamlet' class="btn btn-primary add-button" data-bs-toggle="modal"
+        <button wire:click='resetHamlet' class="btn btn-primary add-button col-md-2 my-1" data-bs-toggle="modal"
           data-bs-target="#createModal">
           <span class="text-white">
             <i class="ti ti-plus"></i> Dusun
@@ -184,10 +184,10 @@
         <div class="modal-body">
           <form action="" wire:submit='storeHamlet' enctype="multipart/form-data">
             <div class="row mb-3">
-              <div class="col-5 col-lg-4">
+              <div class="col-12 col-md-4">
                 <p class="fs-4">Nama <x-admin.form.required /> </p>
               </div>
-              <div class="col-7 col-lg-8">
+              <div class="col-12 col-md-8">
                 <input wire:model.live='hamletForm.name'
                   class="form-control @error('hamletForm.name') is-invalid @enderror" type="text"
                   placeholder="Masukkan Nama Dusun">
@@ -197,10 +197,10 @@
               </div>
             </div>
             <div class="row mb-3">
-              <div class="col-5 col-lg-4">
+              <div class="col-12 col-md-4">
                 <p class="fs-4">Kepala Dusun <x-admin.form.required /> </p>
               </div>
-              <div class="col-7 col-lg-8">
+              <div class="col-12 col-md-8">
                 <input wire:model.live='hamletForm.chief'
                   class="form-control @error('hamletForm.chief') is-invalid @enderror" type="text"
                   placeholder="Masukkan Nama Kepala Dusun">
@@ -232,10 +232,10 @@
         <div class="modal-body">
           <form action="" wire:submit='updateHamlet' enctype="multipart/form-data">
             <div class="row mb-3">
-              <div class="col-5 col-lg-4">
+              <div class="col-12 col-md-4">
                 <p class="fs-4">Nama Dusun <x-admin.form.required /> </p>
               </div>
-              <div class="col-7 col-lg-8">
+              <div class="col-12 col-md-8">
                 <input wire:model.live='hamletForm.name'
                   class="form-control @error('hamletForm.name') is-invalid @enderror" type="text"
                   placeholder="Masukkan Nama Dusun">
@@ -245,10 +245,10 @@
               </div>
             </div>
             <div class="row mb-3">
-              <div class="col-5 col-lg-4">
+              <div class="col-12 col-md-4">
                 <p class="fs-4">Kepala Dusun <x-admin.form.required /> </p>
               </div>
-              <div class="col-7 col-lg-8">
+              <div class="col-12 col-md-8">
                 <input wire:model.live='hamletForm.chief'
                   class="form-control @error('hamletForm.chief') is-invalid @enderror" type="text"
                   placeholder="Masukkan Nama Kepala Dusun">

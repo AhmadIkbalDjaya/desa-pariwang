@@ -45,13 +45,13 @@
   <div class="card">
     <div class="card-body">
       <h5 class="card-title fw-semibold mb-3">Misi Desa</h5>
-      <div class="d-flex justify-content-between">
-        <div>
+      <div class="row justify-content-between">
+        <div class="col-md-3 my-1 px-0">
           <input wire:model.live="search" class="form-control" type="text" placeholder="Cari Misi Desa"
             aria-label="default input example">
         </div>
-        <button wire:click='resetMision' class="btn btn-primary add-button" data-bs-toggle="modal"
-          data-bs-target="#createModal">
+        <button wire:click='resetMision' class="btn btn-primary add-button btn btn-primary add-button col-md-2 my-1"
+          data-bs-toggle="modal" data-bs-target="#createModal">
           <span class="text-white">
             <i class="ti ti-plus"></i> Misi
           </span>
@@ -123,12 +123,13 @@
         <div class="modal-body">
           <form action="" wire:submit='storeMision' enctype="multipart/form-data">
             <div class="row mb-3">
-              <div class="col-12">
+              <div class="col-12 col-md-4">
                 <p class="fs-4">Misi <x-admin.form.required /> </p>
               </div>
-              <div class="col-12">
-                <textarea wire:model.live='misionForm.content' class="form-control @error('misionForm.content') is-invalid @enderror"
-                  type="text" placeholder="Masukkan Misi Desa"> </textarea>
+              <div class="col-12 col-md-8">
+                <textarea wire:model.live='misionForm.content' rows="3"
+                  class="form-control @error('misionForm.content') is-invalid @enderror" type="text"
+                  placeholder="Masukkan Misi Desa"> </textarea>
                 @error('misionForm.content')
                   <div class="invalid-feedback text-start">{{ $message }}</div>
                 @enderror
@@ -157,12 +158,13 @@
         <div class="modal-body">
           <form action="" wire:submit='updateMision' enctype="multipart/form-data">
             <div class="row mb-3">
-              <div class="col-12">
+              <div class="col-12 col-md-4">
                 <p class="fs-4">Misi <x-admin.form.required /> </p>
               </div>
-              <div class="col-12">
-                <textarea wire:model.live='misionForm.content' class="form-control @error('misionForm.content') is-invalid @enderror"
-                  type="text" placeholder="Masukkan Misi Desa"> </textarea>
+              <div class="col-12 col-md-8">
+                <textarea wire:model.live='misionForm.content' rows="3"
+                  class="form-control @error('misionForm.content') is-invalid @enderror" type="text"
+                  placeholder="Masukkan Misi Desa"> </textarea>
                 @error('misionForm.content')
                   <div class="invalid-feedback text-start">{{ $message }}</div>
                 @enderror

@@ -83,10 +83,10 @@
     <div class="card-body">
       <form action="" wire:submit='store' enctype="multipart/form-data">
         <div class="row mb-3">
-          <div class="col-5 col-lg-4">
+          <div class="col-12 col-md-4">
             <p class="fs-4">Judul Berita <x-admin.form.required /> </p>
           </div>
-          <div class="col-7 col-lg-8">
+          <div class="col-12 col-md-8">
             <input wire:model.live='form.title' class="form-control @error('form.title') is-invalid @enderror"
               type="text" placeholder="Judul Berita">
             @error('form.title')
@@ -95,10 +95,10 @@
           </div>
         </div>
         <div class="row mb-3">
-          <div class="col-5 col-lg-4">
+          <div class="col-12 col-md-4">
             <p class="fs-4">Gambar</p>
           </div>
-          <div class="col-7 col-lg-8">
+          <div class="col-12 col-md-8">
             <input wire:model.live='form.image' class="form-control @error('form.image') is-invalid @enderror"
               type="file" placeholder="Gambar Berita">
             @error('form.image')
@@ -107,10 +107,10 @@
           </div>
         </div>
         <div class="row mb-3">
-          <div class="col-5 col-lg-4">
+          <div class="col-12 col-md-4">
             <p class="fs-4">Tanggal Publish</p>
           </div>
-          <div class="col-7 col-lg-8">
+          <div class="col-12 col-md-8">
             <input wire:model.live='form.publish_date'
               class="form-control @error('form.publish_date') is-invalid @enderror" type="date"
               placeholder="Tanggal Publish Berita">
@@ -120,10 +120,10 @@
           </div>
         </div>
         <div class="row mb-3">
-          <div class="col-5 col-lg-4">
+          <div class="col-12 col-md-4">
             <p class="fs-4">Isi Berita <x-admin.form.required /> </p>
           </div>
-          <div class="col-7 col-lg-8">
+          <div class="col-12 col-md-8">
             <div wire:ignore>
               <textarea wire:model.live="body" name="body" id="body" rows="10" cols="80"></textarea>
             </div>

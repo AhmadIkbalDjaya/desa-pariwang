@@ -23,10 +23,10 @@
     <div class="card-body">
       <form action="" wire:submit='update' enctype="multipart/form-data">
         <div class="row mb-3">
-          <div class="col-5 col-lg-4">
+          <div class="col-12 col-md-4">
             <p class="fs-4">Jumlah Penduduk <x-admin.form.required /> </p>
           </div>
-          <div class="col-7 col-lg-8">
+          <div class="col-12 col-md-8">
             <input wire:model.live='form.total_population'
               class="form-control @error('form.total_population') is-invalid @enderror" type="number" min="0"
               placeholder="Masukkan Jumlah Penduduk Desa">
@@ -36,10 +36,10 @@
           </div>
         </div>
         <div class="row mb-3">
-          <div class="col-5 col-lg-4">
+          <div class="col-12 col-md-4">
             <p class="fs-4">Laki-Laki <x-admin.form.required /> </p>
           </div>
-          <div class="col-7 col-lg-8">
+          <div class="col-12 col-md-8">
             <input wire:model.live='form.male' class="form-control @error('form.male') is-invalid @enderror"
               type="number" min="0" placeholder="Masukkan Jumlah Laki-Laki">
             @error('form.male')
@@ -48,10 +48,10 @@
           </div>
         </div>
         <div class="row mb-3">
-          <div class="col-5 col-lg-4">
+          <div class="col-12 col-md-4">
             <p class="fs-4">Perempuan <x-admin.form.required /> </p>
           </div>
-          <div class="col-7 col-lg-8">
+          <div class="col-12 col-md-8">
             <input wire:model.live='form.female' class="form-control @error('form.female') is-invalid @enderror"
               type="number" min="0" placeholder="Masukkan Jumlah Perempuan">
             @error('form.female')
@@ -60,10 +60,10 @@
           </div>
         </div>
         <div class="row mb-3">
-          <div class="col-5 col-lg-4">
+          <div class="col-12 col-md-4">
             <p class="fs-4">Kepala Keluarga <x-admin.form.required /> </p>
           </div>
-          <div class="col-7 col-lg-8">
+          <div class="col-12 col-md-8">
             <input wire:model.live='form.family' class="form-control @error('form.family') is-invalid @enderror"
               type="number" min="0" placeholder="Masukkan Jumlah Kepala Keluarga">
             @error('form.family')
@@ -72,10 +72,10 @@
           </div>
         </div>
         <div class="row mb-3">
-          <div class="col-5 col-lg-4">
+          <div class="col-12 col-md-4">
             <p class="fs-4">Penduduk Sementara <x-admin.form.required /> </p>
           </div>
-          <div class="col-7 col-lg-8">
+          <div class="col-12 col-md-8">
             <input wire:model.live='form.temporary' class="form-control @error('form.temporary') is-invalid @enderror"
               type="number" min="0" placeholder="Masukkan Jumlah Penduduk Sementara">
             @error('form.temporary')
@@ -84,10 +84,10 @@
           </div>
         </div>
         <div class="row mb-3">
-          <div class="col-5 col-lg-4">
+          <div class="col-12 col-md-4">
             <p class="fs-4">Mutasi Penduduk <x-admin.form.required /> </p>
           </div>
-          <div class="col-7 col-lg-8">
+          <div class="col-12 col-md-8">
             <input wire:model.live='form.mutation' class="form-control @error('form.mutation') is-invalid @enderror"
               type="number" min="0" placeholder="Masukkan Jumlah Mutasi Penduduk">
             @error('form.mutation')

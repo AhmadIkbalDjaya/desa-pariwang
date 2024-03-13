@@ -37,34 +37,34 @@
   <div class="card">
     <div class="card-body">
       <div class="row mb-3">
-        <div class="col-5 col-lg-4">
+        <div class="col-12 col-md-4">
           <p class="fs-4">Judul Berita</p>
         </div>
-        <div class="col-7 col-lg-8">
-          <p class="fs-4">: {{ $article->title }}</p>
+        <div class="col-12 col-md-8">
+          <p class="fs-4">{{ $article->title }}</p>
         </div>
       </div>
       <div class="row mb-3">
-        <div class="col-5 col-lg-4">
+        <div class="col-12 col-md-4">
           <p class="fs-4">Isi Berita</p>
         </div>
-        <div class="col-7 col-lg-8">
+        <div class="col-12 col-md-8">
           <p class="fs-4">{!! $article->body !!}</p>
         </div>
       </div>
       <div class="row mb-3">
-        <div class="col-5 col-lg-4">
+        <div class="col-12 col-md-4">
           <p class="fs-4">Tanggal Publish</p>
         </div>
-        <div class="col-7 col-lg-8">
+        <div class="col-12 col-md-8">
           <p class="fs-4">{{ $article->publish_date }}</p>
         </div>
       </div>
       <div class="row mb-3">
-        <div class="col-5 col-lg-4">
+        <div class="col-12 col-md-4">
           <p class="fs-4">Gambar Berita</p>
         </div>
-        <div class="col-7 col-lg-8">
+        <div class="col-12 col-md-8">
           <img src="{{ asset('storage/' . $article->image) }}" alt="" srcset="" class="img-fluid">
         </div>
       </div>

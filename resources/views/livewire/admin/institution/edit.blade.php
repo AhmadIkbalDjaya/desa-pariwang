@@ -30,10 +30,10 @@
     <div class="card-body">
       <form action="" wire:submit='update' enctype="multipart/form-data">
         <div class="row mb-3">
-          <div class="col-5 col-lg-4">
-            <p class="fs-4">Nama Lembaga</p>
+          <div class="col-12 col-md-4">
+            <p class="fs-4">Nama Lembaga <x-admin.form.required /></p>
           </div>
-          <div class="col-7 col-lg-8">
+          <div class="col-12 col-md-8">
             <input wire:model.live='form.name' class="form-control @error('form.name') is-invalid @enderror"
               type="text" placeholder="Nama Lembaga Desa">
             @error('form.name')
@@ -42,10 +42,10 @@
           </div>
         </div>
         <div class="row mb-3">
-          <div class="col-5 col-lg-4">
+          <div class="col-12 col-md-4">
             <p class="fs-4">Singkatan</p>
           </div>
-          <div class="col-7 col-lg-8">
+          <div class="col-12 col-md-8">
             <input wire:model.live='form.abbreviation'
               class="form-control @error('form.abbreviation') is-invalid @enderror" type="text"
               placeholder="Singkatan Nama Lembaga">
