@@ -9,6 +9,10 @@
   <link rel="icon" href="{{ asset('images/favicon.ico') }}" type="image/x-icon">
   <link rel="stylesheet" href="{{ asset('admin/assets/css/styles.min.css') }}" />
   <link rel="stylesheet" href="{{ asset('admin/css/style.css') }}" />
+
+  <script src="https://unpkg.com/maplibre-gl/dist/maplibre-gl.js"></script>
+  <link rel="stylesheet" href="https://unpkg.com/maplibre-gl/dist/maplibre-gl.css">
+
   @stack('style')
 </head>
 
@@ -25,11 +29,7 @@
   </div>
   <script src="{{ asset('admin/assets/libs/jquery/dist/jquery.min.js') }}"></script>
   <script src="{{ asset('admin/assets/libs/bootstrap/dist/js/bootstrap.bundle.min.js') }}"></script>
-  <script src="{{ asset('admin/assets/js/sidebarmenu.js') }}"></script>
   <script src="{{ asset('admin/assets/js/app.min.js') }}"></script>
-  <script src="{{ asset('admin/assets/libs/apexcharts/dist/apexcharts.min.js') }}"></script>
-  <script src="{{ asset('admin/assets/libs/simplebar/dist/simplebar.js') }}"></script>
-  <script src="{{ asset('admin/assets/js/dashboard.js') }}"></script>
   <script src="{{ asset('js/modal.js') }}"></script>
   <script src="{{ asset('js/toast.js') }}"></script>
   @stack('script')

@@ -5,10 +5,6 @@
         display: none !important;
       }
 
-      /* .maplibregl-popup {
-                                                                                                                                                                                                          max-width: 200px;
-                                                                                                                                                                                                        } */
-
       .maplibregl-popup-content {
         padding: 0px !important;
         height: 80px;
@@ -222,153 +218,104 @@
   @push('script')
     <script src="https://unpkg.com/maplibre-gl/dist/maplibre-gl.js"></script>
     <link rel="stylesheet" href="https://unpkg.com/maplibre-gl/dist/maplibre-gl.css">
-    <script>
-      var latitude = "{{ $location->latitude }}"
-      var longitude = "{{ $location->longitude }}"
-      var map = new maplibregl.Map({
-        container: 'map', // container id
-        style: 'https://api.maptiler.com/maps/hybrid/style.json?key=59l19GYa3vqXGGIlpAez', // satelit
-        // style: 'https://api.maptiler.com/maps/basic-v2/style.json?key=59l19GYa3vqXGGIlpAez', // basic
-        // style: 'https://api.maptiler.com/maps/streets-v2/style.json?key=59l19GYa3vqXGGIlpAez', // street
+    <script data-navigate-once>
+      document.addEventListener('livewire:navigated', () => {
 
-        center: [longitude, latitude], // starting position [lng, lat]
-        zoom: 12.80 // starting zoom
-      });
+        var latitude = "{{ $location->latitude }}"
+        var longitude = "{{ $location->longitude }}"
+        var map = new maplibregl.Map({
+          container: 'map', // container id
+          style: 'https://api.maptiler.com/maps/hybrid/style.json?key=59l19GYa3vqXGGIlpAez', // satelit
+          // style: 'https://api.maptiler.com/maps/basic-v2/style.json?key=59l19GYa3vqXGGIlpAez', // basic
+          // style: 'https://api.maptiler.com/maps/streets-v2/style.json?key=59l19GYa3vqXGGIlpAez', // street
 
-      map.addControl(new maplibregl.NavigationControl());
-      map.scrollZoom.disable();
+          center: [longitude, latitude], // starting position [lng, lat]
+          zoom: 12.80 // starting zoom
+        });
 
-      // polygon area
-      map.on('load', () => {
-        map.addSource('maine', {
-          'type': 'geojson',
-          'data': {
-            'type': 'Feature',
-            'geometry': {
-              'type': 'Polygon',
-              'coordinates': [
-                [
-                  [119.827353, -3.649504],
-                  [119.819429, -3.652094],
-                  [119.819220, -3.651920],
-                  [119.815155, -3.664098],
-                  [119.813282, -3.683219],
-                  [119.814223, -3.687010],
-                  [119.814157, -3.689090],
-                  [119.835379, -3.686904],
-                  [119.843314, -3.688304],
-                  [119.845423, -3.685982],
-                  [119.845531, -3.683871],
-                  [119.842532, -3.676241],
-                  [119.842315, -3.668247],
-                  [119.840970, -3.664153],
-                  [119.837878, -3.659067],
-                  [119.837889, -3.658972],
-                  [119.827353, -3.649504],
+        map.addControl(new maplibregl.NavigationControl());
+        map.scrollZoom.disable();
+
+        // polygon area
+        map.on('load', () => {
+          map.addSource('maine', {
+            'type': 'geojson',
+            'data': {
+              'type': 'Feature',
+              'geometry': {
+                'type': 'Polygon',
+                'coordinates': [
+                  [
+                    [119.827353, -3.649504],
+                    [119.819429, -3.652094],
+                    [119.819220, -3.651920],
+                    [119.815155, -3.664098],
+                    [119.813282, -3.683219],
+                    [119.814223, -3.687010],
+                    [119.814157, -3.689090],
+                    [119.835379, -3.686904],
+                    [119.843314, -3.688304],
+                    [119.845423, -3.685982],
+                    [119.845531, -3.683871],
+                    [119.842532, -3.676241],
+                    [119.842315, -3.668247],
+                    [119.840970, -3.664153],
+                    [119.837878, -3.659067],
+                    [119.837889, -3.658972],
+                    [119.827353, -3.649504],
+                  ]
                 ]
-              ]
+              }
             }
-          }
+          });
+          map.addLayer({
+            'id': 'maine',
+            'type': 'fill',
+            'source': 'maine',
+            'layout': {},
+            'paint': {
+              'fill-color': '#8ff2a9',
+              'fill-opacity': 0.25,
+            }
+          });
         });
-        map.addLayer({
-          'id': 'maine',
-          'type': 'fill',
-          'source': 'maine',
-          'layout': {},
-          'paint': {
-            'fill-color': '#8ff2a9',
-            'fill-opacity': 0.25,
-          }
-        });
-      });
-
-      // @foreach ($markers as $marker)
-      //   console.log(`{{ $marker->name }}`);
-      // @endforeach
-      // var markers = [
-      //   @foreach ($markers as $marker)
-      //     {
-      //       "lngLat": [{{ $marker['longitude'] }}, {{ $marker['latitude'] }}],
-      //       "popupHTML": "{!! $marker['popupHTML'] !!}"
-      //     },
-      //   @endforeach
-      // ];
-
-      // markers.forEach(marker => {
-      //   console.log(marker.LngLat);
-      // });
-
-      // markers.forEach(marker => {
-      //   new maplibregl.Marker()
-      //     .setLngLat(marker.lngLat)
-      //     .addTo(map)
-      //     .setPopup(new maplibregl.Popup().setHTML(marker.popupHTML));
-      // });
-      //     const marker = new maplibregl.Marker()
-      //       .setLngLat([119.8295304629999, -3.672330042457889])
-      //       .addTo(map);
-      //     const popup = new maplibregl.Popup()
-      //       .setHTML(
-      //         `<div class="flex max-h-full">
-  //   <div class="basis-3/12">
-  //     <img src="{{ asset('images/profile-1.webp') }}" class="h-full" alt="">
-  //   </div>
-  //   <div class="basis-9/12 px-2 pt-1">
-  //     <h1 class="font-semibold line-clamp-1">Nama tempat</h1>
-  //     <p class="text-justify text-[0.7rem] line-clamp-2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat numquam dolor qui cum
-  //       ipsa minus?</p>
-  //     <div class="text-xs flex justify-end">
-  //         <a href='https://maps.google.com/?q=-3.672330042457889,119.8295304629999' target='_blank' class='flex text-blue-200 underline'>
-  //           <img src="{{ asset('images/maps_logo.png') }}" width='15px' />
-  //           Maps
-  //         </a>
-  //       </div>
-  //   </div>
-  // </div>`
-      //       );
-      //     marker.setPopup(popup);
-
-
-      let markerName = [];
-      let markerLongitude = [];
-      let markerLatitude = [];
-      let markerImage = [];
-      let markerDescription = [];
-    </script>
-    @foreach ($markers as $marker)
-      <script>
-        markerName.push("{{ $marker->name }}")
-        markerLongitude.push("{{ $marker->longitude }}")
-        markerLatitude.push("{{ $marker->latitude }}")
-        markerImage.push("{{ $marker->image }}")
-        markerDescription.push("{{ $marker->description }}")
-      </script>
-    @endforeach
-    <script>
-      markerName.forEach((name, index) => {
-        linkImage = markerImage[index] != '' ? 'storage/' + markerImage[index] : 'images/map.webp';
-        new maplibregl.Marker()
-          .setLngLat([markerLongitude[index], markerLatitude[index]])
-          .addTo(map)
-          .setPopup(new maplibregl.Popup().setHTML(`
-          <div class="flex">
-            <div class="basis-3/12">
-              <img src="{{ asset('${linkImage}') }}" class="h-full object-center" alt="" style="max-height: 80px">
-            </div>
-            <div class="basis-9/12 px-2 pt-1 flex flex-col justify-between">
-              <div>
-                <h1 class="font-semibold line-clamp-1">${name}</h1>
-                <p class="text-justify text-[0.7rem] line-clamp-2">${markerDescription[index]}</p>
+        let markersData = [];
+        @foreach ($markers as $marker)
+          //
+          markersData.push({
+            "name": "{{ $marker->name }}",
+            "longitude": "{{ $marker->longitude }}",
+            "latitude": "{{ $marker->latitude }}",
+            "image": "{{ $marker->image }}",
+            "description": "{{ $marker->description }}",
+          })
+          //
+        @endforeach
+        markersData.forEach((marker, index) => {
+          linkImage = marker.image != '' ? 'storage/' + marker.image : 'images/map.webp';
+          new maplibregl.Marker()
+            .setLngLat([marker.longitude, marker.latitude])
+            .addTo(map)
+            .setPopup(new maplibregl.Popup().setHTML(`
+            <div class="flex">
+              <div class="basis-3/12">
+                <img src="{{ asset('${linkImage}') }}" class="object-cover" alt="" style="max-height: 80px; min-height: 80px;">
               </div>
-              <div class="text-xs flex justify-end">
-                  <a href='https://maps.google.com/?q=${markerLatitude[index]},${markerLongitude[index]}' target='_blank' class='flex text-blue-200 underline'>
-                    <img src="{{ asset('images/maps_logo.png') }}" width='15px' />
-                    Maps
-                  </a>
+              <div class="basis-9/12 px-2 pt-1 flex flex-col justify-between">
+                <div>
+                  <h1 class="font-semibold line-clamp-1">${marker.name}</h1>
+                  <p class="text-justify text-[0.7rem] line-clamp-2">${marker.description}</p>
                 </div>
+                <div class="text-xs flex justify-end">
+                    <a href='https://maps.google.com/?q=${marker.latitude},${marker.longitude}' target='_blank' class='flex text-blue-200 underline'>
+                      <img src="{{ asset('images/maps_logo.png') }}" width='15px' />
+                      Maps
+                    </a>
+                  </div>
+              </div>
             </div>
-          </div>
-        `));
+          `));
+        });
       });
     </script>
   @endpush
