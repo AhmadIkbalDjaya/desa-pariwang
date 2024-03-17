@@ -6,6 +6,7 @@ use App\Models\Article;
 use App\Models\Bumdes;
 use App\Models\Institution;
 use App\Models\Location;
+use App\Models\Marker;
 use App\Models\Profile;
 use App\Models\VillageAparatus;
 use Livewire\Attributes\Layout;
@@ -27,6 +28,7 @@ class Index extends Component
             "location" => Location::get()->first(),
             "aparatuses" => $aparatuses,
             "institutions" => $institutions,
+            "markers" => Marker::get(),
         ])->title("Admin");
     }
 }

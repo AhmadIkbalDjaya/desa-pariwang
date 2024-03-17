@@ -20,7 +20,7 @@ class Login extends Component
     public function login() {
         $login = $this->form->login();
         if ($login) {
-            return $this->redirectRoute('admin.index', navigate: true);
+            return $this->redirectRoute('admin.index', navigate: false);
         } else{
             $this->form->reset();
             flash("Username / Password Salah", "danger");

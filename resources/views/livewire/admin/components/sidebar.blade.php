@@ -107,7 +107,8 @@
               class="btn btn-primary fs-2 fw-semibold lh-sm">Hubungi Developer</a>
           </div>
           <div class="unlimited-access-img">
-            <img src="{{ 'admin/assets/images/backgrounds/rocket.png' }}" alt="" class="img-fluid">
+            {{-- <img src="{{ 'admin/assets/images/backgrounds/rocket.png' }}" alt="" class="img-fluid"> --}}
+            <img src="{{ asset('admin/assets/images/backgrounds/rocket.png') }}" alt="" class="img-fluid">
           </div>
         </div>
       </div>
