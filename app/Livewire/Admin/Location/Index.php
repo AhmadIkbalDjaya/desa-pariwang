@@ -15,6 +15,12 @@ class Index extends Component
     public $search;
     public LocationForm $form;
     public MarkerForm $markerForm;
+    public $breadcrumbs = [
+        [
+            "name" => "Lokasi & Penanda",
+            "route" => "",
+        ],
+    ];
     public function mount() {
         $this->form->setLocation(Location::get()->first());
     }

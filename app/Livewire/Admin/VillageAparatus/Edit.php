@@ -14,6 +14,16 @@ class Edit extends Component
     #[Layout('components.layouts.admin')]
     public VillageAparatus $village_aparatus;
     public VillageAparatusForm $form;
+    public $breadcrumbs = [
+        [
+            "name" => "Perangkat Desa",
+            "route" => "admin.village-aparatus.index",
+        ],
+        [
+            "name" => "Edit Perangkat Desa",
+            "route" => "",
+        ],
+    ];
     public function mount(VillageAparatus $village_aparatus) {
         $this->form->setVillageAparatus($village_aparatus);
     }

@@ -14,6 +14,16 @@ class Edit extends Component
     #[Layout('components.layouts.admin')]
     public Bumdes $bumdes;
     public BumdesForm $form;
+    public $breadcrumbs = [
+        [
+            "name" => "Bumdes",
+            "route" => "admin.bumdes.index",
+        ],
+        [
+            "name" => "Edit Bumdes",
+            "route" => "",
+        ],
+    ];
     public function mount(Bumdes $bumdes) {
         $this->form->setBumdes($this->bumdes);
     }

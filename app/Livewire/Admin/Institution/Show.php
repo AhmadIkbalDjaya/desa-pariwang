@@ -19,6 +19,16 @@ class Show extends Component
     public $search = "";
     public Institution $institution;
     public InstitutionMemberForm $form;
+    public $breadcrumbs = [
+        [
+            "name" => "Kelembagaan",
+            "route" => "admin.institution.index",
+        ],
+        [
+            "name" => "Detail Kelembagaan",
+            "route" => "",
+        ],
+    ];
     public function mount() {
         $this->form->institution_id = $this->institution->id;
     }

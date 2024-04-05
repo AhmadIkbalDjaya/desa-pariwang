@@ -15,6 +15,12 @@ class Index extends Component
     public $perpage = 10;
     public $search = "";
     public InstitutionForm $form;
+    public $breadcrumbs = [
+        [
+            "name" => "Kelembagaan",
+            "route" => "",
+        ],
+    ];
 
     public function render()
     {

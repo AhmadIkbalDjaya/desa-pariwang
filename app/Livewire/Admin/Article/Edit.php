@@ -14,6 +14,16 @@ class Edit extends Component
     #[Layout('components.layouts.admin')]
     public Article $article;
     public ArticleForm $form;
+    public $breadcrumbs = [
+        [
+            "name" => "Berita",
+            "route" => "admin.article.index",
+        ],
+        [
+            "name" => "Edit Berita",
+            "route" => "",
+        ],
+    ];
     public function mount(Article $article) {
         $this->form->setArticle($article);
     }

@@ -10,6 +10,16 @@ class Create extends Component
 {
     #[Layout('components.layouts.admin')]
     public ?InstitutionForm $form;
+    public $breadcrumbs = [
+        [
+            "name" => "Kelembagaan",
+            "route" => "admin.institution.index",
+        ],
+        [
+            "name" => "Tambah Kelembagaan",
+            "route" => "",
+        ],
+    ];
     public function render()
     {
         return view('livewire.admin.institution.create')->title("Tambah Lembaga");

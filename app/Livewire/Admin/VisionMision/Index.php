@@ -13,6 +13,12 @@ class Index extends Component
     public $search = "";
     public VisionMissionForm $misionForm;
     public VisionMissionForm $visionForm;
+    public $breadcrumbs = [
+        [
+            "name" => "Visi Misi",
+            "route" => "",
+        ],
+    ];
     public function mount() {
         $this->visionForm->setVisionMission(VisionMission::get()->first());
     }

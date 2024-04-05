@@ -10,8 +10,18 @@ use Livewire\Component;
 class Show extends Component
 {
     #[Layout('components.layouts.admin')]
-    public ArticleForm $form;
     public Article $article;
+    public ArticleForm $form;
+    public $breadcrumbs = [
+        [
+            "name" => "Berita",
+            "route" => "admin.article.index",
+        ],
+        [
+            "name" => "Detail Berita",
+            "route" => "",
+        ],
+    ];
     public function mount() {
         $this->form->setArticle($this->article);
     }
