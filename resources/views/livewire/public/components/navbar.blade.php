@@ -3,7 +3,7 @@
     <div class="flex justify-between items-center py-3 md:py-0 px-3 md:px-0">
       <a wire:navigate href=""
         class="text-green-700 text-3xl font-justMeAgainDownHere whitespace-nowrap font-bold uppercase">
-        DESA {{ $profile->name }}
+        DESAA {{ $profile->name }}
       </a>
       @if ($open)
         <i wire:click='clickOpen' class="ti ti-menu-2 md:hidden text-green-700 cursor-pointer text-2xl"></i>
