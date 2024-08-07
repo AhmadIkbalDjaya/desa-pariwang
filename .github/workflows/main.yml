@@ -18,7 +18,7 @@ jobs:
           password: ${{ secrets.FTP_PASSWORD }}
           server-dir: /
       - name: Update composer dependencies
-        run: componser Update
+        run: composer update
       - name: Install NPM dependencies
         run: npm install
       - name: Build frontend
