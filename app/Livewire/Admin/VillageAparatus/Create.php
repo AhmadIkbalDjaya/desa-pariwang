@@ -12,6 +12,16 @@ class Create extends Component
     use WithFileUploads;
     #[Layout('components.layouts.admin')]
     public VillageAparatusForm $form;
+    public $breadcrumbs = [
+        [
+            "name" => "Perangkat Desa",
+            "route" => "admin.village-aparatus.index",
+        ],
+        [
+            "name" => "Tambah Perangkat Desa",
+            "route" => "",
+        ],
+    ];
 
     public function render()
     {

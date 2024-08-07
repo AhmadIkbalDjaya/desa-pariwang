@@ -15,6 +15,12 @@ class Index extends Component
     public $perpage = 10;
     public $search = "";
     public BumdesForm $form;
+    public $breadcrumbs = [
+        [
+            "name" => "Bumdes",
+            "route" => "",
+        ],
+    ];
     public function render()
     {
         $search = $this->search;

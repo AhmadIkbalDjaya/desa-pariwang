@@ -12,6 +12,16 @@ class Create extends Component
     use WithFileUploads;
     #[Layout('components.layouts.admin')]
     public BumdesForm $form;
+    public $breadcrumbs = [
+        [
+            "name" => "Bumdes",
+            "route" => "admin.bumdes.index",
+        ],
+        [
+            "name" => "Tambah Bumdes",
+            "route" => "",
+        ],
+    ];
     public function render()
     {
         return view('livewire.admin.bumdes.create')->title("Tambah Bumdes");

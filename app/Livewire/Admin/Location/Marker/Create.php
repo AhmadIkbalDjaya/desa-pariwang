@@ -12,6 +12,16 @@ class Create extends Component
     use WithFileUploads;
     #[Layout('components.layouts.admin')]
     public ?MarkerForm $form;
+    public $breadcrumbs = [
+        [
+            "name" => "Lokasi & Penanda",
+            "route" => "admin.location.index",
+        ],
+        [
+            "name" => "Tambah Penanda",
+            "route" => "",
+        ],
+    ];
     public function render()
     {
         return view('livewire.admin.location.marker.create')->title("Tambah Penanda");

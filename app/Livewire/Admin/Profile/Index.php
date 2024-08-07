@@ -16,6 +16,12 @@ class Index extends Component
     public $search = "";
     public ProfileForm $form;
     public HamletForm $hamletForm;
+    public $breadcrumbs = [
+        [
+            "name" => "Profil",
+            "route" => "",
+        ],
+    ];
 
     public function mount() {
         $this->form->setProfile(Profile::get()->first());

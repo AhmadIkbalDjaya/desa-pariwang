@@ -18,6 +18,16 @@ class ChangePass extends Component
     public $new_password;
     #[Validate("required_with:new_password|same:new_password|min:8")]
     public $new_password_confirmation;
+    public $breadcrumbs = [
+        [
+            "name" => "Admin Profil",
+            "route" => "",
+        ],
+        [
+            "name" => "Ganti Password",
+            "route" => "",
+        ],
+    ];
     public function render()
     {
         return view('livewire.admin.admin-profile.change-pass')->title("Ganti Password");

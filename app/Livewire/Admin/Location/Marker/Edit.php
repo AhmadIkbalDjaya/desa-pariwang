@@ -14,6 +14,16 @@ class Edit extends Component
     #[Layout('components.layouts.admin')]
     public Marker $marker;
     public MarkerForm $form;
+    public $breadcrumbs = [
+        [
+            "name" => "Lokasi & Penanda",
+            "route" => "admin.location.index",
+        ],
+        [
+            "name" => "Edit Penanda",
+            "route" => "",
+        ],
+    ];
     public function mount(Marker $marker) {
         $this->form->setMarker($marker);
     }

@@ -10,8 +10,18 @@ use Livewire\Component;
 class Show extends Component
 {
     #[Layout('components.layouts.admin')]
-    public BumdesForm $form;
     public Bumdes $bumdes;
+    public BumdesForm $form;
+    public $breadcrumbs = [
+        [
+            "name" => "Bumdes",
+            "route" => "admin.bumdes.index",
+        ],
+        [
+            "name" => "Detail Bumdes",
+            "route" => "",
+        ],
+    ];
     public function mount() {
         $this->form->setBumdes($this->bumdes);
     }

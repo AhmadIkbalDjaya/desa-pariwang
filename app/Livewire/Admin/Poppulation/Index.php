@@ -11,6 +11,12 @@ class Index extends Component
 {
     #[Layout("components.layouts.admin")]
     public PopulationForm $form;
+    public $breadcrumbs = [
+        [
+            "name" => "Kependudukan",
+            "route" => "",
+        ],
+    ];
     public function mount() {
         $this->form->setPopulation(Population::get()->first());
     }

@@ -10,8 +10,18 @@ use Livewire\Component;
 class Show extends Component
 {
     #[Layout('components.layouts.admin')]
-    public MarkerForm $form;
     public Marker $marker;
+    public MarkerForm $form;
+    public $breadcrumbs = [
+        [
+            "name" => "Lokasi & Penanda",
+            "route" => "admin.location.index",
+        ],
+        [
+            "name" => "Detail Penanda",
+            "route" => "",
+        ],
+    ];
     public function mount() {
         $this->form->setMarker($this->marker);
     }

@@ -12,6 +12,16 @@ class Edit extends Component
     #[Layout('components.layouts.admin')]
     public Institution $institution;
     public InstitutionForm $form;
+    public $breadcrumbs = [
+        [
+            "name" => "Kelembagaan",
+            "route" => "admin.institution.index",
+        ],
+        [
+            "name" => "Edit Kelembagaan",
+            "route" => "",
+        ],
+    ];
     public function mount(Institution $institution) {
         $this->form->setInstitution($this->institution);
     }
