@@ -2,7 +2,7 @@
   <header class="px-0 md:px-20 py-0 md:py-3 md:flex md:items-baseline md:gap-x-3">
     <div class="flex justify-between items-center py-3 md:py-0 px-3 md:px-0">
       <a wire:navigate href=""
-        class="text-sky-300 text-3xl font-justMeAgainDownHere whitespace-nowrap font-bold uppercase">
+        class="text-green-700 text-3xl font-justMeAgainDownHere whitespace-nowrap font-bold uppercase">
         DESA {{ $profile->name }}
       </a>
       @if ($open)
