@@ -1,0 +1,138 @@
+enum gender {
+  "male"
+  "female"
+}
+
+enum religion {
+  "Islam" 
+  "Kristen Protestan"
+  "Kristen Katolik"
+  "Hindu"
+  "Buddha"
+  "Konghucu"
+}
+
+table users {
+  id int PK
+  username varchar
+  password varchar
+}
+
+table village_statuses {
+  id int PK
+  name varchar
+}
+
+table profiles {
+  id int PK
+  name varchar
+  description longtext
+  potency varchar
+  contact varchar
+  vallage_status_id int [ref: > village_statuses.id]
+}
+
+table location {
+  id int PK
+  longitude varchar
+  latitude varchar
+  province varchar
+  regency varchar
+  district varchar
+  border_east varchar
+  border_west varchar
+  border_south varchar
+  border_north varchar
+  area varchar
+}
+
+table hamlet {
+  id int PK
+  name varchar
+  chief varchar
+}
+
+table bumdeses {
+  id int PK
+  name varchar
+  description longtext
+  director varchar
+  certification_status boolean
+  total_employee bigint
+  unit varchar
+  // certicate_file varchar
+  image varchar
+  phone varchar
+}
+
+table articles {
+  id int PK
+  title varchar
+  slug varchar
+  body varchar
+  image varchar
+  publish_date date
+}
+
+table institutions {
+  id int PK
+  name varchar
+  slug varchar
+  abbreviation varchar
+}
+
+table institution_members {
+  id int PK
+  name varchar
+  position varchar
+  photo varchar
+  gender gender
+  institution_id int [ref: > institutions.id]
+}
+
+table village_apparatuses {
+  id int PK
+  name varchar
+  position varchar
+  pob varchar
+  dob date
+  gender gender
+  photo varchar
+  education varchar
+  job varchar
+  religion religion
+}
+
+table complaints {
+  id int PK
+  name varchar
+  email varchar
+  phone varchar
+  institute varchar
+  description longtext
+}
+
+table populations {
+  id int PK
+  population int
+  male int
+  female int
+  family int
+  temporary int
+  mutation int
+}
+
+table markers {
+  id int PK
+  name varchar
+  description varchar
+  image varchar
+  longitude varchar
+  latitude varchar
+}
+
+table vision_missions {
+  id int PK
+  content longtext
+  is_visi bool [default: false]
+}
