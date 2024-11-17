@@ -14,125 +14,127 @@ enum religion {
 
 table users {
   id int PK
-  username varchar
-  password varchar
+  username varchar [not null]
+  password varchar [not null]
 }
 
 table village_statuses {
   id int PK
-  name varchar
+  name varchar [not null]
 }
 
 table profiles {
   id int PK
-  name varchar
-  description longtext
-  potency varchar
-  contact varchar
-  vallage_status_id int [ref: > village_statuses.id]
+  name varchar [not null]
+  description longtext [not null]
+  potency varchar [not null]
+  contact varchar [null]
+  village_status_id int [null]
 }
+Ref: profiles.village_status_id > village_statuses.id [update: cascade, delete: cascade]
 
-table location {
+table bumdes {
   id int PK
-  longitude varchar
-  latitude varchar
-  province varchar
-  regency varchar
-  district varchar
-  border_east varchar
-  border_west varchar
-  border_south varchar
-  border_north varchar
-  area varchar
-}
-
-table hamlet {
-  id int PK
-  name varchar
-  chief varchar
-}
-
-table bumdeses {
-  id int PK
-  name varchar
-  description longtext
-  director varchar
-  certification_status boolean
-  total_employee bigint
-  unit varchar
+  name varchar [not null]
+  description longtext [not null]
+  director varchar [not null]
+  certification_status boolean [default: false]
+  total_employee int [not null, default: 0]
+  unit varchar [null]
   // certicate_file varchar
-  image varchar
-  phone varchar
+  image varchar [null]
+  phone varchar [null]
 }
 
 table articles {
   id int PK
-  title varchar
-  slug varchar
-  body varchar
-  image varchar
-  publish_date date
+  title varchar [not null]
+  slug varchar [not null]
+  body varchar [not null]
+  image varchar [null]
+  publish_date date [not null]
 }
 
 table institutions {
   id int PK
-  name varchar
-  slug varchar
-  abbreviation varchar
+  name varchar [not null]
+  slug varchar [not null]
+  abbreviation varchar [null]
 }
 
 table institution_members {
   id int PK
-  name varchar
-  position varchar
-  photo varchar
-  gender gender
-  institution_id int [ref: > institutions.id]
+  name varchar [not null]
+  position varchar [not null]
+  photo varchar [null]
+  gender gender [not null]
+  institution_id int [not null]
 }
+Ref: institution_members.institution_id > institutions.id [update: cascade, delete: cascade]
 
 table village_apparatuses {
   id int PK
-  name varchar
-  position varchar
-  pob varchar
-  dob date
-  gender gender
-  photo varchar
-  education varchar
-  job varchar
-  religion religion
+  name varchar [not null]
+  position varchar [not null]
+  pob varchar [null]
+  dob date [null]
+  gender gender [not null]
+  photo varchar [null]
+  education varchar [null]
+  job varchar [null]
+  religion religion [not null, default: "Islam"]
 }
 
 table complaints {
   id int PK
-  name varchar
-  email varchar
-  phone varchar
-  institute varchar
-  description longtext
+  name varchar [not null]
+  email varchar [null]
+  phone varchar [null]
+  institute varchar [null]
+  description longtext [not null]
+}
+
+table locations {
+  id int PK
+  longitude varchar [null]
+  latitude varchar [null]
+  province varchar [null]
+  regency varchar [null]
+  district varchar [null]
+  border_east varchar [null]
+  border_west varchar [null]
+  border_south varchar [null]
+  border_north varchar [null]
+  area varchar [null]
+}
+
+table hamlet {
+  id int PK
+  name varchar [not null]
+  chief varchar [not null]
 }
 
 table populations {
   id int PK
-  population int
-  male int
-  female int
-  family int
-  temporary int
-  mutation int
+  population int [null]
+  male int [null]
+  female int [null]
+  family int [null]
+  temporary int [null]
+  mutation int [null]
 }
 
 table markers {
   id int PK
-  name varchar
-  description varchar
-  image varchar
-  longitude varchar
-  latitude varchar
+  name varchar [not null]
+  description varchar [not null]
+  image varchar [null]
+  longitude varchar [null]
+  latitude varchar [null]
 }
 
 table vision_missions {
   id int PK
-  content longtext
-  is_visi bool [default: false]
+  content longtext [null]
+  is_visi bool [not null, default: false]
 }

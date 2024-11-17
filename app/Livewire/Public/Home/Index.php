@@ -17,16 +17,17 @@ class Index extends Component
     public function render()
     {
         return view('livewire.public.home.index', [
-            "articles" => Article::orderBy('publish_date', 'DESC')->limit(3)->get(),
-            "bumdeses" => Bumdes::latest()->limit(2)->get(),
-            "profile" => Profile::get()->first(),
-            "population" => Population::get()->first(),
-            "location" => Location::get()->first(),
-            "markers" => Marker::get(),
+            "articles" => Article::select(["id", "title", "slug", "body", "image"])->latest("publish_date")->limit(3)->get(),
+            "bumdeses" => Bumdes::select(["id", "name", "image"])->latest()->limit(2)->get(),
+            "profile" => Profile::select(["id", "name", "description"])->first(),
+            "population" => Population::select(["id", "total_population", "male", "female", "family", "temporary", "mutation"])->first(),
+            "location" => Location::select(["id", "longitude", "latitude"])->first(),
+            "markers" => Marker::select(["id", "name", "longitude", "latitude", "image", "description"])->get(),
         ])->title("Desa Pariwang");
     }
 
-    public function store() {
+    public function store()
+    {
         $this->form->store();
         flash("Masukan Berhasil Dikirim", "success");
         $this->dispatch('show-notif');

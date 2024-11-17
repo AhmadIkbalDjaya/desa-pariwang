@@ -13,7 +13,7 @@
     </div>
     <div
       class="bg-white grow py-1 px-3 md:px-0 md:py-0 md:flex md:justify-end justify-center w-full md:items-baseline absolute md:static
-      w-full transition-all duration-500 ease-in {{ $open ? 'top-15 opacity-100' : 'top-[-400px] opacity-0 md:opacity-100' }}">
+      transition-all duration-500 ease-in {{ $open ? 'top-15 opacity-100' : 'top-[-400px] opacity-0 md:opacity-100' }}">
       <ul class="md:flex gap-4">
         <li class="my-3 md:my-0">
           <div class="relative pb-1 text-center">

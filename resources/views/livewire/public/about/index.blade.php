@@ -47,7 +47,7 @@
         </p>
       </div>
       <div class="mt-3">
-        <h1 class="text-green-700 text-2xl font-semibold mb-5 mb-2">Misi</h1>
+        <h1 class="text-green-700 text-2xl font-semibold mb-5">Misi</h1>
         <ol class="ms-5 font-medium text-justify list-decimal">
           @foreach ($mision as $misi)
             <li>

@@ -13,8 +13,8 @@ class ArticleCard extends Component
      * Create a new component instance.
      */
     public function __construct(
-        public bool $responsive = false, 
         public Article $article,
+        public bool $responsive = false, 
     )
     {
         //

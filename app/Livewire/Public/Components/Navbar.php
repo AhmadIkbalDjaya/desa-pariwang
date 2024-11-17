@@ -11,11 +11,12 @@ class Navbar extends Component
     public function render()
     {
         return view('livewire.public.components.navbar', [
-            "profile" => Profile::get()->first(),
+            "profile" => Profile::select(["id", "name"])->first(),
         ]);
     }
 
-    public function clickOpen() {
+    public function clickOpen()
+    {
         $this->open = !$this->open;
     }
 }
