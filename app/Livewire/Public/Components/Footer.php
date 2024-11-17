@@ -11,8 +11,8 @@ class Footer extends Component
     public function render()
     {
         return view('livewire.public.components.footer', [
-            "profile" => Profile::get()->first(),
-            "location" => Location::get()->first(),
+            "profile" => Profile::select(["id", "name", "contact", "email"])->first(),
+            "location" => Location::select("id", "district", "regency")->first(),
         ]);
     }
 }
