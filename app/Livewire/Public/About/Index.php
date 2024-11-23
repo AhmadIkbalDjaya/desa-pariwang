@@ -14,12 +14,12 @@ class Index extends Component
     public function render()
     {
         return view('livewire.public.about.index', [
-            "hamlets" => Hamlet::all(),
-            "profile" => Profile::get()->first(),
-            "location" => Location::get()->first(),
-            "village_aparatus" => VillageAparatus::all(),
-            "visi" => VisionMission::where('is_visi', 1)->get()->first(),
-            "mision" => VisionMission::where('is_visi', 0)->get(),
+            "hamlets" => Hamlet::select("id", "name")->get(),
+            "profile" => Profile::select("id", "name", "description", "potency", "village_status_id")->with(['village_status:id,name'])->first(),
+            "location" => Location::select("id", "province", "regency", "district", "latitude", "longitude", "border_north", "border_east", "border_south", "border_west", "area")->first(),
+            "village_aparatus" => VillageAparatus::select("id", "name", "position", "photo")->get(),
+            "visi" => VisionMission::select("id", "content")->where('is_visi', 1)->get()->first(),
+            "mision" => VisionMission::select("id", "content")->where('is_visi', 0)->get(),
         ])->title("Tentang Desa");
     }
 }

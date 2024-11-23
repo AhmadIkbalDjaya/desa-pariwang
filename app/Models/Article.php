@@ -19,4 +19,13 @@ class Article extends Model
             ],
         ];
     }
+
+    /**
+     * accesor for image url
+     * @return string
+     */
+    public function getImageUrlAttribute(): string
+    {
+        return $this->image ? url("storage/$this->image") : "images/default-article.webp";
+    }
 }
