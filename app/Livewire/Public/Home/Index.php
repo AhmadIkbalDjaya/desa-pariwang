@@ -29,8 +29,5 @@ class Index extends Component
     public function store()
     {
         $this->form->store();
-        flash("Masukan Berhasil Dikirim", "success");
-        $this->dispatch('show-notif');
-        $this->form->resetCommplaint();
     }
 }

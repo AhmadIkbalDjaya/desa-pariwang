@@ -8,19 +8,30 @@ use Livewire\Form;
 
 class ComplaintForm extends Form
 {
-    public ?Complaint $complaint;
-    #[Validate("required|string")]
-    public $name;
-    #[Validate("nullable|string")]
-    public $email;
-    #[Validate("nullable|phone:ID")]
-    public $phone;
-    #[Validate("nullable|string")]
-    public $institute;
-    #[Validate("required|string")]
-    public $description;
+    public ?Complaint $complaint = null;
+    #[Validate]
+    public ?string $name = null;
+    #[Validate]
+    public ?string $email = null;
+    #[Validate]
+    public ?string $phone = null;
+    #[Validate]
+    public ?string $institute = null;
+    #[Validate]
+    public ?string $description = null;
+    public function rules(): array
+    {
+        return [
+            "name" => "required|string",
+            "email" => "nullable|string",
+            "phone" => "nullable|phone:ID",
+            "institute" => "nullable|string",
+            "description" => "required|string",
+        ];
+    }
 
-    public function setComplaint(Complaint $complaint) {
+    public function setComplaint(Complaint $complaint)
+    {
         $this->complaint = $complaint;
         $this->name = $complaint->name;
         $this->email = $complaint->email;
@@ -28,28 +39,28 @@ class ComplaintForm extends Form
         $this->institute = $complaint->institute;
         $this->description = $complaint->description;
     }
-    
-    public function resetCommplaint() {
-        $this->complaint = null;
-        $this->name = null;
-        $this->email = null;
-        $this->phone = null;
-        $this->institute = null;
-        $this->description = null;
-        
+
+    public function resetCommplaint()
+    {
+        $this->reset("complaint", "name", "email", "phone", "institute", "description");
     }
 
-    public function store() {
+    public function store()
+    {
         $validated = $this->validate();
         Complaint::create($validated);
+        $this->reset();
+        session()->flash("success", "Masukan Berhasil Dikirim");
     }
 
-    public function update() {
+    public function update()
+    {
         $validated = $this->validate();
         $this->complaint->update($validated);
     }
 
-    public function delete() {
+    public function delete()
+    {
         $this->complaint->delete();
     }
 }
