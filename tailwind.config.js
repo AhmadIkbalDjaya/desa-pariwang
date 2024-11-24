@@ -9,6 +9,7 @@ export default {
                 protestStrike: ["Protest Strike", "sans-serif"]
             },
             backgroundImage: {
+                "hero1": "url('/public/images/profile-1.webp')",
                 "home-hero1": "url('/public/image/village-2.webp')",
                 "home-hero2": "url('public/image/village-2.webp')",
                 "home-hero3": "url('/image/village-2.webp')",
