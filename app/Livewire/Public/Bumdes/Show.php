@@ -10,6 +10,6 @@ class Show extends Component
     public Bumdes $bumdes;
     public function render()
     {
-        return view('livewire.public.bumdes.show');
+        return view('livewire.public.bumdes.show')->title("Bumdes - {$this->bumdes->name}");
     }
 }

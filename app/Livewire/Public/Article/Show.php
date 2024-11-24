@@ -10,6 +10,6 @@ class Show extends Component
     public Article $article;
     public function render()
     {
-        return view('livewire.public.article.show');
+        return view('livewire.public.article.show')->title($this->article->title);
     }
 }
