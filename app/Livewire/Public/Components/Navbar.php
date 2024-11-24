@@ -3,6 +3,7 @@
 namespace App\Livewire\Public\Components;
 
 use App\Models\Profile;
+use Illuminate\Support\Facades\Cache;
 use Livewire\Component;
 
 class Navbar extends Component
@@ -16,9 +17,13 @@ class Navbar extends Component
     ];
     public function render()
     {
+        $profile = Cache::rememberForever('navbar-profile', function () {
+            return Profile::select(["id", "name"])->first();
+        });
+        
         return view('livewire.public.components.navbar', [
             "menuItems" => $this->menuItems,
-            "profile" => Profile::select(["id", "name"])->first(),
+            "profile" => $profile,
         ]);
     }
 }
