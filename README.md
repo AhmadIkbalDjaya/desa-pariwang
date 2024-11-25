@@ -87,3 +87,10 @@ Follow these steps to install and run the project:
 -   Admin Panel: Access the admin dashboard at /admin to manage village data, news, and more.
 
 ## Screenshots 📸
+
+
+## Database Design 🗄️
+
+Below is the database design for the Desa Pariwang project:
+
+![Database Design](docs/database/Desa%20Pariwang.png)
