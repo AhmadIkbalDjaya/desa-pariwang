@@ -13,6 +13,7 @@ class ArticleObserver
     public function created(Article $article): void
     {
         Cache::forget('home-articles');
+        Cache::forget('article-articles');
     }
 
     /**
@@ -21,6 +22,7 @@ class ArticleObserver
     public function updated(Article $article): void
     {
         Cache::forget('home-articles');
+        Cache::forget('article-articles');
     }
 
     /**
@@ -29,6 +31,7 @@ class ArticleObserver
     public function deleted(Article $article): void
     {
         Cache::forget('home-articles');
+        Cache::forget('article-articles');
     }
 
     /**

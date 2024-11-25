@@ -23,6 +23,7 @@ class ProfileObserver
         Cache::forget('navbar-profile');
         Cache::forget('footer-profile');
         Cache::forget('home-profile');
+        Cache::forget('about-profile');
     }
 
     /**

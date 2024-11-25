@@ -13,6 +13,7 @@ class MarkerObserver
     public function created(Marker $marker): void
     {
         Cache::forget('home-markers');
+        Cache::forget('about-markers');
     }
     
     /**
@@ -21,6 +22,7 @@ class MarkerObserver
     public function updated(Marker $marker): void
     {
         Cache::forget('home-markers');
+        Cache::forget('about-markers');
     }
     
     /**
@@ -29,6 +31,7 @@ class MarkerObserver
     public function deleted(Marker $marker): void
     {
         Cache::forget('home-markers');
+        Cache::forget('about-markers');
     }
 
     /**
