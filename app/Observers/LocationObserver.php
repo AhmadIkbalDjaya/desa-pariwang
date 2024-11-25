@@ -22,6 +22,7 @@ class LocationObserver
     {
         Cache::forget("footer-location");
         Cache::forget("home-location");
+        Cache::forget("about-location");
     }
 
     /**

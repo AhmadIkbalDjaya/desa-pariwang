@@ -13,6 +13,7 @@ class BumdesObserver
     public function created(Bumdes $bumdes): void
     {
         Cache::forget('home-bumdeses');
+        Cache::forget('bumdes-bumdeses');
     }
 
     /**
@@ -21,6 +22,7 @@ class BumdesObserver
     public function updated(Bumdes $bumdes): void
     {
         Cache::forget('home-bumdeses');
+        Cache::forget('bumdes-bumdeses');
     }
 
     /**
@@ -29,6 +31,7 @@ class BumdesObserver
     public function deleted(Bumdes $bumdes): void
     {
         Cache::forget('home-bumdeses');
+        Cache::forget('bumdes-bumdeses');
     }
 
     /**
