@@ -18,7 +18,7 @@
       </a>
     </div>
     <div class="text-end">
-      <a href="{{ route('bumdes.show', ['bumdes' => $bumdes->id]) }}" wire:navigate
+      <a wire:navigate.hover href="{{ route('bumdes.show', ['bumdes' => $bumdes->id]) }}"
         class="text-xs font-semibold text-green-700">
         Baca Selengkapnya
       </a>

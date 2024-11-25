@@ -29,7 +29,7 @@
         {{ $profile->description }}
       </p>
       <div class="mt-2">
-        <a wire:navigate href="{{ route('about') }}" class="font-semibold text-green-700">
+        <a wire:navigate.hover href="{{ route('about') }}" class="font-semibold text-green-700">
           Lihat Selengkapnya
         </a>
       </div>
@@ -59,7 +59,7 @@
         @endforeach
       </div>
       <div class="mt-5 text-end">
-        <a href="{{ route('article') }}" wire:navigate class="text-base font-semibold text-green-700">
+        <a wire:navigate.hover href="{{ route('article') }}" class="text-base font-semibold text-green-700">
           Lihat Berita Lainnya
         </a>
       </div>
@@ -148,7 +148,7 @@
         mana masyarakat desa mengelola bisnis untuk memajukan ekonomi lokal dan
         meningkatkan kesejahteraan.
       </p>
-      <a href="{{ route('bumdes') }}" wire:navigate class="text-sm underline underline-offset-8">
+      <a wire:navigate.hover href="{{ route('bumdes') }}" class="text-sm underline underline-offset-8">
         Lihat lebih banyak >
       </a>
     </div>

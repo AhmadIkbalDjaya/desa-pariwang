@@ -18,7 +18,7 @@
       {!! $article->body !!}
     </div>
     <div class="text-end">
-      <a href="{{ route('article.show', ['article' => $article->slug]) }}" wire:navigate
+      <a wire:navigate.hover href="{{ route('article.show', ['article' => $article->slug]) }}"
         class="text-xs font-semibold text-green-700">
         Baca Selengkapnya
       </a>

@@ -31,19 +31,19 @@
   <span class="mx-5 block h-[0.5px] bg-gray-300 md:mx-10"></span>
   <div class="mx-20 mt-4 flex flex-wrap justify-center md:justify-between">
     <div class="flex gap-4 font-semibold">
-      <a wire:navigate href="{{ route('home') }}" class="text-xs text-gray-700">
+      <a wire:navigate.hover href="{{ route('home') }}" class="text-xs text-gray-700">
         Beranda
       </a>
-      <a wire:navigate href="{{ route('article') }}" class="text-xs text-gray-700">
+      <a wire:navigate.hover href="{{ route('article') }}" class="text-xs text-gray-700">
         Berita
       </a>
-      <a wire:navigate href="{{ route('bumdes') }}" class="text-xs text-gray-700">
+      <a wire:navigate.hover href="{{ route('bumdes') }}" class="text-xs text-gray-700">
         Bumdes
       </a>
-      <a wire:navigate href="{{ route('institution') }}" class="text-xs text-gray-700">
+      <a wire:navigate.hover href="{{ route('institution') }}" class="text-xs text-gray-700">
         Kelembagaan
       </a>
-      <a wire:navigate href="{{ route('about') }}" class="text-xs text-gray-700">
+      <a wire:navigate.hover href="{{ route('about') }}" class="text-xs text-gray-700">
         Tentang
       </a>
     </div>
