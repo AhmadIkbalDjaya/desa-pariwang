@@ -5,7 +5,6 @@ namespace App\Livewire\Public\About;
 use App\Models\Hamlet;
 use App\Models\Location;
 use App\Models\Marker;
-use App\Models\Marker;
 use App\Models\Profile;
 use App\Models\VillageAparatus;
 use App\Models\VisionMission;
