@@ -312,14 +312,13 @@
       //
     @endforeach
     markersData.forEach((marker, index) => {
-      linkImage = marker.image != '' ? 'storage/' + marker.image : 'images/map.webp';
       new maplibregl.Marker()
         .setLngLat([marker.longitude, marker.latitude])
         .addTo(map)
         .setPopup(new maplibregl.Popup().setHTML(`
             <div class="flex">
               <div class="basis-3/12">
-                <img src="{{ asset('${linkImage}') }}" class="object-cover" alt="" style="max-height: 80px; min-height: 80px;">
+                <img src="{{ asset('${marker.image}') }}" class="object-cover" alt="${marker.name}" style="max-height: 80px; min-height: 80px;">
               </div>
               <div class="basis-9/12 px-2 pt-1 flex flex-col justify-between">
                 <div>

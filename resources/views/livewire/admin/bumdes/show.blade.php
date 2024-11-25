@@ -104,8 +104,7 @@
           </div>
         </div>
         <div class="col-12 col-md-6">
-          <img src="{{ $bumdes->image ? asset('storage/' . $bumdes->image) : asset('images/bumdes-icon2.webp') }}"
-            alt="" srcset="" class="img-fluid px-md-5">
+          <img src="{{ asset($bumdes->image) }}" alt="" srcset="" class="img-fluid px-md-5">
         </div>
       </div>
     </div>

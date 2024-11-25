@@ -85,8 +85,7 @@
         <div class="col-7 col-lg-8">
           <p class="fs-4">
             @if ($village_aparatus->photo)
-              <img src="{{ asset('storage/' . $village_aparatus->photo) }}" class="img-fluid" width="200"
-                alt="...">
+              <img src="{{ asset($village_aparatus->photo) }}" class="img-fluid" width="200" alt="...">
             @else
               <img
                 src="{{ $village_aparatus->gender == 'male' ? asset('images/user_male.webp') : asset('images/user_female.webp') }}"

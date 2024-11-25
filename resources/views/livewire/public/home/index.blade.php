@@ -158,8 +158,7 @@
           @foreach ($bumdeses as $bumdes)
             <div class="mb-6 max-w-[9rem] overflow-hidden rounded-md bg-white shadow-lg md:mb-0 md:max-w-[17rem]">
               <div class="m-1 md:m-5">
-                <img class="h-32 w-32 object-cover object-center md:h-56 md:w-56"
-                  src="{{ $bumdes->image ? asset('storage/' . $bumdes->image) : asset('images/bumdes-icon2.webp') }}"
+                <img class="h-32 w-32 object-cover object-center md:h-56 md:w-56" src="{{ asset($bumdes->image) }}"
                   alt="Gambar" />
               </div>
             </div>
@@ -343,14 +342,13 @@
       //
     @endforeach
     markersData.forEach((marker, index) => {
-      linkImage = marker.image != '' ? 'storage/' + marker.image : 'images/map.webp';
       new maplibregl.Marker()
         .setLngLat([marker.longitude, marker.latitude])
         .addTo(map)
         .setPopup(new maplibregl.Popup().setHTML(`
             <div class="flex">
               <div class="basis-3/12">
-                <img src="{{ asset('${linkImage}') }}" class="object-cover" alt="" style="max-height: 80px; min-height: 80px;">
+                <img src="{{ asset('${marker.image}') }}" class="object-cover" alt="${marker.name}" style="max-height: 80px; min-height: 80px;">
               </div>
               <div class="basis-9/12 px-2 pt-1 flex flex-col justify-between">
                 <div>

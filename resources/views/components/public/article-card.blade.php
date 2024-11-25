@@ -7,7 +7,7 @@
       </span>
     @endif
 
-    <img src="{{ asset($article->imageUrl) }}" alt="{{ $article->title }}" loading="lazy"
+    <img src="{{ asset($article->image) }}" alt="{{ $article->title }}" loading="lazy"
       class="{{ $responsive ? 'h-24 md:h-40' : 'h-40' }} w-full object-cover object-center" />
   </div>
   <div class="p-4">
