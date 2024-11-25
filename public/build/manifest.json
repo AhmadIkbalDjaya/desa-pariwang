@@ -1,6 +1,10 @@
 {
+  "public/images/profile-1.webp": {
+    "file": "assets/profile-1-X5EOKKPZ.webp",
+    "src": "public/images/profile-1.webp"
+  },
   "resources/css/app.css": {
-    "file": "assets/app-UvaTTBJt.css",
+    "file": "assets/app-NJFCegg8.css",
     "isEntry": true,
     "src": "resources/css/app.css"
   },
