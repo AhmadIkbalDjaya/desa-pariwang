@@ -35,10 +35,10 @@ class VillageAparatusForm extends Form
         $this->position = $village_aparatus->position;
         $this->pob = $village_aparatus->pob;
         $this->dob = $village_aparatus->dob;
-        $this->gender = $village_aparatus->gender;
+        $this->gender = $village_aparatus->gender->value;
         $this->education = $village_aparatus->education;
         $this->job = $village_aparatus->job;
-        $this->religion = $village_aparatus->religion;
+        $this->religion = $village_aparatus->religion->value;
     }
 
     public function store() {

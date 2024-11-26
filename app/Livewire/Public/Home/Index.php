@@ -2,7 +2,6 @@
 
 namespace App\Livewire\Public\Home;
 
-use App\Enums\Gender;
 use App\Livewire\Forms\Admin\ComplaintForm;
 use App\Models\Article;
 use App\Models\Bumdes;

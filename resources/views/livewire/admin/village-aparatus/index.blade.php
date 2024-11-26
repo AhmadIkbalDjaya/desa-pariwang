@@ -33,7 +33,7 @@
               <tr wire:key="{{ $aparatus->id }}">
                 <td style="white-space: nowrap">{{ $aparatus->name }}</td>
                 <td style="white-space: nowrap">{{ $aparatus->position }}</td>
-                <td style="white-space: nowrap">{{ $aparatus->gender == 'male' ? 'Laki-laki' : 'Perempuan' }}</td>
+                <td style="white-space: nowrap">{{ $aparatus->gender->label() }}</td>
                 {{-- <td style="white-space: nowrap">{{ $aparatus->pob ?? '-' }}, {{ $aparatus->dob ?? "-"}}</td> --}}
                 <td style="white-space: nowrap">
                   <a href="{{ route('admin.village-aparatus.show', ['village_aparatus' => $aparatus->id]) }}"

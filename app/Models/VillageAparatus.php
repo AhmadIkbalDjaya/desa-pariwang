@@ -2,6 +2,8 @@
 
 namespace App\Models;
 
+use App\Enums\Gender;
+use App\Enums\Religion;
 use App\Observers\VillageAparatusObserver;
 use Illuminate\Database\Eloquent\Attributes\ObservedBy;
 use Illuminate\Database\Eloquent\Casts\Attribute;
@@ -14,6 +16,12 @@ class VillageAparatus extends Model
     use HasFactory;
 
     protected $guarded = ["id"];
+    
+    protected $casts = [
+        "gender" => Gender::class,
+        "religion" => Religion::class,
+    ];
+
     /**
      * Get the villageAparatus photo with url
      * @return \Illuminate\Database\Eloquent\Casts\Attribute
@@ -22,7 +30,7 @@ class VillageAparatus extends Model
     {
         return Attribute::make(
             get: function (?string $value): string {
-                return $value ? "storage/$value" : ($this->gender == "male" ? "images/user_male.webp" : "images/user_female.webp");
+                return $value ? "storage/$value" : ($this->gender == Gender::Male ? "images/user_male.webp" : "images/user_female.webp");
             }
         );
     }

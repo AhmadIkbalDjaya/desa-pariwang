@@ -25,7 +25,7 @@ class InstitutionMemberForm extends Form
     public function setInstitutionMember(InstitutionMember $institutionMember) {
         $this->institutionMember = $institutionMember;
         $this->name = $institutionMember->name;
-        $this->gender = $institutionMember->gender;
+        $this->gender = $institutionMember->gender->value;
         $this->position = $institutionMember->position;
         $this->show_photo = $institutionMember->photo;
         // $this->institution_id = $institutionMember->institution_id;

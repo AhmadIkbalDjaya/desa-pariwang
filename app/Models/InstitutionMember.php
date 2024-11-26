@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\Enums\Gender;
 use App\Observers\InstitutionMemberObserver;
 use Illuminate\Database\Eloquent\Attributes\ObservedBy;
 use Illuminate\Database\Eloquent\Casts\Attribute;
@@ -14,6 +15,9 @@ class InstitutionMember extends Model
 {
     use HasFactory;
     protected $guarded = ["id"];
+    protected $casts = [
+        "gender" => Gender::class,
+    ];
 
     /**
      * Get the institution that owns the InstitutionMember
@@ -32,7 +36,7 @@ class InstitutionMember extends Model
     {
         return Attribute::make(
             get: function (?string $value): string {
-                return $value ? "storage/$value" : ($this->gender == "male" ? "images/user_male.webp" : "images/user_female.webp");
+                return $value ? "storage/$value" : ($this->gender == Gender::Male ? "images/user_male.webp" : "images/user_female.webp");
             }
         );
     }
