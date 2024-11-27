@@ -9,20 +9,39 @@ use Livewire\Form;
 class ProfileForm extends Form
 {
     public ?Profile $profile;
-    #[Validate("required|string")]
+    #[Validate]
     public $name;
-    #[Validate("required|string")]
+
+    #[Validate]
     public $description;
-    #[Validate("required|string")]
+
+    #[Validate]
     public $potency;
-    #[Validate("required|string")]
+
+    #[Validate]
     public $contact;
-    #[Validate("required|email")]
+
+    #[Validate]
     public $email;
-    #[Validate("required|exists:village_statuses,id")]
+
+    #[Validate]
     public $village_status_id;
 
-    public function setProfile(Profile $profile) {
+    public function rules(): array
+    {
+        return [
+            "name" => "required|string",
+            "description" => "required|string",
+            "potency" => "required|string",
+            "contact" => "required|string",
+            "email" => "required|email",
+            "village_status_id" => "required|exists:village_statuses,id",
+        ];
+    }
+
+
+    public function setProfile(Profile $profile)
+    {
         $this->profile = $profile;
         $this->name = $profile->name;
         $this->description = $profile->description;
@@ -32,17 +51,20 @@ class ProfileForm extends Form
         $this->village_status_id = $profile->village_status_id;
     }
 
-    public function store() {
+    public function store()
+    {
         $validated = $this->validate();
         Profile::create($validated);
     }
 
-    public function update() {
+    public function update()
+    {
         $validated = $this->validate();
         $this->profile->update($validated);
     }
 
-    public function delete() {
+    public function delete()
+    {
         $this->profile->delete();
     }
 }

@@ -10,37 +10,44 @@ use Livewire\Form;
 class InstitutionMemberForm extends Form
 {
     public ?InstitutionMember $institutionMember;
-    #[Validate("required|string")]
+    #[Validate]
     public $name;
-    #[Validate("required|string")]
+    #[Validate]
     public $position;
-    #[Validate("required|exists:institutions,id")]
+    #[Validate]
     public $institution_id;
-    #[Validate("nullable|image")]
+    #[Validate]
     public $photo;
-    #[Validate("required|in:male,female")]
+    #[Validate]
     public $gender;
     public $show_photo;
+    public function rules(): array
+    {
+        return [
+            "name" => "required|string",
+            "position" => "required|string",
+            "institution_id" => "required|exists:institutions,id",
+            "photo" => "nullable|image",
+            "gender" => "required|in:male,female",
+        ];
+    }
 
-    public function setInstitutionMember(InstitutionMember $institutionMember) {
+    public function setInstitutionMember(InstitutionMember $institutionMember)
+    {
         $this->institutionMember = $institutionMember;
         $this->name = $institutionMember->name;
         $this->gender = $institutionMember->gender->value;
         $this->position = $institutionMember->position;
         $this->show_photo = $institutionMember->photo;
-        // $this->institution_id = $institutionMember->institution_id;
-    }
-    
-    public function resetInstitutionMember() {
-        $this->institutionMember = null;
-        $this->name = null;
-        $this->gender = null;
-        $this->position = null;
-        $this->photo = null;
-        $this->show_photo = null;
     }
 
-    public function store() {
+    public function resetInstitutionMember()
+    {
+        $this->reset();
+    }
+
+    public function store()
+    {
         $validated = $this->validate();
         if ($this->photo) {
             $validated['photo'] = $this->photo->storePublicly('institutionmember');
@@ -50,11 +57,12 @@ class InstitutionMemberForm extends Form
         InstitutionMember::create($validated);
     }
 
-    public function update() {
+    public function update()
+    {
         $validated = $this->validate();
         if ($this->photo && gettype($this->photo) == "object") {
-            if (Storage::exists($this->photo)) {
-                Storage::delete($this->photo);
+            if ($this->institutionMember->photo && Storage::exists($this->institutionMember->photo)) {
+                Storage::delete($this->institutionMember->photo);
             }
             $validated["photo"] = $this->photo->storePublicly("institutionmember");
         } else {
@@ -63,11 +71,10 @@ class InstitutionMemberForm extends Form
         $this->institutionMember->update($validated);
     }
 
-    public function delete() {
-        if ($this->photo) {
-            if (Storage::exists($this->photo)) {
-                Storage::delete($this->photo);
-            }
+    public function delete()
+    {
+        if ($this->institutionMember->photo && Storage::exists($this->institutionMember->photo)) {
+            Storage::delete($this->institutionMember->photo);
         }
         $this->institutionMember->delete();
     }

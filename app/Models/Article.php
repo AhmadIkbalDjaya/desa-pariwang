@@ -33,4 +33,13 @@ class Article extends Model
             get: fn(?string $value) => $value ? "storage/$value" : "images/default-article.webp"
         );
     }
+    protected static function boot()
+    {
+        parent::boot();
+        static::creating(function ($article) {
+            if (empty($article->publish_date)) {
+                $article->publish_date = now()->toDateString();
+            }
+        });
+    }
 }

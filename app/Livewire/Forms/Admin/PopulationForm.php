@@ -9,20 +9,39 @@ use Livewire\Form;
 class PopulationForm extends Form
 {
     public ?Population $population;
-    #[Validate("nullable|numeric|min:0")]
+    #[Validate]
     public $total_population;
-    #[Validate("nullable|numeric|min:0")]
+
+    #[Validate]
     public $male;
-    #[Validate("nullable|numeric|min:0")]
+
+    #[Validate]
     public $female;
-    #[Validate("nullable|numeric|min:0")]
+
+    #[Validate]
     public $family;
-    #[Validate("nullable|numeric|min:0")]
+
+    #[Validate]
     public $temporary;
-    #[Validate("nullable|numeric|min:0")]
+
+    #[Validate]
     public $mutation;
 
-    public function setPopulation(Population $population) {
+    public function rules(): array
+    {
+        return [
+            "total_population" => "nullable|numeric|min:0",
+            "male" => "nullable|numeric|min:0",
+            "female" => "nullable|numeric|min:0",
+            "family" => "nullable|numeric|min:0",
+            "temporary" => "nullable|numeric|min:0",
+            "mutation" => "nullable|numeric|min:0",
+        ];
+    }
+
+
+    public function setPopulation(Population $population)
+    {
         $this->population = $population;
         $this->total_population = $population->total_population;
         $this->male = $population->male;
@@ -32,27 +51,25 @@ class PopulationForm extends Form
         $this->mutation = $population->mutation;
     }
 
-    public function resetPopulation() {
-        $this->population = null;
-        $this->total_population = null;
-        $this->male = null;
-        $this->female = null;
-        $this->family = null;
-        $this->temporary = null;
-        $this->mutation = null;
+    public function resetPopulation()
+    {
+        $this->reset();
     }
 
-    public function store() {
+    public function store()
+    {
         $validated = $this->validate();
         Population::create($validated);
     }
 
-    public function update() {
+    public function update()
+    {
         $validated = $this->validate();
         $this->population->update($validated);
     }
 
-    public function delete() {
+    public function delete()
+    {
         $this->population->delete();
     }
 }

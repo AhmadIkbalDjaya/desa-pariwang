@@ -9,35 +9,47 @@ use Livewire\Form;
 class VisionMissionForm extends Form
 {
     public ?VisionMission $visionMission;
-    #[Validate("required|string")]
+    #[Validate]
     public $content;
-    #[Validate("nullable|boolean")]
+
+    #[Validate]
     public $is_visi;
 
-    public function setVisionMission(VisionMission $visionMission) {
+    public function rules(): array
+    {
+        return [
+            "content" => "required|string",
+            "is_visi" => "nullable|boolean",
+        ];
+    }
+
+    public function setVisionMission(VisionMission $visionMission)
+    {
         $this->visionMission = $visionMission;
         $this->content = $visionMission->content;
         $this->is_visi = $visionMission->is_visi;
     }
 
-    public function resetVisionMission() {
-        $this->visionMission = null;
-        $this->content = null;
-        $this->is_visi = null;
+    public function resetVisionMission()
+    {
+        $this->reset();
     }
 
-    public function store() {
+    public function store()
+    {
         $validated = $this->validate();
-        $validated['is_visi'] = false;
+        $validated["is_visi"] = false;
         VisionMission::create($validated);
     }
 
-    public function update() {
+    public function update()
+    {
         $validated = $this->validate();
         $this->visionMission->update($validated);
     }
 
-    public function delete() {
+    public function delete()
+    {
         $this->visionMission->delete();
     }
 }

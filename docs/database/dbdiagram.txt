@@ -108,7 +108,7 @@ table locations {
   area varchar [null]
 }
 
-table hamlet {
+table hamlets {
   id int PK
   name varchar [not null]
   chief varchar [not null]

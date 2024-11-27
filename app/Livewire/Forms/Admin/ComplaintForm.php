@@ -8,17 +8,17 @@ use Livewire\Form;
 
 class ComplaintForm extends Form
 {
-    public ?Complaint $complaint = null;
+    public ?Complaint $complaint;
     #[Validate]
-    public ?string $name = null;
+    public ?string $name;
     #[Validate]
-    public ?string $email = null;
+    public ?string $email;
     #[Validate]
-    public ?string $phone = null;
+    public ?string $phone;
     #[Validate]
-    public ?string $institute = null;
+    public ?string $institute;
     #[Validate]
-    public ?string $description = null;
+    public ?string $description;
     public function rules(): array
     {
         return [
