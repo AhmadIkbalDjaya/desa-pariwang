@@ -20,6 +20,10 @@ class ProfileSeeder extends Seeder
             "contact" => "081241250245",
             "email" => "desa.pariwang01@gmail.com",
             "village_status_id" => "1",
+            "vision" => "Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam sapiente amet debitis cumque a, nihil odio aspernatur explicabo cum aliquid consequuntur consectetur minus eaque saepe?",
+            "mission" => "1. Lorem ipsum dolor sit, amet consectetur adipisicing elit. Harum laudantium esse consequatur aliquid, quasi quae!
+2. Lorem ipsum dolor sit, amet consectetur adipisicing elit. Harum laudantium esse consequatur aliquid, quasi quae!
+3. Lorem ipsum dolor sit, amet consectetur adipisicing elit. Harum laudantium esse consequatur aliquid, quasi quae!",
         ];
 
         Profile::create($profile);

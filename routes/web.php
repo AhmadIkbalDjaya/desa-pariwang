@@ -33,7 +33,6 @@ Route::middleware(["auth"])
         Route::get("adminProfile/changePass", \App\Livewire\Admin\AdminProfile\ChangePass::class)->name("admin-profile.changePass");
         Route::get("population", \App\Livewire\Admin\Poppulation\Index::class)->name("population.index");
         Route::get("profile", \App\Livewire\Admin\Profile\Index::class)->name("profile.index");
-        Route::get("vision-mision", \App\Livewire\Admin\VisionMision\Index::class)->name("vision-mision.index");
         Route::prefix("location")->name("location.")->group(function () {
             Route::get("location", \App\Livewire\Admin\Location\Index::class)->name("index");
             Route::prefix('marker')->name("marker.")->group(function () {

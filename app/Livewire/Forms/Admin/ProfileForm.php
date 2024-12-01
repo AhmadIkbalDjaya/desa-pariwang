@@ -26,6 +26,10 @@ class ProfileForm extends Form
 
     #[Validate]
     public $village_status_id;
+    #[Validate()]
+    public $vision;
+    #[Validate()]
+    public $mission;
 
     public function rules(): array
     {
@@ -36,6 +40,8 @@ class ProfileForm extends Form
             "contact" => "required|string",
             "email" => "required|email",
             "village_status_id" => "required|exists:village_statuses,id",
+            "vision" => "required|string|min:100",
+            "mission" => "required|string|min:100",
         ];
     }
 
@@ -49,6 +55,8 @@ class ProfileForm extends Form
         $this->contact = $profile->contact;
         $this->email = $profile->email;
         $this->village_status_id = $profile->village_status_id;
+        $this->vision = $profile->vision;
+        $this->mission = $profile->mission;
     }
 
     public function store()
