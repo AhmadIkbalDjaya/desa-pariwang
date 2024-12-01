@@ -1,7 +1,7 @@
 <div class="mb-6 flex basis-full gap-6 overflow-hidden rounded-lg bg-white p-3 shadow-lg md:basis-[48%]">
   <div class="basis-4/12">
     <img class="h-32 w-full object-cover object-center md:h-40"
-      src="{{ $bumdes->image ? asset('storage/' . $bumdes->image) : asset('images/bumdes-icon2.webp') }}"
+      src="{{ asset($bumdes->image_url) }}"
       alt="{{ $bumdes->name }}" />
   </div>
   <div class="flex basis-8/12 flex-col justify-between">
@@ -18,7 +18,7 @@
       </a>
     </div>
     <div class="text-end">
-      <a href="{{ route('bumdes.show', ['bumdes' => $bumdes->id]) }}" wire:navigate
+      <a wire:navigate.hover href="{{ route('bumdes.show', ['bumdes' => $bumdes->id]) }}"
         class="text-xs font-semibold text-green-700">
         Baca Selengkapnya
       </a>

@@ -58,7 +58,7 @@
       </div>
       <div class="row">
         <div class="col-6">
-          <img src="{{ $marker->image ? asset('storage/' . $marker->image) : asset('images/bumdes-icon2.webp') }}"
+          <img src="{{ asset($marker->image_url) }}"
             alt="" srcset="" class="img-fluid px-md-5">
         </div>
       </div>

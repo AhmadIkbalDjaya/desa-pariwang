@@ -9,28 +9,45 @@ use Livewire\Form;
 class LocationForm extends Form
 {
     public ?Location $location;
-    #[Validate("required|string")]
+    #[Validate]
     public $longitude;
-    #[Validate("required|string")]
+    #[Validate]
     public $latitude;
-    #[Validate("required|string")]
+    #[Validate]
     public $province;
-    #[Validate("required|string")]
+    #[Validate]
     public $regency;
-    #[Validate("required|string")]
+    #[Validate]
     public $district;
-    #[Validate("required|string")]
+    #[Validate]
     public $border_east;
-    #[Validate("required|string")]
+    #[Validate]
     public $border_west;
-    #[Validate("required|string")]
+    #[Validate]
     public $border_south;
-    #[Validate("required|string")]
+    #[Validate]
     public $border_north;
-    #[Validate("required|string")]
+    #[Validate]
     public $area;
 
-    public function setLocation(Location $location) {
+    public function rules(): array
+    {
+        return [
+            "longitude" => "required|string",
+            "latitude" => "required|string",
+            "province" => "required|string",
+            "regency" => "required|string",
+            "district" => "required|string",
+            "border_east" => "required|string",
+            "border_west" => "required|string",
+            "border_south" => "required|string",
+            "border_north" => "required|string",
+            "area" => "required|string",
+        ];
+    }
+
+    public function setLocation(Location $location)
+    {
         $this->location = $location;
         $this->longitude = $location->longitude;
         $this->latitude = $location->latitude;
@@ -44,31 +61,25 @@ class LocationForm extends Form
         $this->area = $location->area;
     }
 
-    public function resetLocation() {
-        $this->location = null;
-        $this->longitude = null;
-        $this->latitude = null;
-        $this->province = null;
-        $this->regency = null;
-        $this->district = null;
-        $this->border_east = null;
-        $this->border_west = null;
-        $this->border_south = null;
-        $this->border_north = null;
-        $this->area = null;
+    public function resetLocation()
+    {
+        $this->reset();
     }
 
-    public function store() {
+    public function store()
+    {
         $validated = $this->validate();
         Location::create($validated);
     }
 
-    public function update() {
+    public function update()
+    {
         $validated = $this->validate();
         $this->location->update($validated);
     }
 
-    public function delete() {
+    public function delete()
+    {
         $this->location->delete();
     }
 }

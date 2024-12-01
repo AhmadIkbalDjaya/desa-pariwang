@@ -10,7 +10,7 @@
   <link rel="stylesheet" href="{{ asset('admin/assets/css/styles.min.css') }}" />
   <link rel="stylesheet" href="{{ asset('admin/css/style.css') }}" />
 
-  <script src="https://unpkg.com/maplibre-gl/dist/maplibre-gl.js"></script>
+  <script data-navigate-once src="https://unpkg.com/maplibre-gl/dist/maplibre-gl.js"></script>
   <link rel="stylesheet" href="https://unpkg.com/maplibre-gl/dist/maplibre-gl.css">
 
   @stack('style')
@@ -27,9 +27,9 @@
       </div>
     </div>
   </div>
-  <script src="{{ asset('admin/assets/libs/jquery/dist/jquery.min.js') }}"></script>
-  <script src="{{ asset('admin/assets/libs/bootstrap/dist/js/bootstrap.bundle.min.js') }}"></script>
-  <script src="{{ asset('admin/assets/js/app.min.js') }}"></script>
+  <script data-navigate-once src="{{ asset('admin/assets/libs/jquery/dist/jquery.min.js') }}"></script>
+  <script data-navigate-once src="{{ asset('admin/assets/libs/bootstrap/dist/js/bootstrap.bundle.min.js') }}"></script>
+  <script data-navigate-once src="{{ asset('admin/assets/js/app.min.js') }}"></script>
   <script src="{{ asset('js/modal.js') }}"></script>
   <script src="{{ asset('js/toast.js') }}"></script>
   @stack('script')

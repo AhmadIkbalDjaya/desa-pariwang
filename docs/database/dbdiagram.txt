@@ -83,6 +83,8 @@ table village_apparatuses {
   education varchar [null]
   job varchar [null]
   religion religion [not null, default: "Islam"]
+  vission longtext [null]
+  mission longtext [null]
 }
 
 table complaints {
@@ -108,7 +110,7 @@ table locations {
   area varchar [null]
 }
 
-table hamlet {
+table hamlets {
   id int PK
   name varchar [not null]
   chief varchar [not null]
@@ -131,10 +133,4 @@ table markers {
   image varchar [null]
   longitude varchar [null]
   latitude varchar [null]
-}
-
-table vision_missions {
-  id int PK
-  content longtext [null]
-  is_visi bool [not null, default: false]
 }

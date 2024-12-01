@@ -8,10 +8,19 @@ use Livewire\Form;
 
 class LoginForm extends Form
 {
-    #[Validate('required')]
+    #[Validate]
     public $username;
-    #[Validate('required|min:8')]
+
+    #[Validate]
     public $password;
+
+    public function rules(): array
+    {
+        return [
+            "username" => "required",
+            "password" => "required|min:8",
+        ];
+    }
 
     public function login() {
         $validated = $this->validate();

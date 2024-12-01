@@ -4,7 +4,6 @@
     <div class="brand-logo d-flex align-items-center justify-content-between">
       <a href="{{ route('admin.index') }}" wire:navigate.hover class="text-nowrap logo-img">
         <p class=" text-black" style="font-weight: 700; font-size: 1.5rem;">Desa Pariwang</p>
-        {{-- <img src="{{ 'admin/assets/images/logos/dark-logo.svg' }}" width="180" alt="" /> --}}
       </a>
       <div class="close-btn d-xl-none d-block sidebartoggler cursor-pointer" id="sidebarCollapse">
         <i class="ti ti-x fs-8"></i>
@@ -27,15 +26,6 @@
               <i class="ti ti-user"></i>
             </span>
             <span class="hide-menu">Profil</span>
-          </a>
-        </li>
-        <li class="sidebar-item {{ Request::is('addes/vision-mision*') ? 'selected' : '' }}">
-          <a class="sidebar-link" href="{{ route('admin.vision-mision.index') }}" wire:navigate.hover
-            aria-expanded="false">
-            <span>
-              <i class="ti ti-vocabulary"></i>
-            </span>
-            <span class="hide-menu">Visi Misi</span>
           </a>
         </li>
         <li class="sidebar-item {{ Request::is('addes/village-aparatus*') ? 'selected' : '' }}">
@@ -107,7 +97,6 @@
               class="btn btn-primary fs-2 fw-semibold lh-sm">Hubungi Developer</a>
           </div>
           <div class="unlimited-access-img">
-            {{-- <img src="{{ 'admin/assets/images/backgrounds/rocket.png' }}" alt="" class="img-fluid"> --}}
             <img src="{{ asset('admin/assets/images/backgrounds/rocket.png') }}" alt="" class="img-fluid">
           </div>
         </div>

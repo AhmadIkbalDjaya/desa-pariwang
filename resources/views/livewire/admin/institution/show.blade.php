@@ -34,7 +34,7 @@
               <tr wire:key="{{ $member->id }}">
                 <td style="white-space: nowrap">{{ $member->name }}</td>
                 <td style="white-space: nowrap">{{ $member->position }}</td>
-                <td style="white-space: nowrap">{{ $member->gender == 'male' ? 'Laki-Laki' : 'Perempuan' }}</td>
+                <td style="white-space: nowrap">{{ $member->gender->label() }}</td>
                 <td style="white-space: nowrap">
                   <span class="badge bg-warning text-white" style="cursor: pointer" data-bs-toggle="modal"
                     data-bs-target="#editModal" wire:click="setInstitutionMember({{ $member->id }})">

@@ -53,7 +53,7 @@
           <p class="fs-4">Gambar Berita</p>
         </div>
         <div class="col-12 col-md-8">
-          <img src="{{ asset('storage/' . $article->image) }}" alt="" srcset="" class="img-fluid">
+          <img src="{{ asset($article->image_url) }}" alt="" srcset="" class="img-fluid">
         </div>
       </div>
     </div>

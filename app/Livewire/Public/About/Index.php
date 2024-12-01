@@ -7,7 +7,6 @@ use App\Models\Location;
 use App\Models\Marker;
 use App\Models\Profile;
 use App\Models\VillageAparatus;
-use App\Models\VisionMission;
 use Illuminate\Support\Facades\Cache;
 use Livewire\Component;
 
@@ -19,7 +18,7 @@ class Index extends Component
             return Hamlet::select("id", "name")->get();
         });
         $profile = Cache::rememberForever("about-profile", function () {
-            return Profile::select("id", "name", "description", "potency", "village_status_id")
+            return Profile::select("id", "name", "description", "potency", "village_status_id", "vision", "mission")
                 ->with(['village_status:id,name'])
                 ->first();
         });
@@ -39,8 +38,6 @@ class Index extends Component
             "profile" => $profile,
             "location" => $location,
             "village_aparatus" => $village_aparatus,
-            "visi" => VisionMission::select("id", "content")->where('is_visi', 1)->get()->first(),
-            "mision" => VisionMission::select("id", "content")->where('is_visi', 0)->get(),
             "markers" => $markers,
         ])->title("Tentang Desa");
     }

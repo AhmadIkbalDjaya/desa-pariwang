@@ -4,7 +4,7 @@
       <div
         class="absolute bottom-3 right-3 flex h-[150px] w-[150px] transform items-end justify-center rounded-md bg-gray-300 p-3 pb-0 transition-transform duration-500 hover:translate-x-[-8px] hover:translate-y-[-8px]">
         <img class="h-full w-full rounded-sm object-cover object-center"
-          src="{{ $villageAparatus->photo ? asset('storage/' . $villageAparatus->photo) : ($villageAparatus->gender == 'male' ? asset('images/user_male.webp') : asset('images/user_female.webp')) }}"
+          src="{{ asset($villageAparatus->photo_url) }}"
           alt="{{ $villageAparatus->name }}" />
       </div>
     </div>

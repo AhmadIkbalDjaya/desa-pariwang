@@ -3,7 +3,6 @@
 namespace App\Livewire\Forms\Admin;
 
 use App\Models\Article;
-use Illuminate\Support\Carbon;
 use Illuminate\Support\Facades\Storage;
 use Livewire\Attributes\Validate;
 use Livewire\Form;
@@ -11,39 +10,49 @@ use Livewire\Form;
 class ArticleForm extends Form
 {
     public ?Article $article;
-    #[Validate("required|string")]
+    #[Validate]
     public $title;
-    #[Validate("required|string")]
+    #[Validate]
     public $body;
-    #[Validate("nullable|image")]
+    #[Validate]
     public $image;
-    #[Validate("nullable|date")]
+    #[Validate]
     public $publish_date;
+    public function rules(): array
+    {
+        return [
+            "title" => "required|string",
+            "body" => "required|string",
+            "image" => "nullable|image",
+            "publish_date" => "nullable|date",
+        ];
+    }
 
-    public function setArticle(Article $article) {
+    public function setArticle(Article $article)
+    {
         $this->article = $article;
         $this->title = $article->title;
         $this->body = $article->body;
-        // $this->image = $article->image;
         $this->publish_date = $article->publish_date;
     }
 
-    public function store() {
+    public function store()
+    {
         $validated = $this->validate();
         if ($this->image) {
             $validated["image"] = $this->image->storePublicly("article");
-        }
-        if (!$this->publish_date) {
-            $validated["publish_date"] = Carbon::now();
+        } else {
+            unset($validated["image"]);
         }
         Article::create($validated);
     }
 
-    public function update() {
+    public function update()
+    {
         $validated = $this->validate();
         if ($this->image && gettype($this->image) == "object") {
-            if (Storage::exists($this->image)) {
-                Storage::delete($this->image);
+            if ($this->article->image && Storage::exists($this->article->image)) {
+                Storage::delete($this->article->image);
             }
             $validated["image"] = $this->image->storePublicly("article");
         } else {
@@ -52,9 +61,10 @@ class ArticleForm extends Form
         $this->article->update($validated);
     }
 
-    public function delete() {
-        if ($this->image && Storage::exists($this->image)) {
-            Storage::delete($this->image);
+    public function delete()
+    {
+        if ($this->article->image && Storage::exists($this->article->image)) {
+            Storage::delete($this->article->image);
         }
         $this->article->delete();
     }

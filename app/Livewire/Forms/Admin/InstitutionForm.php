@@ -9,28 +9,39 @@ use Livewire\Form;
 class InstitutionForm extends Form
 {
     public ?Institution $institution;
-    #[Validate("required|string")]
+    #[Validate]
     public $name;
-    #[Validate("nullable|string")]
+    #[Validate]
     public $abbreviation;
+    public function rules(): array
+    {
+        return [
+            "name" => "required|string",
+            "abbreviation" => "nullable|string",
+        ];
+    }
 
-    public function setInstitution(Institution $institution) {
+    public function setInstitution(Institution $institution)
+    {
         $this->institution = $institution;
         $this->name = $institution->name;
         $this->abbreviation = $institution->abbreviation;
     }
 
-    public function store() {
+    public function store()
+    {
         $validated = $this->validate();
         Institution::create($validated);
     }
 
-    public function update() {
+    public function update()
+    {
         $validated = $this->validate();
         $this->institution->update($validated);
     }
 
-    public function delete() {
+    public function delete()
+    {
         $this->institution->delete();
     }
 }

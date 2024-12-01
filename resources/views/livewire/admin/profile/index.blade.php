@@ -89,6 +89,28 @@
           </div>
         </div>
         <div class="row mb-3">
+          <div class="col-12 col-md-4">
+            <p class="fs-4">Visi Desa <x-admin.form.required /> </p>
+          </div>
+          <div class="col-12 col-md-8">
+            <textarea wire:model.live='form.vision' name="" id="" rows="5" class="form-control w-100"></textarea>
+            @error('form.vision')
+              <div class="invalid-feedback text-start">{{ $message }}</div>
+            @enderror
+          </div>
+        </div>
+        <div class="row mb-3">
+          <div class="col-12 col-md-4">
+            <p class="fs-4">Misi Desa <x-admin.form.required /> </p>
+          </div>
+          <div class="col-12 col-md-8">
+            <textarea wire:model.live='form.mission' name="" id="" rows="5" class="form-control w-100"></textarea>
+            @error('form.mission')
+              <div class="invalid-feedback text-start">{{ $message }}</div>
+            @enderror
+          </div>
+        </div>
+        <div class="row mb-3">
           <button class="btn btn-primary" type="submit">Simpan</button>
         </div>
       </form>

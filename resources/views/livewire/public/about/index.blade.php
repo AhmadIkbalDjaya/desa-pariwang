@@ -40,18 +40,14 @@
       <div class="">
         <h1 class="mb-5 text-2xl font-semibold text-green-700">Visi</h1>
         <p class="text-justify font-medium">
-          {{ $visi->content }}
+          {{ $profile->vision }}
         </p>
       </div>
       <div class="mt-3">
         <h1 class="mb-5 text-2xl font-semibold text-green-700">Misi</h1>
-        <ol class="ms-5 list-decimal text-justify font-medium">
-          @foreach ($mision as $misi)
-            <li>
-              {{ $misi->content }}
-            </li>
-          @endforeach
-        </ol>
+        <p class="text-justify font-medium">
+          {!! nl2br(e($profile->mission)) !!}
+        </p>
       </div>
     </div>
     <div class="mb-6 hidden place-items-end md:grid md:basis-1/2">
@@ -306,20 +302,19 @@
         "name": "{{ $marker->name }}",
         "longitude": "{{ $marker->longitude }}",
         "latitude": "{{ $marker->latitude }}",
-        "image": "{{ $marker->image }}",
+        "image": "{{ $marker->image_url }}",
         "description": "{{ $marker->description }}",
       })
       //
     @endforeach
     markersData.forEach((marker, index) => {
-      linkImage = marker.image != '' ? 'storage/' + marker.image : 'images/map.webp';
       new maplibregl.Marker()
         .setLngLat([marker.longitude, marker.latitude])
         .addTo(map)
         .setPopup(new maplibregl.Popup().setHTML(`
             <div class="flex">
               <div class="basis-3/12">
-                <img src="{{ asset('${linkImage}') }}" class="object-cover" alt="" style="max-height: 80px; min-height: 80px;">
+                <img src="{{ asset('${marker.image}') }}" class="object-cover" alt="${marker.name}" style="max-height: 80px; min-height: 80px;">
               </div>
               <div class="basis-9/12 px-2 pt-1 flex flex-col justify-between">
                 <div>

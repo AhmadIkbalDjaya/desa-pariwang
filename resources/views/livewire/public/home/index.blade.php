@@ -29,7 +29,7 @@
         {{ $profile->description }}
       </p>
       <div class="mt-2">
-        <a wire:navigate href="{{ route('about') }}" class="font-semibold text-green-700">
+        <a wire:navigate.hover href="{{ route('about') }}" class="font-semibold text-green-700">
           Lihat Selengkapnya
         </a>
       </div>
@@ -59,7 +59,7 @@
         @endforeach
       </div>
       <div class="mt-5 text-end">
-        <a href="{{ route('article') }}" wire:navigate class="text-base font-semibold text-green-700">
+        <a wire:navigate.hover href="{{ route('article') }}" class="text-base font-semibold text-green-700">
           Lihat Berita Lainnya
         </a>
       </div>
@@ -148,7 +148,7 @@
         mana masyarakat desa mengelola bisnis untuk memajukan ekonomi lokal dan
         meningkatkan kesejahteraan.
       </p>
-      <a href="{{ route('bumdes') }}" wire:navigate class="text-sm underline underline-offset-8">
+      <a wire:navigate.hover href="{{ route('bumdes') }}" class="text-sm underline underline-offset-8">
         Lihat lebih banyak >
       </a>
     </div>
@@ -159,8 +159,7 @@
             <div class="mb-6 max-w-[9rem] overflow-hidden rounded-md bg-white shadow-lg md:mb-0 md:max-w-[17rem]">
               <div class="m-1 md:m-5">
                 <img class="h-32 w-32 object-cover object-center md:h-56 md:w-56"
-                  src="{{ $bumdes->image ? asset('storage/' . $bumdes->image) : asset('images/bumdes-icon2.webp') }}"
-                  alt="Gambar" />
+                  src="{{ asset($bumdes->image_url) }}" alt="{{ $bumdes->name }}" />
               </div>
             </div>
           @endforeach
@@ -337,20 +336,19 @@
         "name": "{{ $marker->name }}",
         "longitude": "{{ $marker->longitude }}",
         "latitude": "{{ $marker->latitude }}",
-        "image": "{{ $marker->image }}",
+        "image": "{{ $marker->image_url }}",
         "description": "{{ $marker->description }}",
       })
       //
     @endforeach
     markersData.forEach((marker, index) => {
-      linkImage = marker.image != '' ? 'storage/' + marker.image : 'images/map.webp';
       new maplibregl.Marker()
         .setLngLat([marker.longitude, marker.latitude])
         .addTo(map)
         .setPopup(new maplibregl.Popup().setHTML(`
             <div class="flex">
               <div class="basis-3/12">
-                <img src="{{ asset('${linkImage}') }}" class="object-cover" alt="" style="max-height: 80px; min-height: 80px;">
+                <img src="{{ asset('${marker.image}') }}" class="object-cover" alt="${marker.name}" style="max-height: 80px; min-height: 80px;">
               </div>
               <div class="basis-9/12 px-2 pt-1 flex flex-col justify-between">
                 <div>

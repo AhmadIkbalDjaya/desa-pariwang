@@ -7,7 +7,7 @@
       </span>
     @endif
 
-    <img src="{{ asset($article->imageUrl) }}" alt="{{ $article->title }}" loading="lazy"
+    <img src="{{ asset($article->image_url) }}" alt="{{ $article->title }}" loading="lazy"
       class="{{ $responsive ? 'h-24 md:h-40' : 'h-40' }} w-full object-cover object-center" />
   </div>
   <div class="p-4">
@@ -18,7 +18,7 @@
       {!! $article->body !!}
     </div>
     <div class="text-end">
-      <a href="{{ route('article.show', ['article' => $article->slug]) }}" wire:navigate
+      <a wire:navigate.hover href="{{ route('article.show', ['article' => $article->slug]) }}"
         class="text-xs font-semibold text-green-700">
         Baca Selengkapnya
       </a>

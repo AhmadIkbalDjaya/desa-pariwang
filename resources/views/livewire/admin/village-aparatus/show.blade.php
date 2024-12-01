@@ -51,7 +51,7 @@
           <p class="fs-4">Jenis Kelamin</p>
         </div>
         <div class="col-7 col-lg-8">
-          <p class="fs-4">: {{ $village_aparatus->gender == 'male' ? 'Laki-laki' : 'Perempuan' }}</p>
+          <p class="fs-4">: {{ $village_aparatus->gender->label() }}</p>
         </div>
       </div>
       <div class="row mb-3">
@@ -75,7 +75,7 @@
           <p class="fs-4">Agama</p>
         </div>
         <div class="col-7 col-lg-8">
-          <p class="fs-4">: {{ $village_aparatus->religion }}</p>
+          <p class="fs-4">: {{ $village_aparatus->religion->label() }}</p>
         </div>
       </div>
       <div class="row mb-3">
@@ -84,14 +84,7 @@
         </div>
         <div class="col-7 col-lg-8">
           <p class="fs-4">
-            @if ($village_aparatus->photo)
-              <img src="{{ asset('storage/' . $village_aparatus->photo) }}" class="img-fluid" width="200"
-                alt="...">
-            @else
-              <img
-                src="{{ $village_aparatus->gender == 'male' ? asset('images/user_male.webp') : asset('images/user_female.webp') }}"
-                class="img-fluid" width="200" alt="...">
-            @endif
+            <img src="{{ asset($village_aparatus->photo_url) }}" class="img-fluid" width="200" alt="...">
           </p>
         </div>
       </div>

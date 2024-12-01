@@ -9,20 +9,45 @@ use Livewire\Form;
 class ProfileForm extends Form
 {
     public ?Profile $profile;
-    #[Validate("required|string")]
+    #[Validate]
     public $name;
-    #[Validate("required|string")]
-    public $description;
-    #[Validate("required|string")]
-    public $potency;
-    #[Validate("required|string")]
-    public $contact;
-    #[Validate("required|email")]
-    public $email;
-    #[Validate("required|exists:village_statuses,id")]
-    public $village_status_id;
 
-    public function setProfile(Profile $profile) {
+    #[Validate]
+    public $description;
+
+    #[Validate]
+    public $potency;
+
+    #[Validate]
+    public $contact;
+
+    #[Validate]
+    public $email;
+
+    #[Validate]
+    public $village_status_id;
+    #[Validate()]
+    public $vision;
+    #[Validate()]
+    public $mission;
+
+    public function rules(): array
+    {
+        return [
+            "name" => "required|string",
+            "description" => "required|string",
+            "potency" => "required|string",
+            "contact" => "required|string",
+            "email" => "required|email",
+            "village_status_id" => "required|exists:village_statuses,id",
+            "vision" => "required|string|min:100",
+            "mission" => "required|string|min:100",
+        ];
+    }
+
+
+    public function setProfile(Profile $profile)
+    {
         $this->profile = $profile;
         $this->name = $profile->name;
         $this->description = $profile->description;
@@ -30,19 +55,24 @@ class ProfileForm extends Form
         $this->contact = $profile->contact;
         $this->email = $profile->email;
         $this->village_status_id = $profile->village_status_id;
+        $this->vision = $profile->vision;
+        $this->mission = $profile->mission;
     }
 
-    public function store() {
+    public function store()
+    {
         $validated = $this->validate();
         Profile::create($validated);
     }
 
-    public function update() {
+    public function update()
+    {
         $validated = $this->validate();
         $this->profile->update($validated);
     }
 
-    public function delete() {
+    public function delete()
+    {
         $this->profile->delete();
     }
 }
