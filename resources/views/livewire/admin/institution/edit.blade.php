@@ -7,7 +7,7 @@
       <h5 class="card-title fw-semibold mb-3">Edit Lembaga Desa</h5>
       <p class="mb-2">Edit Data Lembaga Desa Dibawah Ini</p>
       <div class="d-flex justify-content-end">
-        <a href="{{ route('admin.institution.index') }}" wire:navigate>
+        <a wire:navigate href="{{ route('admin.institution.index') }}">
           <button class="btn btn-danger">Cancel</button>
         </a>
       </div>

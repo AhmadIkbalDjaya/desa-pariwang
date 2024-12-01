@@ -7,7 +7,7 @@
       <h5 class="card-title fw-semibold mb-3">Tambah Perangkat Desa</h5>
       <p class="mb-2">Tambah Data Badan Usaha Dibawah Ini</p>
       <div class="d-flex justify-content-end">
-        <a href="{{ route('admin.village-aparatus.index') }}" wire:navigate>
+        <a wire:navigate href="{{ route('admin.village-aparatus.index') }}">
           <button class="btn btn-danger">Cancel</button>
         </a>
       </div>

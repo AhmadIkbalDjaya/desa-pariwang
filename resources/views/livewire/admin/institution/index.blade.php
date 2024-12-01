@@ -12,7 +12,7 @@
           <input wire:model.live="search" class="form-control" type="text" placeholder="Cari Lembaga"
             aria-label="default input example">
         </div>
-        <a href="{{ route('admin.institution.create') }}" wire:navigate
+        <a wire:navigate href="{{ route('admin.institution.create') }}"
           class="btn btn-primary add-button text-white col-md-3 my-1">
           <i class="ti ti-plus"></i> Lembaga
         </a>
@@ -36,10 +36,10 @@
                 </td>
                 <td style="white-space: nowrap">{{ $institution->members->count() }}</td>
                 <td style="white-space: nowrap">
-                  <a href="{{ route('admin.institution.show', ['institution' => $institution->id]) }}" wire:navigate>
+                  <a wire:navigate href="{{ route('admin.institution.show', ['institution' => $institution->id]) }}">
                     <span class="badge bg-info text-white"><i class="ti ti-eye"></i></span>
                   </a>
-                  <a href="{{ route('admin.institution.edit', ['institution' => $institution->id]) }}" wire:navigate>
+                  <a wire:navigate href="{{ route('admin.institution.edit', ['institution' => $institution->id]) }}">
                     <span class="badge bg-warning text-white"><i class="ti ti-edit"></i></span>
                   </a>
                   <span class="badge bg-danger text-white" style="cursor: pointer" data-bs-toggle="modal"

@@ -12,7 +12,7 @@
           <input wire:model.live="search" class="form-control" type="text" placeholder="Cari Berita"
             aria-label="default input example">
         </div>
-        <a href="{{ route('admin.article.create') }}" wire:navigate
+        <a wire:navigate href="{{ route('admin.article.create') }}"
           class="btn btn-primary add-button text-white col-md-3 my-1">
           <i class="ti ti-plus"></i> Berita
         </a>
@@ -34,10 +34,10 @@
                 <td style="white-space: nowrap">{!! Str::limit($article->body, $limit = 40, '...') !!}</td>
                 <td style="white-space: nowrap">{{ $article->publish_date }}</td>
                 <td style="white-space: nowrap">
-                  <a href="{{ route('admin.article.show', ['article' => $article->id]) }}" wire:navigate>
+                  <a wire:navigate href="{{ route('admin.article.show', ['article' => $article->id]) }}">
                     <span class="badge bg-info text-white"><i class="ti ti-eye"></i></span>
                   </a>
-                  <a href="{{ route('admin.article.edit', ['article' => $article->id]) }}" wire:navigate>
+                  <a wire:navigate href="{{ route('admin.article.edit', ['article' => $article->id]) }}">
                     <span class="badge bg-warning text-white"><i class="ti ti-edit"></i></span>
                   </a>
                   <span class="badge bg-danger text-white" style="cursor: pointer" data-bs-toggle="modal"

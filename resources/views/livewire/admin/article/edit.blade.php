@@ -1,19 +1,5 @@
 <div>
   {{-- Stop trying to control. --}}
-  @push('script')
-    <script src="https://code.jquery.com/jquery-3.7.1.min.js"
-      integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
-    <script src="https://cdn.ckeditor.com/4.21.0/standard/ckeditor.js"></script>
-    <script>
-      $(document).ready(function() {
-        const body = CKEDITOR.replace('body');
-        body.on('change', function(event) {
-          console.log(event.editor.getData());
-          @this.set('form.body', event.editor.getData());
-        });
-      });
-    </script>
-  @endpush
   <livewire:admin.components.breadcrumb :items="$breadcrumbs" />
 
   <div class="card">
@@ -21,7 +7,7 @@
       <h5 class="card-title fw-semibold mb-3">Edit Berita</h5>
       <p class="mb-2">Edit Data Berita Dibawah Ini</p>
       <div class="d-flex justify-content-end">
-        <a href="{{ route('admin.article.index') }}" wire:navigate>
+        <a wire:navigate href="{{ route('admin.article.index') }}">
           <button class="btn btn-danger">Cancel</button>
         </a>
       </div>
@@ -79,11 +65,6 @@
             @error('form.body')
               <div class="invalid-feedback text-start">{{ $message }}</div>
             @enderror
-            {{-- <textarea wire:model.live='form.body' class="form-control @error('form.body') is-invalid @enderror" id=""
-              rows="5"></textarea> --}}
-            {{-- @error('form.body')
-              <div class="invalid-feedback text-start">{{ $message }}</div>
-            @enderror --}}
           </div>
         </div>
         <div class="row mb-3">
@@ -93,3 +74,14 @@
     </div>
   </div>
 </div>
+@script
+  <script>
+    $(document).ready(function() {
+      const body = CKEDITOR.replace('body');
+      body.on('change', function(event) {
+        console.log(event.editor.getData());
+        @this.set('form.body', event.editor.getData());
+      });
+    });
+  </script>
+@endscript
