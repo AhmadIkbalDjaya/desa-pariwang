@@ -80,7 +80,7 @@ class BumdesForm extends Form
 
     public function delete()
     {
-        if ($this->bumdes->image && Storage::exists($this->image)) {
+        if ($this->bumdes->image && Storage::exists($this->bumdes->image)) {
             Storage::delete($this->bumdes->image);
         }
         $this->bumdes->delete();

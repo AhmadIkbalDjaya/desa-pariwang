@@ -5,10 +5,10 @@ namespace App\Models;
 use App\Enums\Gender;
 use App\Observers\InstitutionMemberObserver;
 use Illuminate\Database\Eloquent\Attributes\ObservedBy;
-use Illuminate\Database\Eloquent\Casts\Attribute;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Support\Facades\Storage;
 
 #[ObservedBy([InstitutionMemberObserver::class])]
 class InstitutionMember extends Model
@@ -28,16 +28,9 @@ class InstitutionMember extends Model
     {
         return $this->belongsTo(Institution::class, 'institution_id', 'id');
     }
-    /**
-     * Get the member photo with url
-     * @return \Illuminate\Database\Eloquent\Casts\Attribute
-     */
-    protected function photo(): Attribute
+
+    public function getPhotoUrlAttribute(): string
     {
-        return Attribute::make(
-            get: function (?string $value): string {
-                return $value ? "storage/$value" : ($this->gender == Gender::Male ? "images/user_male.webp" : "images/user_female.webp");
-            }
-        );
+        return ($this->photo && Storage::exists($this->photo)) ? "storage/$this->photo" : ($this->gender == Gender::Male ? "images/user_male.webp" : "images/user_female.webp");
     }
 }

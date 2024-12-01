@@ -4,7 +4,7 @@
   </h1>
   <div class="mt-2">
     <img class="h-56 w-full object-cover object-center md:h-96"
-      src="{{ asset($article->image) }}"
+      src="{{ asset($article->image_url) }}"
       alt="{{ $article->title }}" />
   </div>
   <p class="py-4 italic text-gray-400">

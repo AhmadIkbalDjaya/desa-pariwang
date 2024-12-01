@@ -158,8 +158,8 @@
           @foreach ($bumdeses as $bumdes)
             <div class="mb-6 max-w-[9rem] overflow-hidden rounded-md bg-white shadow-lg md:mb-0 md:max-w-[17rem]">
               <div class="m-1 md:m-5">
-                <img class="h-32 w-32 object-cover object-center md:h-56 md:w-56" src="{{ asset($bumdes->image) }}"
-                  alt="Gambar" />
+                <img class="h-32 w-32 object-cover object-center md:h-56 md:w-56"
+                  src="{{ asset($bumdes->image_url) }}" alt="{{ $bumdes->name }}" />
               </div>
             </div>
           @endforeach
@@ -336,7 +336,7 @@
         "name": "{{ $marker->name }}",
         "longitude": "{{ $marker->longitude }}",
         "latitude": "{{ $marker->latitude }}",
-        "image": "{{ $marker->image }}",
+        "image": "{{ $marker->image_url }}",
         "description": "{{ $marker->description }}",
       })
       //

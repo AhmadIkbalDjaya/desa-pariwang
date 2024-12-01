@@ -306,7 +306,7 @@
         "name": "{{ $marker->name }}",
         "longitude": "{{ $marker->longitude }}",
         "latitude": "{{ $marker->latitude }}",
-        "image": "{{ $marker->image }}",
+        "image": "{{ $marker->image_url }}",
         "description": "{{ $marker->description }}",
       })
       //

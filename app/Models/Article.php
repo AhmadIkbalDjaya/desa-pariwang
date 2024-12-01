@@ -5,9 +5,9 @@ namespace App\Models;
 use App\Observers\ArticleObserver;
 use Cviebrock\EloquentSluggable\Sluggable;
 use Illuminate\Database\Eloquent\Attributes\ObservedBy;
-use Illuminate\Database\Eloquent\Casts\Attribute;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Facades\Storage;
 
 #[ObservedBy([ArticleObserver::class])]
 class Article extends Model
@@ -23,16 +23,7 @@ class Article extends Model
             ],
         ];
     }
-    /**
-     * Get the article image with url
-     * @return \Illuminate\Database\Eloquent\Casts\Attribute
-     */
-    protected function image(): Attribute
-    {
-        return Attribute::make(
-            get: fn(?string $value) => $value ? "storage/$value" : "images/default-article.webp"
-        );
-    }
+
     protected static function boot()
     {
         parent::boot();
@@ -41,5 +32,10 @@ class Article extends Model
                 $article->publish_date = now()->toDateString();
             }
         });
+    }
+
+    public function getImageUrlAttribute(): string
+    {
+        return ($this->image && Storage::exists($this->image)) ? "storage/$this->image" : "images/default-article.webp";
     }
 }

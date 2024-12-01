@@ -84,7 +84,7 @@
         </div>
         <div class="col-7 col-lg-8">
           <p class="fs-4">
-            <img src="{{ asset($village_aparatus->photo) }}" class="img-fluid" width="200" alt="...">
+            <img src="{{ asset($village_aparatus->photo_url) }}" class="img-fluid" width="200" alt="...">
           </p>
         </div>
       </div>

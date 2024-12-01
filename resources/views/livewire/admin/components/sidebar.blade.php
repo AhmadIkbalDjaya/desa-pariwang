@@ -4,7 +4,6 @@
     <div class="brand-logo d-flex align-items-center justify-content-between">
       <a href="{{ route('admin.index') }}" wire:navigate.hover class="text-nowrap logo-img">
         <p class=" text-black" style="font-weight: 700; font-size: 1.5rem;">Desa Pariwang</p>
-        {{-- <img src="{{ 'admin/assets/images/logos/dark-logo.svg' }}" width="180" alt="" /> --}}
       </a>
       <div class="close-btn d-xl-none d-block sidebartoggler cursor-pointer" id="sidebarCollapse">
         <i class="ti ti-x fs-8"></i>
@@ -107,7 +106,6 @@
               class="btn btn-primary fs-2 fw-semibold lh-sm">Hubungi Developer</a>
           </div>
           <div class="unlimited-access-img">
-            {{-- <img src="{{ 'admin/assets/images/backgrounds/rocket.png' }}" alt="" class="img-fluid"> --}}
             <img src="{{ asset('admin/assets/images/backgrounds/rocket.png') }}" alt="" class="img-fluid">
           </div>
         </div>

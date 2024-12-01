@@ -2,7 +2,7 @@
   <div class="gap-10 md:flex">
     <div class="md:basis-5/12">
       <img class="mx-auto h-52 rounded-sm object-cover object-center md:h-72 md:w-3/4"
-        src="{{ asset($bumdes->image) }}" alt="{{ $bumdes->name }}" />
+        src="{{ asset($bumdes->image_url) }}" alt="{{ $bumdes->name }}" />
     </div>
     <div class="md:basis-7/12">
       <h1 class="text-center text-2xl font-semibold text-green-700 md:text-left">
