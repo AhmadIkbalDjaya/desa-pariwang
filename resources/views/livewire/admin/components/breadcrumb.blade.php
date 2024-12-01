@@ -3,14 +3,14 @@
   aria-label="breadcrumb">
   <ol class="breadcrumb overflow-x-auto flex-nowrap">
     <li class="breadcrumb-item" style="white-space: nowrap;">
-      <a href="{{ route('admin.index') }}" wire:navigate class="text-body-secondary fs-4">
+      <a wire:navigate href="{{ route('admin.index') }}" class="text-body-secondary fs-4">
         <i class="ti ti-home"></i>
       </a>
     </li>
     @foreach ($items as $i => $item)
       <li class="breadcrumb-item {{ $i + 1 == count($items) ? 'active' : '' }}" style="white-space: nowrap;"
         aria-current="page">
-        <a href="{{ $item['route'] != '' ? route($item['route']) : '' }}" wire:navigate class="text-body-secondary">
+        <a wire:navigate href="{{ $item['route'] != '' ? route($item['route']) : '' }}" class="text-body-secondary">
           {{ $item['name'] }}
         </a>
       </li>

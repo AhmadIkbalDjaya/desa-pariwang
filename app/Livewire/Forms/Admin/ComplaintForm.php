@@ -10,15 +10,15 @@ class ComplaintForm extends Form
 {
     public ?Complaint $complaint;
     #[Validate]
-    public ?string $name;
+    public $name;
     #[Validate]
-    public ?string $email;
+    public $email;
     #[Validate]
-    public ?string $phone;
+    public $phone;
     #[Validate]
-    public ?string $institute;
+    public $institute;
     #[Validate]
-    public ?string $description;
+    public $description;
     public function rules(): array
     {
         return [

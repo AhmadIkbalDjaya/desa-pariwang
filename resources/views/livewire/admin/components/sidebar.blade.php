@@ -2,7 +2,7 @@
   <!-- Sidebar scroll-->
   <div>
     <div class="brand-logo d-flex align-items-center justify-content-between">
-      <a href="{{ route('admin.index') }}" wire:navigate.hover class="text-nowrap logo-img">
+      <a wire:navigate.hover href="{{ route('admin.index') }}" class="text-nowrap logo-img">
         <p class=" text-black" style="font-weight: 700; font-size: 1.5rem;">Desa Pariwang</p>
       </a>
       <div class="close-btn d-xl-none d-block sidebartoggler cursor-pointer" id="sidebarCollapse">
@@ -13,7 +13,7 @@
     <nav class="sidebar-nav scroll-sidebar" data-simplebar="">
       <ul id="sidebarnav">
         <li class="sidebar-item {{ Request::is('addes') ? 'selected' : '' }}">
-          <a class="sidebar-link" href="{{ route('admin.index') }}" wire:navigate.hover aria-expanded="false">
+          <a wire:navigate.hover class="sidebar-link" href="{{ route('admin.index') }}" aria-expanded="false">
             <span>
               <i class="ti ti-layout-dashboard"></i>
             </span>
@@ -21,7 +21,7 @@
           </a>
         </li>
         <li class="sidebar-item {{ Request::is('addes/profile*') ? 'selected' : '' }}">
-          <a class="sidebar-link" href="{{ route('admin.profile.index') }}" wire:navigate.hover aria-expanded="false">
+          <a wire:navigate.hover class="sidebar-link" href="{{ route('admin.profile.index') }}" aria-expanded="false">
             <span>
               <i class="ti ti-user"></i>
             </span>
@@ -29,7 +29,7 @@
           </a>
         </li>
         <li class="sidebar-item {{ Request::is('addes/village-aparatus*') ? 'selected' : '' }}">
-          <a class="sidebar-link" href="{{ route('admin.village-aparatus.index') }}" wire:navigate.hover
+          <a wire:navigate.hover class="sidebar-link" href="{{ route('admin.village-aparatus.index') }}"
             aria-expanded="false">
             <span>
               <i class="ti ti-users"></i>
@@ -38,7 +38,7 @@
           </a>
         </li>
         <li class="sidebar-item {{ Request::is('addes/population*') ? 'selected' : '' }}">
-          <a class="sidebar-link" href="{{ route('admin.population.index') }}" wire:navigate.hover
+          <a wire:navigate.hover class="sidebar-link" href="{{ route('admin.population.index') }}"
             aria-expanded="false">
             <span>
               <i class="ti ti-users"></i>
@@ -47,7 +47,7 @@
           </a>
         </li>
         <li class="sidebar-item {{ Request::is('addes/location*') ? 'selected' : '' }}">
-          <a class="sidebar-link" href="{{ route('admin.location.index') }}" wire:navigate.hover aria-expanded="false">
+          <a wire:navigate.hover class="sidebar-link" href="{{ route('admin.location.index') }}" aria-expanded="false">
             <span>
               <i class="ti ti-location"></i>
             </span>
@@ -55,7 +55,7 @@
           </a>
         </li>
         <li class="sidebar-item {{ Request::is('addes/bumdes*') ? 'selected' : '' }}">
-          <a class="sidebar-link" href="{{ route('admin.bumdes.index') }}" wire:navigate.hover aria-expanded="false">
+          <a wire:navigate.hover class="sidebar-link" href="{{ route('admin.bumdes.index') }}" aria-expanded="false">
             <span>
               <i class="ti ti-building-store"></i>
             </span>
@@ -63,7 +63,7 @@
           </a>
         </li>
         <li class="sidebar-item {{ Request::is('addes/institution*') ? 'selected' : '' }}">
-          <a class="sidebar-link" href="{{ route('admin.institution.index') }}" wire:navigate.hover
+          <a wire:navigate.hover class="sidebar-link" href="{{ route('admin.institution.index') }}"
             aria-expanded="false">
             <span>
               <i class="ti ti-building-bank"></i>
@@ -72,7 +72,7 @@
           </a>
         </li>
         <li class="sidebar-item {{ Request::is('addes/article*') ? 'selected' : '' }}">
-          <a class="sidebar-link" href="{{ route('admin.article.index') }}" wire:navigate.hover aria-expanded="false">
+          <a wire:navigate.hover class="sidebar-link" href="{{ route('admin.article.index') }}" aria-expanded="false">
             <span>
               <i class="ti ti-news"></i>
             </span>
@@ -80,7 +80,7 @@
           </a>
         </li>
         <li class="sidebar-item {{ Request::is('addes/complaint*') ? 'selected' : '' }}">
-          <a class="sidebar-link" href="{{ route('admin.complaint.index') }}" wire:navigate.hover
+          <a wire:navigate.hover class="sidebar-link" href="{{ route('admin.complaint.index') }}"
             aria-expanded="false">
             <span>
               <i class="ti ti-messages"></i>

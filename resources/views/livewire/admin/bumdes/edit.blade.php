@@ -7,7 +7,7 @@
       <h5 class="card-title fw-semibold mb-3">Edit Bumdes</h5>
       <p class="mb-2">Edit Data Badan Usaha Dibawah Ini</p>
       <div class="d-flex justify-content-end">
-        <a href="{{ route('admin.bumdes.index') }}" wire:navigate>
+        <a wire:navigate href="{{ route('admin.bumdes.index') }}">
           <button class="btn btn-danger">Cancel</button>
         </a>
       </div>

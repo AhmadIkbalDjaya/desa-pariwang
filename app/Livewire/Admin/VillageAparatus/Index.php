@@ -23,8 +23,7 @@ class Index extends Component
     ];
     public function render()
     {
-        $search = $this->search;
-        $aparatuses = VillageAparatus::where("name", "LIKE", "%$search%")->latest()->paginate($this->perpage);
+        $aparatuses = VillageAparatus::where("name", "LIKE", "%$this->search%")->latest()->paginate($this->perpage);
         return view('livewire.admin.village-aparatus.index', [
             "aparatuses" => $aparatuses,
         ])->title("Perangkat Desa");

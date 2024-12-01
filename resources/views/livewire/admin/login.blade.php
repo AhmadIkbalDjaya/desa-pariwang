@@ -8,7 +8,7 @@
         <div class="col-md-8 col-lg-6 col-xxl-3">
           <div class="card mb-0">
             <div class="card-body">
-              <a href="{{ route('admin.index') }}" wire:navigate
+              <a wire:navigate href="{{ route('admin.index') }}"
                 class="text-nowrap logo-img text-center d-block py-1 w-100">
                 <p class="m-0 text-black" style="font-weight: 700; font-size: 1.5rem;">Desa Pariwang</p>
               </a>

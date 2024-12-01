@@ -12,7 +12,7 @@
           <input wire:model.live="search" class="form-control" type="text" placeholder="Cari Perangkat Desa"
             aria-label="default input example">
         </div>
-        <a href="{{ route('admin.village-aparatus.create') }}" wire:navigate
+        <a wire:navigate href="{{ route('admin.village-aparatus.create') }}"
           class="btn btn-primary add-button text-white col-md-3 my-1">
           <i class="ti ti-plus"></i> Perangkat Desa
         </a>
@@ -23,7 +23,6 @@
             <tr>
               <th scope="col" style="white-space: nowrap">Nama</th>
               <th scope="col" style="white-space: nowrap">Jabatan</th>
-              {{-- <th scope="col" style="white-space: nowrap">Tempat, Tanggal Lahir</th> --}}
               <th scope="col" style="white-space: nowrap">Jenis Kelamin</th>
               <th scope="col">Aksi</th>
             </tr>
@@ -34,14 +33,13 @@
                 <td style="white-space: nowrap">{{ $aparatus->name }}</td>
                 <td style="white-space: nowrap">{{ $aparatus->position }}</td>
                 <td style="white-space: nowrap">{{ $aparatus->gender->label() }}</td>
-                {{-- <td style="white-space: nowrap">{{ $aparatus->pob ?? '-' }}, {{ $aparatus->dob ?? "-"}}</td> --}}
                 <td style="white-space: nowrap">
-                  <a href="{{ route('admin.village-aparatus.show', ['village_aparatus' => $aparatus->id]) }}"
-                    wire:navigate>
+                  <a wire:navigate
+                    href="{{ route('admin.village-aparatus.show', ['village_aparatus' => $aparatus->id]) }}">
                     <span class="badge bg-info text-white"><i class="ti ti-eye"></i></span>
                   </a>
-                  <a href="{{ route('admin.village-aparatus.edit', ['village_aparatus' => $aparatus->id]) }}"
-                    wire:navigate>
+                  <a wire:navigate
+                    href="{{ route('admin.village-aparatus.edit', ['village_aparatus' => $aparatus->id]) }}">
                     <span class="badge bg-warning text-white"><i class="ti ti-edit"></i></span>
                   </a>
                   <span class="badge bg-danger text-white" style="cursor: pointer" data-bs-toggle="modal"

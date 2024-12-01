@@ -7,7 +7,7 @@
       <h5 class="card-title fw-semibold mb-3">Edit Penanda</h5>
       <p class="mb-2">Edit Penanda Tempat Desa Dibawah Ini</p>
       <div class="d-flex justify-content-end">
-        <a href="{{ route('admin.location.index') }}" wire:navigate>
+        <a wire:navigate href="{{ route('admin.location.index') }}">
           <button class="btn btn-danger">Cancel</button>
         </a>
       </div>

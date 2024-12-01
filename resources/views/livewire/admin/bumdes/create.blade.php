@@ -7,7 +7,7 @@
       <h5 class="card-title fw-semibold mb-3">Tambah Bumdes</h5>
       <p class="mb-2">Tambah Data Badan Usaha Dibawah Ini</p>
       <div class="d-flex justify-content-end">
-        <a href="{{ route('admin.bumdes.index') }}" wire:navigate>
+        <a wire:navigate href="{{ route('admin.bumdes.index') }}">
           <button class="btn btn-danger">Cancel</button>
         </a>
       </div>
@@ -74,21 +74,6 @@
             </div>
           </div>
         </div>
-        {{-- @if ($form->certification_status)
-          <div class="row mb-3">
-            <div class="col-12 col-md-4">
-              <p class="fs-4">Sertifikat</p>
-            </div>
-            <div class="col-12 col-md-8">
-              <input wire:model.live='form.certificate_file'
-                class="form-control @error('form.certificate_file') is-invalid @enderror" type="file"
-                placeholder="Default input">
-              @error('form.certificate_file')
-                <div class="invalid-feedback text-start">{{ $message }}</div>
-              @enderror
-            </div>
-          </div>
-        @endif --}}
         <div class="row mb-3">
           <div class="col-12 col-md-4">
             <p class="fs-4">Jumlah Pegawai <x-admin.form.required /> </p>

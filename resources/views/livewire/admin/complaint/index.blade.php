@@ -12,11 +12,6 @@
           <input wire:model.live="search" class="form-control" type="text" placeholder="Cari Nama"
             aria-label="default input example">
         </div>
-        {{-- <button class="btn btn-primary add-button">
-          <a href="{{ route('admin.bumdes.create') }}" wire:navigate class="text-white">
-            <i class="ti ti-plus"></i> Kritik dan Masukan
-          </a>
-        </button> --}}
       </div>
       <div class="table-responsive">
         <table class="table datatable">

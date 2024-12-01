@@ -1,49 +1,4 @@
 <div>
-  @push('script')
-    <script src="https://code.jquery.com/jquery-3.7.1.min.js"
-      integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
-    {{-- <script src="https://cdn.ckeditor.com/ckeditor5/41.1.0/classic/ckeditor.js"></script> --}}
-    <script src="https://cdn.ckeditor.com/4.21.0/standard/ckeditor.js"></script>
-    <script>
-      $(document).ready(function() {
-        const body = CKEDITOR.replace('body', {
-          // toolbar: false,
-          toolbar: [{
-              name: 'clipboard',
-              items: ['Cut', 'Copy', 'Paste', '-', 'Undo', 'Redo']
-            },
-            {
-              name: 'styles',
-              items: ['Format', 'Font', 'FontSize']
-            },
-            {
-              name: 'basicstyles',
-              items: ['Bold', 'Italic', 'Underline', 'Strike', 'Subscript', 'Superscript']
-            }
-          ]
-        });
-        body.on('change', function(event) {
-          @this.set('form.body', event.editor.getData());
-        });
-      });
-      // $(document).ready(function() {
-      //   const editor = ClassicEditor
-      //     .create(document.querySelector('#editor'))
-      //     .catch(error => {
-      //       console.error(error);
-      //     });
-      //   editor.on('change', function(event) {
-      //     console.log("tes");
-      //     console.log(event.editor.getData());
-      //   })
-      // });
-      // ClassicEditor
-      //   .create(document.querySelector('#editor'))
-      //   .catch(error => {
-      //     console.error(error);
-      //   });
-    </script>
-  @endpush
   {{-- A good traveler has no fixed plans and is not intent upon arriving. --}}
   <livewire:admin.components.breadcrumb :items="$breadcrumbs" />
 
@@ -52,7 +7,7 @@
       <h5 class="card-title fw-semibold mb-3">Tambah Berita</h5>
       <p class="mb-2">Tambah Data Berita</p>
       <div class="d-flex justify-content-end">
-        <a href="{{ route('admin.article.index') }}" wire:navigate>
+        <a wire:navigate href="{{ route('admin.article.index') }}">
           <button class="btn btn-danger">Cancel</button>
         </a>
       </div>
@@ -132,3 +87,28 @@
     </div>
   </div>
 </div>
+@script
+  <script>
+    $(document).ready(function() {
+      const body = CKEDITOR.replace('body', {
+        // toolbar: false,
+        toolbar: [{
+            name: 'clipboard',
+            items: ['Cut', 'Copy', 'Paste', '-', 'Undo', 'Redo']
+          },
+          {
+            name: 'styles',
+            items: ['Format', 'Font', 'FontSize']
+          },
+          {
+            name: 'basicstyles',
+            items: ['Bold', 'Italic', 'Underline', 'Strike', 'Subscript', 'Superscript']
+          }
+        ]
+      });
+      body.on('change', function(event) {
+        @this.set('form.body', event.editor.getData());
+      });
+    });
+  </script>
+@endscript
